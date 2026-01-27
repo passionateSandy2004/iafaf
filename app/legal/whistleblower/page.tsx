@@ -95,7 +95,7 @@ export default function WhistleblowerPage() {
           </p>
         </div>
 
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
+        <div className="bg-red-50 border-l-4 border-red-500 p-4">
           <p className="text-sm text-gray-700">
             <strong>Note:</strong> This policy is designed to encourage reporting 
             of genuine concerns while protecting whistleblowers and ensuring fair 

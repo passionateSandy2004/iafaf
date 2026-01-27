@@ -21,7 +21,7 @@ export default function ResearchPage() {
           R&D Activities
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border-l-4 border-blue-500 pl-4">
+          <div className="border-l-4 border-red-500 pl-4">
             <h3 className="font-semibold text-gray-800 mb-2">
               National Fraud Trend Analysis
             </h3>
@@ -29,7 +29,7 @@ export default function ResearchPage() {
               Comprehensive analysis of fraud patterns across India
             </p>
           </div>
-          <div className="border-l-4 border-blue-500 pl-4">
+          <div className="border-l-4 border-red-500 pl-4">
             <h3 className="font-semibold text-gray-800 mb-2">
               Scam Typology Research
             </h3>
@@ -37,7 +37,7 @@ export default function ResearchPage() {
               Classification and study of different types of financial scams
             </p>
           </div>
-          <div className="border-l-4 border-blue-500 pl-4">
+          <div className="border-l-4 border-red-500 pl-4">
             <h3 className="font-semibold text-gray-800 mb-2">
               Complaint Pattern Analytics
             </h3>
@@ -45,7 +45,7 @@ export default function ResearchPage() {
               Analysis of complaint patterns to identify systemic issues
             </p>
           </div>
-          <div className="border-l-4 border-blue-500 pl-4">
+          <div className="border-l-4 border-red-500 pl-4">
             <h3 className="font-semibold text-gray-800 mb-2">
               Policy Gap Studies
             </h3>
@@ -53,7 +53,7 @@ export default function ResearchPage() {
               Research on gaps in investor protection policies
             </p>
           </div>
-          <div className="border-l-4 border-blue-500 pl-4">
+          <div className="border-l-4 border-red-500 pl-4">
             <h3 className="font-semibold text-gray-800 mb-2">
               Early-Warning Advisories
             </h3>
@@ -61,7 +61,7 @@ export default function ResearchPage() {
               Development of early warning systems for fraud prevention
             </p>
           </div>
-          <div className="border-l-4 border-blue-500 pl-4">
+          <div className="border-l-4 border-red-500 pl-4">
             <h3 className="font-semibold text-gray-800 mb-2">
               Investor Vulnerability Index
             </h3>
@@ -135,7 +135,7 @@ export default function ResearchPage() {
         </div>
       </div>
 
-      <div className="bg-blue-50 border-l-4 border-blue-500 p-6">
+      <div className="bg-red-50 border-l-4 border-red-500 p-6">
         <h2 className="text-xl font-bold text-gray-800 mb-2">
           Research Objectives
         </h2>
@@ -151,7 +151,7 @@ export default function ResearchPage() {
       <div className="mt-8">
         <Link
           href="/fraud-alerts"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 font-medium"
+          className="inline-block bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 font-medium"
         >
           View Fraud Alert Bulletin →
         </Link>

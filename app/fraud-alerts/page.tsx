@@ -84,7 +84,7 @@ export default function FraudAlertsPage() {
         </div>
       </div>
 
-      <div className="bg-blue-50 border-l-4 border-blue-500 p-6">
+      <div className="bg-red-50 border-l-4 border-red-500 p-6">
         <h2 className="text-xl font-bold text-gray-800 mb-2">
           How to Report Suspected Fraud
         </h2>
@@ -96,7 +96,7 @@ export default function FraudAlertsPage() {
         <div className="flex gap-4">
           <a
             href="/file-complaint"
-            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 font-medium"
+            className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 font-medium"
           >
             File a Complaint
           </a>

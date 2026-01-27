@@ -23,25 +23,25 @@ export default function AuthorityDirectory() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-t-4 border-[#0d47a1]">
-      <div className="bg-gradient-to-r from-[#0d47a1] to-[#1565c0] text-white p-6">
+    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-t-4 border-[#bd1c0d]">
+      <div className="bg-gradient-to-r from-[#bd1c0d] to-[#bd1c0d] text-white p-6">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-3xl">🏛️</span>
           <h2 className="text-3xl font-bold">Interactive Authority Directory</h2>
         </div>
-        <p className="text-blue-100 mt-2 text-lg">Find the right authority for your complaint type</p>
+        <p className="text-red-100 mt-2 text-lg">Find the right authority for your complaint type</p>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
             <tr>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#0d47a1] border-b-2 border-[#1565c0]">
+              <th className="px-6 py-4 text-left text-sm font-bold text-[#bd1c0d] border-b-2 border-[#bd1c0d]">
                 Issue Type
               </th>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#0d47a1] border-b-2 border-[#1565c0]">
+              <th className="px-6 py-4 text-left text-sm font-bold text-[#bd1c0d] border-b-2 border-[#bd1c0d]">
                 Authority
               </th>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#0d47a1] border-b-2 border-[#1565c0]">
+              <th className="px-6 py-4 text-left text-sm font-bold text-[#bd1c0d] border-b-2 border-[#bd1c0d]">
                 Actions
               </th>
             </tr>
@@ -54,7 +54,7 @@ export default function AuthorityDirectory() {
               return (
                 <tr
                   key={index}
-                  className="hover:bg-blue-50 transition-all duration-200 border-b"
+                  className="hover:bg-red-50 transition-all duration-200 border-b"
                 >
                   <td className="px-6 py-4 text-sm text-gray-900 font-semibold">
                     {entry.issueType}
@@ -67,7 +67,7 @@ export default function AuthorityDirectory() {
                       <div className="flex gap-3">
                         <Link
                           href={`/find-authority/${authorityId}`}
-                          className="text-[#1565c0] hover:text-[#0d47a1] font-semibold hover:underline transition-all"
+                          className="text-[#bd1c0d] hover:text-[#bd1c0d] font-semibold hover:underline transition-all"
                         >
                           📋 Details
                         </Link>

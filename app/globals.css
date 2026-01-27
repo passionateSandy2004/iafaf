@@ -8,9 +8,9 @@
   --color-light-yellow: #f4ecb3; /* Light Yellow - Primary Brand Color */
   --color-vivid-red: #bd1c0d; /* Vivid Red - Accent/Alert Color */
   
-  --primary-blue: #0d47a1;
-  --secondary-blue: #1565c0;
-  --accent-blue: #1976d2;
+  --primary-blue: #bd1c0d;
+  --secondary-blue: #bd1c0d;
+  --accent-blue: #d32f2f;
   --action-green: #2e7d32;
   --action-yellow: #f57c00;
   --warning: #e65100;

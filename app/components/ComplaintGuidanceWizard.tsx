@@ -42,7 +42,7 @@ export default function ComplaintGuidanceWizard() {
               <button
                 key={type.id}
                 onClick={() => handleComplaintTypeSelect(type.id)}
-                className="p-4 border-2 border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 text-left transition-all"
+                className="p-4 border-2 border-gray-300 rounded-lg hover:border-red-500 hover:bg-red-50 text-left transition-all"
               >
                 <div className="font-semibold text-gray-800">{type.label}</div>
                 <div className="text-sm text-gray-600 mt-1">{type.description}</div>
@@ -60,7 +60,7 @@ export default function ComplaintGuidanceWizard() {
             For your complaint type, you will need to provide the following information:
           </p>
           {authority && (
-            <div className="bg-blue-50 p-4 rounded">
+            <div className="bg-red-50 p-4 rounded">
               <h3 className="font-semibold text-gray-800 mb-2">
                 Required Information:
               </h3>
@@ -91,7 +91,7 @@ export default function ComplaintGuidanceWizard() {
               <p className="text-gray-600 mb-4">{authority.jurisdiction}</p>
               <Link
                 href={`/find-authority/${authorityId}`}
-                className="text-blue-600 hover:text-blue-800 font-medium"
+                className="text-red-600 hover:text-red-800 font-medium"
               >
                 Learn more about {authority.name} →
               </Link>
@@ -123,7 +123,7 @@ export default function ComplaintGuidanceWizard() {
                 </ul>
                 <button
                   onClick={() => window.print()}
-                  className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                  className="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
                 >
                   Print Checklist
                 </button>
@@ -185,19 +185,19 @@ export default function ComplaintGuidanceWizard() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl p-8 md:p-10 border-t-4 border-[#1565c0]">
+    <div className="bg-white rounded-xl shadow-2xl p-8 md:p-10 border-t-4 border-[#bd1c0d]">
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-3xl font-bold text-[#0d47a1]">
+          <h2 className="text-3xl font-bold text-[#bd1c0d]">
             Complaint Guidance Wizard
           </h2>
-          <span className="bg-[#1565c0] text-white px-4 py-2 rounded-full text-sm font-semibold">
+          <span className="bg-[#bd1c0d] text-white px-4 py-2 rounded-full text-sm font-semibold">
             Step {currentStep + 1} of {steps.length}
           </span>
         </div>
         <div className="mt-4 w-full bg-gray-300 rounded-full h-3 shadow-inner">
           <div
-            className="bg-gradient-to-r from-[#1565c0] to-[#1976d2] h-3 rounded-full transition-all duration-500 shadow-sm"
+            className="bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] h-3 rounded-full transition-all duration-500 shadow-sm"
             style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
           ></div>
         </div>
@@ -206,8 +206,8 @@ export default function ComplaintGuidanceWizard() {
         </p>
       </div>
 
-      <div className="mb-8 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200">
-        <h3 className="text-2xl font-bold text-[#0d47a1] mb-6">
+      <div className="mb-8 bg-gradient-to-br from-red-50 to-red-50 p-6 rounded-xl border border-red-200">
+        <h3 className="text-2xl font-bold text-[#bd1c0d] mb-6">
           {steps[currentStep].title}
         </h3>
         <div>{steps[currentStep].content}</div>
@@ -228,7 +228,7 @@ export default function ComplaintGuidanceWizard() {
               setCurrentStep(Math.min(steps.length - 1, currentStep + 1));
             }}
             disabled={currentStep === 0 && !complaintType}
-            className="px-8 py-3 bg-gradient-to-r from-[#1565c0] to-[#1976d2] text-white rounded-lg hover:from-[#0d47a1] hover:to-[#1565c0] disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-all shadow-lg"
+            className="px-8 py-3 bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] text-white rounded-lg hover:from-[#bd1c0d] hover:to-[#bd1c0d] disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-all shadow-lg"
           >
             Next →
           </button>

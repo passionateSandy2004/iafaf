@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="bg-white border-b-4 border-[#0d47a1] shadow-md">
+    <header className="bg-white border-b-4 border-[#bd1c0d] shadow-md">
       {/* Top bar with national emblem feel */}
       <div className="text-white py-2" style={{backgroundColor: '#bd1c0d'}}>
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
@@ -24,11 +24,11 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-4">
               {/* Government-style emblem */}
-              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#0d47a1] to-[#1565c0] rounded-full shadow-lg">
+              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#bd1c0d] to-[#bd1c0d] rounded-full shadow-lg">
                 <span className="text-white font-bold text-2xl">I</span>
               </div>
               <div>
-                <div className="text-[#0d47a1] font-bold text-xl tracking-tight leading-tight">
+                <div className="text-[#bd1c0d] font-bold text-xl tracking-tight leading-tight">
                   Investor Awareness & Fraud Awareness Federation
                 </div>
                 <div className="text-sm text-gray-600 font-medium mt-1">
@@ -41,7 +41,7 @@ export default function Header() {
       </div>
       
       {/* Navigation bar */}
-      <div className="bg-gradient-to-r from-[#1565c0] to-[#1976d2]">
+      <div className="bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f]">
         <div className="container mx-auto px-4">
           <nav className="hidden md:flex items-center justify-center gap-1">
             <Link

@@ -130,7 +130,7 @@ export default function NonRecoveryPage() {
           </p>
         </div>
 
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
+        <div className="bg-red-50 border-l-4 border-red-500 p-4">
           <p className="text-sm text-gray-700">
             <strong>Last Updated:</strong> [Date to be updated]
           </p>

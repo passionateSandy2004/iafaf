@@ -112,12 +112,12 @@ export default function OneStopGuidance() {
   };
 
   return (
-    <div className="bg-white border-t-4 border-[#1565c0] rounded-xl p-8 md:p-10 shadow-2xl max-w-5xl mx-auto">
+    <div className="bg-white border-t-4 border-[#bd1c0d] rounded-xl p-8 md:p-10 shadow-2xl max-w-5xl mx-auto">
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-14 h-14 bg-gradient-to-br from-[#1565c0] to-[#1976d2] rounded-full flex items-center justify-center shadow-lg">
+        <div className="w-14 h-14 bg-gradient-to-br from-[#bd1c0d] to-[#d32f2f] rounded-full flex items-center justify-center shadow-lg">
           <span className="text-white font-bold text-2xl">?</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0d47a1]">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#bd1c0d]">
           Not sure where to complain?
         </h2>
       </div>
@@ -143,7 +143,7 @@ export default function OneStopGuidance() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href={`/find-authority/${recommendedAuthority.toLowerCase()}`}
-                className="bg-gradient-to-r from-[#1565c0] to-[#1976d2] text-white px-8 py-3 rounded-lg hover:from-[#0d47a1] hover:to-[#1565c0] font-semibold shadow-lg transition-all transform hover:-translate-y-0.5"
+                className="bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] text-white px-8 py-3 rounded-lg hover:from-[#bd1c0d] hover:to-[#bd1c0d] font-semibold shadow-lg transition-all transform hover:-translate-y-0.5"
               >
                 📋 Learn More
               </Link>
@@ -159,31 +159,31 @@ export default function OneStopGuidance() {
           </div>
           <button
             onClick={resetQuestionnaire}
-            className="text-[#1565c0] hover:text-[#0d47a1] font-semibold hover:underline transition-all"
+            className="text-[#bd1c0d] hover:text-[#bd1c0d] font-semibold hover:underline transition-all"
           >
             ← Start Over
           </button>
         </div>
       ) : (
         <div className="space-y-6">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 shadow-inner">
+          <div className="bg-gradient-to-br from-red-50 to-red-50 p-6 rounded-xl border border-red-200 shadow-inner">
             <div className="flex items-center justify-between mb-4">
               <p className="text-gray-700 font-medium">
                 Question {currentStep + 1} of {questions.length}
               </p>
-              <span className="bg-[#1565c0] text-white px-3 py-1 rounded-full text-sm font-semibold">
+              <span className="bg-[#bd1c0d] text-white px-3 py-1 rounded-full text-sm font-semibold">
                 {Math.round(((currentStep + 1) / questions.length) * 100)}%
               </span>
             </div>
             <div className="mb-6">
               <div className="w-full bg-gray-300 rounded-full h-3 shadow-inner">
                 <div
-                  className="bg-gradient-to-r from-[#1565c0] to-[#1976d2] h-3 rounded-full transition-all duration-500 shadow-sm"
+                  className="bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] h-3 rounded-full transition-all duration-500 shadow-sm"
                   style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
                 ></div>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-[#0d47a1] mb-6">
+            <h3 className="text-2xl font-bold text-[#bd1c0d] mb-6">
               {questions[currentStep].text}
             </h3>
             <div className="grid grid-cols-2 gap-4">

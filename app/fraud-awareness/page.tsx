@@ -120,7 +120,7 @@ export default function FraudAwarenessPage() {
       <div className="space-y-8">
         {fraudTypes.map((section) => (
           <div key={section.id} className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-blue-200 pb-2">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-red-200 pb-2">
               {section.title}
             </h2>
             <ul className="space-y-3">
@@ -135,7 +135,7 @@ export default function FraudAwarenessPage() {
         ))}
       </div>
 
-      <div className="mt-8 bg-blue-50 border-l-4 border-blue-500 p-6 rounded">
+      <div className="mt-8 bg-red-50 border-l-4 border-red-500 p-6 rounded">
         <h2 className="text-xl font-bold text-gray-800 mb-4">
           What to Do If You Suspect Fraud
         </h2>
@@ -153,7 +153,7 @@ export default function FraudAwarenessPage() {
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         <Link
           href="/file-complaint"
-          className="bg-blue-600 text-white p-6 rounded-lg hover:bg-blue-700 text-center font-semibold text-lg"
+          className="bg-red-600 text-white p-6 rounded-lg hover:bg-red-700 text-center font-semibold text-lg"
         >
           File a Complaint
         </Link>

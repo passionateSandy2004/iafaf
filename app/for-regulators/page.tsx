@@ -134,7 +134,7 @@ export default function ForRegulatorsPage() {
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Contact Nodal Officer
           </h2>
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6">
+          <div className="bg-red-50 border-l-4 border-red-500 p-6">
             <p className="text-gray-700 mb-2">
               For partnership inquiries, MoU discussions, or collaboration opportunities, 
               please contact:

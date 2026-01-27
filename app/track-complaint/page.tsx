@@ -72,7 +72,7 @@ export default function TrackComplaintPage() {
                   href={authority.trackingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 font-medium"
+                  className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 font-medium"
                 >
                   Go to {authority.name} Tracking Portal
                 </a>
@@ -93,7 +93,7 @@ export default function TrackComplaintPage() {
           </p>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded font-semibold">
+              <span className="bg-red-100 text-red-800 px-3 py-1 rounded font-semibold">
                 1
               </span>
               <div>
@@ -155,7 +155,7 @@ export default function TrackComplaintPage() {
             <li>Contact the regulator's regional office</li>
             <li>For urgent matters, contact the regulator's emergency helpline</li>
           </ul>
-          <div className="mt-4 bg-blue-50 border-l-4 border-blue-500 p-4">
+          <div className="mt-4 bg-red-50 border-l-4 border-red-500 p-4">
             <p className="text-sm text-gray-700">
               <strong>Tip:</strong> Keep all your documents and reference numbers safe. 
               You may need them for escalation or follow-up.

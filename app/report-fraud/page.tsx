@@ -18,7 +18,7 @@ export default function ReportFraudPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-600">
+        <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-red-600">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Not Sure Where to Report?
           </h2>
@@ -27,7 +27,7 @@ export default function ReportFraudPage() {
           </p>
           <Link
             href="/"
-            className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 font-medium"
+            className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 font-medium"
           >
             Use One-Stop Guidance →
           </Link>

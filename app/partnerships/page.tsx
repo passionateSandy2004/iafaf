@@ -47,7 +47,7 @@ export default function PartnershipsPage() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {ministries.map((ministry, index) => (
-            <div key={index} className="border-l-4 border-blue-500 pl-4">
+            <div key={index} className="border-l-4 border-red-500 pl-4">
               <h3 className="font-semibold text-gray-800">{ministry}</h3>
             </div>
           ))}
@@ -74,14 +74,14 @@ export default function PartnershipsPage() {
         <ul className="space-y-3">
           {cooperationAreas.map((area, index) => (
             <li key={index} className="flex items-start gap-3 text-gray-700">
-              <span className="text-blue-600 mt-1">•</span>
+              <span className="text-red-600 mt-1">•</span>
               <span>{area}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
+      <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
         <h2 className="text-xl font-bold text-gray-800 mb-4">
           Partnership Objectives
         </h2>
@@ -105,7 +105,7 @@ export default function PartnershipsPage() {
         </p>
         <a
           href="/for-regulators"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 font-medium"
+          className="inline-block bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 font-medium"
         >
           Learn More for Ministries & Regulators →
         </a>
