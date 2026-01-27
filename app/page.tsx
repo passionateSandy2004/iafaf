@@ -6,23 +6,23 @@ export default function Home() {
   return (
     <div style={{backgroundColor: '#f4ecb3'}}>
       {/* Hero Section */}
-      <section className="py-20" style={{backgroundColor: '#bd1c0d'}}>
+      <section className="py-12" style={{backgroundColor: '#bd1c0d'}}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-block px-6 py-2 rounded-full mb-8 border-2" style={{borderColor: '#f4ecb3', backgroundColor: 'rgba(244, 236, 179, 0.1)'}}>
-              <span className="text-sm font-bold uppercase tracking-wider" style={{color: '#f4ecb3'}}>Investor Protection & Fraud Awareness</span>
+            <div className="inline-block px-4 py-1.5 rounded-full mb-6 border-2" style={{borderColor: '#f4ecb3', backgroundColor: 'rgba(244, 236, 179, 0.1)'}}>
+              <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#f4ecb3'}}>Investor Protection & Fraud Awareness</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{color: '#f4ecb3'}}>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight" style={{color: '#f4ecb3', fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>
               Investor Awareness & Fraud Awareness Federation
             </h1>
-            <div className="text-lg md:text-xl mb-4 font-medium" style={{color: '#f4ecb3'}}>
+            <div className="text-sm md:text-base mb-3 font-medium" style={{color: '#f4ecb3'}}>
               निवेशक जागरूकता एवं धोखाधड़ी जागरूकता महासंघ
             </div>
-            <p className="text-xl md:text-2xl mb-6 font-semibold" style={{color: '#f4ecb3'}}>
+            <p className="text-base md:text-lg mb-4 font-semibold" style={{color: '#f4ecb3'}}>
               A National Single-Window Platform for Investor Protection, Fraud Awareness and Grievance Facilitation
             </p>
-            <div className="w-32 h-1 mx-auto my-8 rounded-full" style={{backgroundColor: '#f4ecb3', opacity: 0.7}}></div>
-            <p className="text-lg mt-4 leading-relaxed max-w-4xl mx-auto" style={{color: '#f4ecb3'}}>
+            <div className="w-24 h-0.5 mx-auto my-6 rounded-full" style={{backgroundColor: '#f4ecb3', opacity: 0.7}}></div>
+            <p className="text-sm md:text-base leading-relaxed max-w-4xl mx-auto" style={{color: '#f4ecb3', opacity: 0.95}}>
               Empowering citizens through awareness, early-warning intelligence and structured grievance routing — in coordination with Government Ministries and Financial Regulators of India.
             </p>
           </div>
