@@ -8,7 +8,7 @@ export default function Header() {
       <div className="text-white py-2" style={{backgroundColor: '#bd1c0d'}}>
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
-            <span className="font-bold uppercase tracking-wide" style={{fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>Government of India Initiative</span>
+            <span className="font-bold uppercase tracking-wide" style={{fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>Investor Protection & Fraud Awareness Platform</span>
           </div>
           <div className="hidden md:flex items-center gap-4">
             <button className="hover:underline">Text Size: A+ | A | A-</button>

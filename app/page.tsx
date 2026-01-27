@@ -10,7 +10,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
             <div className="inline-block bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-8">
-              <span className="text-sm font-bold uppercase tracking-wider text-white">Government of India Initiative</span>
+              <span className="text-sm font-bold uppercase tracking-wider text-white">Investor Protection & Fraud Awareness</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
               Investor Awareness & Fraud Awareness Federation
