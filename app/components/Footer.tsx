@@ -92,21 +92,21 @@ export default function Footer() {
         </div>
         
         <div className="border-t-2 border-white/40 pt-8">
-          <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border-l-4 border-amber-600 p-6 mb-8 rounded-r-lg shadow-xl">
-            <p className="text-gray-900 font-bold text-base mb-4 uppercase tracking-wide">
+          <div className="border-l-4 p-6 mb-8 rounded-r-lg shadow-xl disclaimer-box" style={{backgroundColor: '#f4ecb3', borderColor: '#bd1c0d'}}>
+            <p className="font-bold text-base mb-4 uppercase tracking-wide" style={{color: '#bd1c0d', fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>
               Important Disclaimer
             </p>
-            <ul className="text-gray-800 text-sm space-y-3 leading-relaxed">
+            <ul className="text-gray-900 text-sm space-y-3 leading-relaxed" style={{fontFamily: 'Georgia Pro, Georgia, serif'}}>
               <li className="flex items-start">
-                <span className="mr-3 text-amber-600 font-bold">▸</span>
+                <span className="mr-3 font-bold" style={{color: '#bd1c0d'}}>▸</span>
                 <span><strong>IAFAF does not investigate, adjudicate or recover funds.</strong></span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-amber-600 font-bold">▸</span>
+                <span className="mr-3 font-bold" style={{color: '#bd1c0d'}}>▸</span>
                 <span>IAFAF operates as a facilitation, awareness and research institution in public interest.</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-amber-600 font-bold">▸</span>
+                <span className="mr-3 font-bold" style={{color: '#bd1c0d'}}>▸</span>
                 <span>IAFAF does not collect or store any user data.</span>
               </li>
             </ul>

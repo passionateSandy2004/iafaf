@@ -5,10 +5,10 @@ export default function Header() {
   return (
     <header className="bg-white border-b-4 border-[#0d47a1] shadow-md">
       {/* Top bar with national emblem feel */}
-      <div className="bg-gradient-to-r from-[#0d47a1] to-[#1565c0] text-white py-2">
+      <div className="text-white py-2" style={{backgroundColor: '#bd1c0d'}}>
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
-            <span className="font-semibold">Government of India Initiative</span>
+            <span className="font-bold uppercase tracking-wide" style={{fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>Government of India Initiative</span>
           </div>
           <div className="hidden md:flex items-center gap-4">
             <button className="hover:underline">Text Size: A+ | A | A-</button>
