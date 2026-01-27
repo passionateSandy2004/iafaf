@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f9fc;
+  --foreground: #1a1a1a;
+  --primary-blue: #0d47a1;
+  --secondary-blue: #1565c0;
+  --accent-blue: #1976d2;
+  --action-red: #c62828;
+  --action-blue: #1565c0;
+  --action-yellow: #f57c00;
+  --action-green: #2e7d32;
+  --warning: #e65100;
+  --border-color: #e0e0e0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 @theme inline {
@@ -12,15 +24,191 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Government portal styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Professional headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Professional links */
+a {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Professional buttons */
+button, .btn {
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  letter-spacing: 0.025em;
+}
+
+/* Government badge/emblem style */
+.gov-badge {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Professional card styling */
+.gov-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.gov-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Official notice styling */
+.official-notice {
+  background: linear-gradient(to right, #fff3e0, #ffffff);
+  border-left: 4px solid var(--action-yellow);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Disclaimer styling */
+.disclaimer-box {
+  background: linear-gradient(to right, #ffebee, #ffffff);
+  border-left: 4px solid var(--action-red);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Accessibility improvements */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+/* Skip to main content */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1rem;
+  background: var(--primary-blue);
+  color: white;
+  text-decoration: none;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1rem;
+}
+
+/* Professional table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background: linear-gradient(to bottom, #f5f5f5, #eeeeee);
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid var(--primary-blue);
+}
+
+td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+  
+  .gov-card {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation for better UX */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
 }

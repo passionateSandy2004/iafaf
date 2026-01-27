@@ -1,65 +1,155 @@
-import Image from "next/image";
+import PrimaryActionButton from "./components/PrimaryActionButton";
+import OneStopGuidance from "./components/OneStopGuidance";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="bg-gradient-to-b from-[#f7f9fc] to-white">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-[#0d47a1] via-[#1565c0] to-[#1976d2] py-20 shadow-xl">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-block bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-8">
+              <span className="text-sm font-bold uppercase tracking-wider !text-white">Government of India Initiative</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight !text-white" style={{color: 'white !important'}}>
+              Investor Awareness & Fraud Awareness Federation
+            </h1>
+            <div className="text-lg md:text-xl mb-4 !text-white font-medium" style={{color: 'white !important'}}>
+              निवेशक जागरूकता एवं धोखाधड़ी जागरूकता महासंघ
+            </div>
+            <p className="text-xl md:text-2xl mb-4 font-semibold !text-white" style={{color: 'white !important'}}>
+              A National Single-Window Platform for Investor Protection, Fraud Awareness and Grievance Facilitation
+            </p>
+            <div className="w-32 h-1 bg-white/60 mx-auto my-8 rounded-full"></div>
+            <p className="text-lg mt-4 !text-white leading-relaxed max-w-4xl mx-auto opacity-95" style={{color: 'white !important'}}>
+              Empowering citizens through awareness, early-warning intelligence and structured grievance routing — in coordination with Government Ministries and Financial Regulators of India.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Primary Action Buttons */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 text-[#0d47a1]">
+            Quick Access Services
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
+            Select from the options below to get started with your investor protection journey
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <PrimaryActionButton href="/report-fraud" color="red" icon="🚨">
+              Report Suspected Fraud
+            </PrimaryActionButton>
+            <PrimaryActionButton href="/file-complaint" color="blue" icon="📝">
+              File Investor Complaint
+            </PrimaryActionButton>
+            <PrimaryActionButton href="/find-authority" color="yellow" icon="🔍">
+              Find Correct Authority
+            </PrimaryActionButton>
+            <PrimaryActionButton href="/track-complaint" color="green" icon="📊">
+              Track Your Complaint
+            </PrimaryActionButton>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Short Intro Section */}
+      <section className="bg-gradient-to-b from-gray-100 to-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-2xl shadow-2xl p-10 md:p-12 max-w-5xl mx-auto border-t-4 border-[#0d47a1]">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#0d47a1] to-[#1565c0] rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-2xl">i</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0d47a1]">About IAFAF</h2>
+            </div>
+            <div className="space-y-5 text-gray-700 leading-relaxed text-lg">
+              <p className="text-justify">
+                IAFAF is a <strong>not-for-profit national institution</strong> established to strengthen investor protection in India through awareness, fraud intelligence research, and a single-window complaint facilitation system.
+              </p>
+              <div className="bg-red-50 border-l-4 border-red-600 p-6 rounded-r-lg shadow-sm">
+                <p className="font-bold text-red-800 text-lg">
+                  ⚠️ Important: IAFAF does not investigate, adjudicate, or recover funds.
+                </p>
+              </div>
+              <p className="text-justify">
+                It enables citizens to <strong>identify fraud</strong>, <strong>prepare proper documentation</strong>, and <strong>submit grievances</strong> to the appropriate government and regulatory authorities.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* One-Stop Guidance Panel */}
+      <section className="bg-gradient-to-b from-white to-gray-50 py-20">
+        <div className="container mx-auto px-4">
+          <OneStopGuidance />
+        </div>
+      </section>
+
+      {/* Quick Links Section */}
+      <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0d47a1] mb-3 text-center">
+            Explore Our Resources
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
+            Access comprehensive resources for fraud awareness, research, and collaboration
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <Link
+              href="/fraud-awareness"
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-[#1565c0] transform hover:-translate-y-2 group"
+            >
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">📚</div>
+              <h3 className="text-xl font-bold text-[#0d47a1] mb-3">
+                Fraud Awareness Centre
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Learn about different types of financial scams and how to protect yourself
+              </p>
+            </Link>
+            <Link
+              href="/research"
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-[#2e7d32] transform hover:-translate-y-2 group"
+            >
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🔬</div>
+              <h3 className="text-xl font-bold text-[#0d47a1] mb-3">
+                Research & Development
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Access fraud research, reports, and intelligence publications
+              </p>
+            </Link>
+            <Link
+              href="/partnerships"
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-[#f57c00] transform hover:-translate-y-2 group"
+            >
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🤝</div>
+              <h3 className="text-xl font-bold text-[#0d47a1] mb-3">
+                Government Partnerships
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Learn about our collaboration with ministries and regulators
+              </p>
+            </Link>
+            <Link
+              href="/about"
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-[#c62828] transform hover:-translate-y-2 group"
+            >
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">ℹ️</div>
+              <h3 className="text-xl font-bold text-[#0d47a1] mb-3">
+                About IAFAF
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Understand our mission, vision, and governance structure
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
