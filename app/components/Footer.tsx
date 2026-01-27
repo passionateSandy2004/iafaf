@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#1a237e] to-[#bd1c0d] text-white mt-20">
+    <footer className="mt-20" style={{backgroundColor: '#bd1c0d', color: '#f4ecb3'}}>
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           <div>
-            <h3 className="font-bold text-xl mb-5 text-white border-b-2 border-white/40 pb-3">IAFAF</h3>
-            <p className="text-sm text-white leading-relaxed mb-3 opacity-90">
+            <h3 className="font-bold text-xl mb-5 border-b-2 pb-3" style={{color: '#f4ecb3', borderColor: 'rgba(244, 236, 179, 0.4)'}}>IAFAF</h3>
+            <p className="text-sm leading-relaxed mb-3 opacity-90" style={{color: '#f4ecb3'}}>
               Investor Awareness & Fraud Awareness Federation
             </p>
             <p className="text-sm text-white opacity-90">

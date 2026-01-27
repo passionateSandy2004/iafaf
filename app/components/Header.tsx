@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="bg-white border-b-4 border-[#bd1c0d] shadow-md">
-      {/* Top bar with national emblem feel */}
-      <div className="text-white py-2" style={{backgroundColor: '#bd1c0d'}}>
+    <header className="border-b-4" style={{backgroundColor: '#f4ecb3', borderColor: '#bd1c0d'}}>
+      {/* Top bar */}
+      <div className="py-2" style={{backgroundColor: '#bd1c0d', color: '#f4ecb3'}}>
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
             <span className="font-bold uppercase tracking-wide" style={{fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>Investor Protection & Fraud Awareness Platform</span>

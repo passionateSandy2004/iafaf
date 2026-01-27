@@ -4,25 +4,25 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-[#f7f9fc] to-white">
+    <div style={{backgroundColor: '#f4ecb3'}}>
       {/* Hero Section */}
-      <section className="py-20 shadow-xl" style={{background: 'linear-gradient(to right, #bd1c0d, #d32f2f)'}}>
+      <section className="py-20" style={{backgroundColor: '#bd1c0d'}}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-8">
-              <span className="text-sm font-bold uppercase tracking-wider text-white">Investor Protection & Fraud Awareness</span>
+            <div className="inline-block px-6 py-2 rounded-full mb-8 border-2" style={{borderColor: '#f4ecb3', backgroundColor: 'rgba(244, 236, 179, 0.1)'}}>
+              <span className="text-sm font-bold uppercase tracking-wider" style={{color: '#f4ecb3'}}>Investor Protection & Fraud Awareness</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{color: '#f4ecb3'}}>
               Investor Awareness & Fraud Awareness Federation
             </h1>
-            <div className="text-lg md:text-xl mb-4 text-white font-medium">
+            <div className="text-lg md:text-xl mb-4 font-medium" style={{color: '#f4ecb3'}}>
               निवेशक जागरूकता एवं धोखाधड़ी जागरूकता महासंघ
             </div>
-            <p className="text-xl md:text-2xl mb-4 font-semibold text-white">
+            <p className="text-xl md:text-2xl mb-6 font-semibold" style={{color: '#f4ecb3'}}>
               A National Single-Window Platform for Investor Protection, Fraud Awareness and Grievance Facilitation
             </p>
-            <div className="w-32 h-1 bg-white/60 mx-auto my-8 rounded-full"></div>
-            <p className="text-lg mt-4 text-white leading-relaxed max-w-4xl mx-auto opacity-95">
+            <div className="w-32 h-1 mx-auto my-8 rounded-full" style={{backgroundColor: '#f4ecb3', opacity: 0.7}}></div>
+            <p className="text-lg mt-4 leading-relaxed max-w-4xl mx-auto" style={{color: '#f4ecb3'}}>
               Empowering citizens through awareness, early-warning intelligence and structured grievance routing — in coordination with Government Ministries and Financial Regulators of India.
             </p>
           </div>
@@ -30,12 +30,12 @@ export default function Home() {
       </section>
 
       {/* Primary Action Buttons */}
-      <section className="bg-white py-20">
+      <section className="py-20" style={{backgroundColor: '#faf6e0'}}>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 text-[#bd1c0d]">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3" style={{color: '#bd1c0d'}}>
             Quick Access Services
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
+          <p className="text-center mb-12 max-w-2xl mx-auto text-lg" style={{color: '#bd1c0d', opacity: 0.8}}>
             Select from the options below to get started with your investor protection journey
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
@@ -56,21 +56,21 @@ export default function Home() {
       </section>
 
       {/* Short Intro Section */}
-      <section className="bg-gradient-to-b from-gray-100 to-white py-20">
+      <section className="py-20" style={{backgroundColor: '#f4ecb3'}}>
         <div className="container mx-auto px-4">
-          <div className="bg-white rounded-2xl shadow-2xl p-10 md:p-12 max-w-5xl mx-auto border-t-4 border-[#bd1c0d]">
+          <div className="rounded-2xl p-10 md:p-12 max-w-5xl mx-auto border-4" style={{backgroundColor: '#faf6e0', borderColor: '#bd1c0d'}}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#bd1c0d] to-[#bd1c0d] rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-2xl">i</span>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{backgroundColor: '#bd1c0d'}}>
+                <span className="font-bold text-2xl" style={{color: '#f4ecb3'}}>i</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#bd1c0d]">About IAFAF</h2>
+              <h2 className="text-3xl md:text-4xl font-bold" style={{color: '#bd1c0d'}}>About IAFAF</h2>
             </div>
-            <div className="space-y-5 text-gray-700 leading-relaxed text-lg">
+            <div className="space-y-5 leading-relaxed text-lg" style={{color: '#bd1c0d'}}>
               <p className="text-justify">
                 IAFAF is a <strong>not-for-profit national institution</strong> established to strengthen investor protection in India through awareness, fraud intelligence research, and a single-window complaint facilitation system.
               </p>
-              <div className="bg-red-50 border-l-4 border-red-600 p-6 rounded-r-lg shadow-sm">
-                <p className="font-bold text-red-800 text-lg">
+              <div className="border-l-4 p-6 rounded-r-lg" style={{backgroundColor: '#f4ecb3', borderColor: '#bd1c0d'}}>
+                <p className="font-bold text-lg" style={{color: '#bd1c0d'}}>
                   ⚠️ Important: IAFAF does not investigate, adjudicate, or recover funds.
                 </p>
               </div>
@@ -83,19 +83,19 @@ export default function Home() {
       </section>
 
       {/* One-Stop Guidance Panel */}
-      <section className="bg-gradient-to-b from-white to-gray-50 py-20">
+      <section className="py-20" style={{backgroundColor: '#faf6e0'}}>
         <div className="container mx-auto px-4">
           <OneStopGuidance />
         </div>
       </section>
 
       {/* Quick Links Section */}
-      <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-20">
+      <section className="py-20" style={{backgroundColor: '#f4ecb3'}}>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#bd1c0d] mb-3 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center" style={{color: '#bd1c0d'}}>
             Explore Our Resources
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
+          <p className="text-center mb-12 max-w-2xl mx-auto text-lg" style={{color: '#bd1c0d', opacity: 0.8}}>
             Access comprehensive resources for fraud awareness, research, and collaboration
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
