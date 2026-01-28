@@ -21,19 +21,26 @@ export default function Header() {
        </div>
       
        {/* Main header */}
-       <div className="container mx-auto px-4 py-3">
+       <div className="container mx-auto px-4 py-6">
          <div className="flex items-center justify-between">
-           <div className="flex items-center gap-3">
-             <Link href="/" className="flex items-center gap-3">
-               {/* Government-style emblem */}
-               <div className="flex items-center justify-center w-12 h-12 rounded-full" style={{backgroundColor: '#bd1c0d'}}>
-                 <span className="font-bold text-xl" style={{color: '#f4ecb3'}}>I</span>
+           <div className="flex items-center gap-4">
+             <Link href="/" className="flex items-center gap-4">
+               {/* IAFAF Logo */}
+               <div className="flex-shrink-0">
+                 <Image
+                   src="/iafaf-logo.png"
+                   alt="IAFAF Logo"
+                   width={80}
+                   height={80}
+                   className="object-contain"
+                   priority
+                 />
                </div>
                <div>
-                 <div className="font-bold text-base tracking-tight leading-tight" style={{color: '#bd1c0d', fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>
+                 <div className="font-bold text-lg tracking-tight leading-tight" style={{color: '#bd1c0d', fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>
                    Investor Awareness & Fraud Awareness Federation
                  </div>
-                 <div className="text-xs font-medium mt-0.5" style={{color: '#bd1c0d', opacity: 0.7}}>
+                 <div className="text-sm font-medium mt-1" style={{color: '#bd1c0d', opacity: 0.8}}>
                    A National Single-Window Platform | निवेशक जागरूकता एवं धोखाधड़ी जागरूकता महासंघ
                  </div>
                </div>
