@@ -23,25 +23,24 @@ export default function AuthorityDirectory() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-t-4 border-[#bd1c0d]">
-      <div className="bg-gradient-to-r from-[#bd1c0d] to-[#bd1c0d] text-white p-6">
+    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-t-4 border-[#8b0000]">
+      <div className="p-6" style={{background: 'linear-gradient(to right, #8b0000, #8b0000)'}}>
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-3xl">🏛️</span>
-          <h2 className="text-3xl font-bold">Interactive Authority Directory</h2>
+          <h2 className="text-3xl font-bold" style={{color: '#ffffff', fontFamily: "'Times New Roman', Times, serif"}}>Interactive Authority Directory</h2>
         </div>
-        <p className="text-red-100 mt-2 text-lg">Find the right authority for your complaint type</p>
+        <p className="mt-2 text-lg" style={{color: '#ffffff', opacity: 0.9}}>Find the right authority for your complaint type</p>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
             <tr>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#bd1c0d] border-b-2 border-[#bd1c0d]">
+              <th className="px-6 py-4 text-left text-sm font-bold text-[#8b0000] border-b-2 border-[#8b0000]">
                 Issue Type
               </th>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#bd1c0d] border-b-2 border-[#bd1c0d]">
+              <th className="px-6 py-4 text-left text-sm font-bold text-[#8b0000] border-b-2 border-[#8b0000]">
                 Authority
               </th>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#bd1c0d] border-b-2 border-[#bd1c0d]">
+              <th className="px-6 py-4 text-left text-sm font-bold text-[#8b0000] border-b-2 border-[#8b0000]">
                 Actions
               </th>
             </tr>
@@ -64,24 +63,13 @@ export default function AuthorityDirectory() {
                   </td>
                   <td className="px-6 py-4 text-sm">
                     {authority ? (
-                      <div className="flex gap-3">
-                        <Link
-                          href={`/find-authority/${authorityId}`}
-                          className="text-[#bd1c0d] hover:text-[#bd1c0d] font-semibold hover:underline transition-all"
-                        >
-                          📋 Details
-                        </Link>
-                        {authority.portalUrl !== "#" && (
-                          <a
-                            href={authority.portalUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#2e7d32] hover:text-[#1b5e20] font-semibold hover:underline transition-all"
-                          >
-                            🌐 Portal
-                          </a>
-                        )}
-                      </div>
+                      <Link
+                        href={`/find-authority/${authorityId}`}
+                        className="text-[#8b0000] hover:text-[#8b0000] font-semibold hover:underline transition-all"
+                        style={{fontFamily: "'Times New Roman', Times, serif"}}
+                      >
+                        Details
+                      </Link>
                     ) : (
                       <span className="text-gray-400 italic">Coming soon</span>
                     )}

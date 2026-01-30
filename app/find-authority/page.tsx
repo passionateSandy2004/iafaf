@@ -2,16 +2,16 @@ import AuthorityDirectory from "../components/AuthorityDirectory";
 
 export default function FindAuthorityPage() {
   return (
-    <div className="min-h-screen pt-8" style={{backgroundColor: '#f4ecb3'}}>
+    <div className="min-h-screen pt-8" style={{backgroundColor: '#ffffff'}}>
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 text-center max-w-4xl mx-auto">
-          <div className="inline-block px-4 py-1.5 rounded-full mb-3 border-2" style={{backgroundColor: '#bd1c0d', borderColor: '#bd1c0d'}}>
-            <span className="text-xs font-semibold uppercase tracking-wider" style={{color: '#f4ecb3'}}>Government Alignment</span>
+          <div className="inline-block px-4 py-1.5 rounded-full mb-3 border-2" style={{backgroundColor: '#8b0000', borderColor: '#8b0000'}}>
+            <span className="text-xs font-semibold uppercase tracking-wider" style={{color: '#ffffff'}}>Government Alignment</span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-bold mb-3" style={{color: '#bd1c0d', fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>
+          <h1 className="text-2xl md:text-3xl font-bold mb-3" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
             Find the Right Authority
           </h1>
-          <p className="text-sm md:text-base leading-relaxed" style={{color: '#bd1c0d', opacity: 0.8}}>
+          <p className="text-sm md:text-base leading-relaxed" style={{color: '#8b0000', opacity: 0.8}}>
             Use the directory below to find the appropriate authority for your complaint type. 
             Each authority handles specific types of financial fraud and complaints.
           </p>
@@ -19,19 +19,26 @@ export default function FindAuthorityPage() {
 
         <AuthorityDirectory />
 
-        <div className="mt-12 bg-gradient-to-r from-red-50 to-red-50 border-l-4 border-[#bd1c0d] p-8 rounded-r-xl shadow-lg">
+        <div className="mt-12 bg-white border-l-4 p-8 rounded-xl shadow-lg" style={{borderColor: '#8b0000'}}>
           <div className="flex items-start gap-4">
             <span className="text-4xl">💡</span>
             <div>
-              <h2 className="text-2xl font-bold text-[#bd1c0d] mb-3">
+              <h2 className="text-2xl font-bold mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
                 Need Help Deciding?
               </h2>
-              <p className="text-gray-700 mb-4 leading-relaxed">
+              <p className="mb-6 leading-relaxed" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
                 If you're not sure which authority handles your complaint, use our One-Stop Guidance tool on the homepage. Answer 5 simple questions to get personalized recommendations.
               </p>
               <a
                 href="/"
-                className="inline-block bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] text-white px-6 py-3 rounded-lg hover:from-[#bd1c0d] hover:to-[#bd1c0d] font-semibold shadow-lg transition-all transform hover:-translate-y-0.5"
+                className="inline-block px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
+                style={{
+                  backgroundColor: '#8b0000',
+                  color: '#ffffff',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '16px',
+                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+                }}
               >
                 Go to One-Stop Guidance →
               </a>

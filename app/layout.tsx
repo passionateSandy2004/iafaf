@@ -35,8 +35,8 @@ export default function RootLayout({
         className={`${cinzel.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
         <Header />
-        <main className="flex-grow">
-          {children}
+        <main className="flex-grow" style={{margin: 0, padding: 0}}>
+        {children}
         </main>
         <Footer />
       </body>

@@ -109,14 +109,14 @@ export default function ComplaintGuidanceWizard() {
               <p className="text-gray-700 mb-4">
                 Make sure you have the following documents ready:
               </p>
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6">
+              <div className="bg-white border-l-4 border-red-600 p-6">
                 <h3 className="font-semibold text-gray-800 mb-3">
                   Required Documents:
                 </h3>
                 <ul className="space-y-2">
                   {authority.documentChecklist.map((doc, index) => (
                     <li key={index} className="flex items-start gap-2 text-gray-700">
-                      <span className="text-yellow-600 mt-1">✓</span>
+                      <span className="text-red-600 mt-1">✓</span>
                       <span>{doc}</span>
                     </li>
                   ))}
@@ -171,7 +171,7 @@ export default function ComplaintGuidanceWizard() {
                   Go to {authority.name} Portal
                 </a>
               ) : (
-                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <div className="bg-white border-l-4 border-red-600 p-4">
                   <p className="text-gray-700">
                     Please contact {authority.name} directly for submission instructions.
                   </p>
@@ -185,19 +185,19 @@ export default function ComplaintGuidanceWizard() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl p-8 md:p-10 border-t-4 border-[#bd1c0d]">
+    <div className="bg-white rounded-xl shadow-2xl p-8 md:p-10 border-t-4 border-[#8b0000]">
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-3xl font-bold text-[#bd1c0d]">
+          <h2 className="text-3xl font-bold text-[#8b0000]">
             Complaint Guidance Wizard
           </h2>
-          <span className="bg-[#bd1c0d] text-white px-4 py-2 rounded-full text-sm font-semibold">
+          <span className="bg-[#8b0000] text-white px-4 py-2 rounded-full text-sm font-semibold">
             Step {currentStep + 1} of {steps.length}
           </span>
         </div>
         <div className="mt-4 w-full bg-gray-300 rounded-full h-3 shadow-inner">
           <div
-            className="bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] h-3 rounded-full transition-all duration-500 shadow-sm"
+            className="bg-gradient-to-r from-[#8b0000] to-[#d32f2f] h-3 rounded-full transition-all duration-500 shadow-sm"
             style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
           ></div>
         </div>
@@ -207,7 +207,7 @@ export default function ComplaintGuidanceWizard() {
       </div>
 
       <div className="mb-8 bg-gradient-to-br from-red-50 to-red-50 p-6 rounded-xl border border-red-200">
-        <h3 className="text-2xl font-bold text-[#bd1c0d] mb-6">
+        <h3 className="text-2xl font-bold text-[#8b0000] mb-6">
           {steps[currentStep].title}
         </h3>
         <div>{steps[currentStep].content}</div>
@@ -228,7 +228,7 @@ export default function ComplaintGuidanceWizard() {
               setCurrentStep(Math.min(steps.length - 1, currentStep + 1));
             }}
             disabled={currentStep === 0 && !complaintType}
-            className="px-8 py-3 bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] text-white rounded-lg hover:from-[#bd1c0d] hover:to-[#bd1c0d] disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-all shadow-lg"
+            className="px-8 py-3 bg-gradient-to-r from-[#8b0000] to-[#d32f2f] text-white rounded-lg hover:from-[#8b0000] hover:to-[#8b0000] disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-all shadow-lg"
           >
             Next →
           </button>

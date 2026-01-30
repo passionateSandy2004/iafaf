@@ -104,7 +104,7 @@ export default async function AuthorityDetailPage({ params }: PageProps) {
           <p className="text-gray-700 mb-6">{authority.escalationProcess}</p>
         </div>
 
-        <div className="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+        <div className="mt-8 bg-white border-l-4 border-red-600 p-4">
           <p className="text-sm text-gray-700">
             <strong>Note:</strong> IAFAF does not collect or store any complaint data. 
             All complaints must be submitted directly on the regulator's official portal.

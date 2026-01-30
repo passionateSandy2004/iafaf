@@ -129,7 +129,7 @@ export default function TermsPage() {
           </p>
         </div>
 
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+        <div className="bg-white border-l-4 border-red-600 p-4">
           <p className="text-sm text-gray-700">
             <strong>Last Updated:</strong> [Date to be updated]
           </p>

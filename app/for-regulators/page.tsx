@@ -97,7 +97,7 @@ export default function ForRegulatorsPage() {
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Data Privacy Policy
           </h2>
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+          <div className="bg-white border-l-4 border-red-600 p-4 mb-4">
             <p className="text-gray-700">
               <strong>No Data Collection:</strong> IAFAF does not collect, store, or process 
               any user data. The platform operates as a pure guidance and information resource.

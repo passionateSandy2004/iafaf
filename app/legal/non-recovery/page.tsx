@@ -110,7 +110,7 @@ export default function NonRecoveryPage() {
           </ul>
         </div>
 
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6">
+        <div className="bg-white border-l-4 border-red-600 p-6">
           <h2 className="text-xl font-bold text-gray-800 mb-2">
             Beware of Recovery Scams
           </h2>

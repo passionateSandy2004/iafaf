@@ -247,3 +247,4 @@ export const authorityMapping: Record<ComplaintType, string> = {
   [ComplaintType.PONZI_MLM]: "eow",
 };
 
+

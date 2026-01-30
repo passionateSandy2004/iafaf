@@ -11,7 +11,7 @@ export default function DataProtectionPage() {
       </div>
 
       <div className="bg-white rounded-lg shadow-md p-8 space-y-6">
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6">
+        <div className="bg-white border-l-4 border-red-600 p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Not Applicable - No Data Collection
           </h2>

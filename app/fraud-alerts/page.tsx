@@ -8,7 +8,7 @@ export default function FraudAlertsPage() {
         <p className="text-xl text-gray-600 mb-4">
           Verified Public-Interest Advisories
         </p>
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+        <div className="bg-white border-l-4 border-red-600 p-4 mb-6">
           <p className="text-gray-700">
             <strong>Important:</strong> All alerts published here are verified and 
             follow strict guidelines. No accusations are made without confirmation. 

@@ -103,31 +103,32 @@ export default function FraudAwarenessPage() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
+    <div style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
+      <div className="container mx-auto px-4 py-8">
+      <div className="mb-12">
+        <h1 className="text-4xl font-bold mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
           Fraud Awareness Centre
         </h1>
-        <p className="text-xl text-gray-600 mb-4">
+        <p className="text-xl mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '20px'}}>
           Protect Yourself from Financial Fraud
         </p>
-        <p className="text-gray-700 max-w-3xl">
+        <p className="max-w-3xl leading-relaxed" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
           Learn about different types of financial scams, red flags to watch for, 
           and how to protect yourself from fraud.
         </p>
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-6">
         {fraudTypes.map((section) => (
-          <div key={section.id} className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-red-200 pb-2">
+          <div key={section.id} className="bg-white rounded-xl shadow-lg p-8 border-l-4" style={{borderColor: '#8b0000'}}>
+            <h2 className="text-2xl font-bold mb-6 pb-3" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", borderBottom: '2px solid rgba(139, 0, 0, 0.2)'}}>
               {section.title}
             </h2>
             <ul className="space-y-3">
               {section.content.map((item, index) => (
-                <li key={index} className="flex items-start gap-3 text-gray-700">
-                  <span className="text-red-600 mt-1">•</span>
-                  <span>{item}</span>
+                <li key={index} className="flex items-start gap-3" style={{fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+                  <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+                  <span style={{color: '#000000'}}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -135,11 +136,11 @@ export default function FraudAwarenessPage() {
         ))}
       </div>
 
-      <div className="mt-8 bg-red-50 border-l-4 border-red-500 p-6 rounded">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">
+      <div className="mt-12 bg-white border-l-4 p-8 rounded-xl shadow-lg" style={{borderColor: '#8b0000'}}>
+        <h2 className="text-2xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
           What to Do If You Suspect Fraud
         </h2>
-        <ol className="list-decimal list-inside text-gray-700 space-y-2">
+        <ol className="list-decimal list-inside space-y-3" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
           <li>Stop all communication with the suspected fraudster</li>
           <li>Do not transfer any more money</li>
           <li>Gather all evidence (screenshots, emails, documents)</li>
@@ -150,22 +151,49 @@ export default function FraudAwarenessPage() {
         </ol>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Link
-          href="/file-complaint"
-          className="bg-red-600 text-white p-6 rounded-lg hover:bg-red-700 text-center font-semibold text-lg"
-        >
-          File a Complaint
-        </Link>
-        <Link
-          href="/find-authority"
-          className="bg-green-600 text-white p-6 rounded-lg hover:bg-green-700 text-center font-semibold text-lg"
-        >
-          Find the Right Authority
-        </Link>
+      <div className="mt-12 mb-16">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 max-w-2xl mx-auto">
+          <Link
+            href="/file-complaint"
+            className="w-full md:w-auto px-8 py-4 rounded-lg text-center font-semibold transition-all duration-300 hover:shadow-lg"
+            style={{
+              backgroundColor: '#8b0000',
+              color: '#ffffff',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '56px'
+            }}
+          >
+            File a Complaint
+          </Link>
+          <Link
+            href="/find-authority"
+            className="w-full md:w-auto px-8 py-4 rounded-lg text-center font-semibold transition-all duration-300 hover:shadow-lg"
+            style={{
+              backgroundColor: '#ffffff',
+              color: '#8b0000',
+              border: '2px solid #8b0000',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '56px'
+            }}
+          >
+            Find the Right Authority
+          </Link>
+        </div>
+      </div>
       </div>
     </div>
   );
 }
+
 
 

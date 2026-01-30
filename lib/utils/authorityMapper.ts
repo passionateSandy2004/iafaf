@@ -54,3 +54,4 @@ export function getAuthorityByComplaintType(type: ComplaintType) {
   return getAuthorityById(authorityId);
 }
 
+

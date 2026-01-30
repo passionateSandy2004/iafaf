@@ -5,65 +5,91 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="border-b-3" style={{backgroundColor: '#f4ecb3', borderColor: '#bd1c0d'}}>
+    <header className="border-b-3" style={{backgroundColor: '#ffffff', borderColor: '#8b0000', margin: 0, padding: 0, overflow: 'visible'}}>
        {/* Top bar */}
-       <div className="py-1.5" style={{backgroundColor: '#bd1c0d', color: '#f4ecb3'}}>
+       <div className="py-1.5" style={{backgroundColor: '#8b0000', color: '#ffffff', position: 'relative', zIndex: 5}}>
          <div className="container mx-auto px-4 flex justify-between items-center text-xs">
            <div className="flex items-center gap-3">
-             <span className="font-semibold uppercase tracking-wide" style={{fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>Investor Protection & Fraud Awareness Platform</span>
+             <span className="font-semibold uppercase tracking-wide" style={{fontFamily: "'Times New Roman', Times, serif"}}></span>
            </div>
-           <div className="hidden md:flex items-center gap-3 text-xs">
-             <button className="hover:underline">Text Size: A+ | A | A-</button>
-             <span>|</span>
-             <button className="hover:underline">हिंदी</button>
-           </div>
+          <div className="hidden md:flex items-center gap-3">
+            <span className="font-semibold" style={{fontFamily: "'Times New Roman', Times, serif", fontStyle: 'italic', fontSize: '18px'}}>LIC. NO. 178630</span>
+          </div>
          </div>
        </div>
       
-       {/* Main header */}
-       <div className="container mx-auto px-4 py-6">
-         <div className="flex items-center justify-between">
-           <div className="flex items-center gap-4">
-             <Link href="/" className="flex items-center gap-4">
-               {/* IAFAF Logo */}
-               <div className="flex-shrink-0">
-                 <Image
-                   src="/iafaf-logo.png"
-                   alt="IAFAF Logo"
-                   width={80}
-                   height={80}
-                   className="object-contain"
-                   priority
-                 />
-               </div>
-               <div>
-                 <div className="font-bold text-lg tracking-tight leading-tight" style={{color: '#bd1c0d', fontFamily: 'var(--font-cinzel), Cinzel, serif'}}>
-                   Investor Awareness & Fraud Awareness Federation
-                 </div>
-                 <div className="text-sm font-medium mt-1" style={{color: '#bd1c0d', opacity: 0.8}}>
-                   A National Single-Window Platform | निवेशक जागरूकता एवं धोखाधड़ी जागरूकता महासंघ
-                 </div>
-               </div>
-             </Link>
-           </div>
-         </div>
-       </div>
-      
+      {/* Main header */}
+      <div style={{maxWidth: '1200px', margin: '0 auto', padding: '1.4rem 1rem 1.4rem 10rem', position: 'relative'}}>
+        {/* Title & subtitle - compact, independent of logo */}
+        <Link
+          href="/"
+          style={{
+            display: 'inline-flex',
+            flexDirection: 'column',
+            textDecoration: 'none',
+            padding: 0,
+            margin: 0,
+          }}
+        >
+          <div style={{padding: 0, margin: 0, lineHeight: 1}}>
+            <div style={{marginBottom: '0.25rem'}}>
+              <div style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '26.5px', fontWeight: 'bold', lineHeight: '1.25', padding: 0, margin: 0}}>
+                Investor Awareness & Fraud Awareness Federation
+              </div>
+            </div>
+            <div style={{color: '#000000', fontSize: '16.1px', fontWeight: '500', lineHeight: '1.25', padding: 0, margin: 0, fontStyle: 'italic', fontFamily: "'Times New Roman', Times, serif"}}>
+              A National Single-Window Platform | निवेशक जागरूकता एवं धोखाधड़ी जागरूकता महासंघ
+            </div>
+          </div>
+        </Link>
+
+        {/* Floating logo on separate axis for 3D pop-up effect */}
+        <div
+          style={{
+            position: 'absolute',
+            left: '-6rem',
+            top: '-1.2rem',
+            padding: 0,
+            margin: 0,
+            backgroundColor: 'transparent',
+            transform: 'translateZ(0) scale(1.05) rotateX(4deg)',
+            transformOrigin: 'center bottom',
+            filter: 'drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15))',
+            zIndex: 15,
+            pointerEvents: 'none',
+          }}
+        >
+          <Image
+            src="/iafaf-logo.png?v=2"
+            alt="IAFAF Logo"
+            width={180}
+            height={180}
+            style={{
+              display: 'block',
+              margin: 0,
+              padding: 0,
+              verticalAlign: 'bottom',
+            }}
+            priority
+            unoptimized
+          />
+        </div>
+      </div>
        {/* Navigation bar */}
-       <div style={{backgroundColor: '#bd1c0d'}}>
-         <div className="container mx-auto px-4">
-           <nav className="hidden md:flex items-center justify-center gap-1">
+       <div style={{backgroundColor: '#8b0000', padding: 0, margin: 0}}>
+         <div style={{maxWidth: '1200px', margin: '0 auto', padding: '0 1rem'}}>
+           <nav style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.25rem', padding: 0, margin: 0}}>
              <Link
                href="/"
-               className="px-4 py-3 font-semibold transition-all border-b-3 border-transparent"
-               style={{
-                 color: '#f4ecb3',
-                 fontFamily: 'var(--font-cinzel), Cinzel, serif',
-                 fontSize: '0.9rem'
-               }}
+               className="px-4 py-2 font-semibold transition-all border-b-3 border-transparent"
+              style={{
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px'
+              }}
                onMouseEnter={(e) => {
-                 e.currentTarget.style.backgroundColor = 'rgba(244, 236, 179, 0.15)';
-                 e.currentTarget.style.borderBottomColor = '#f4ecb3';
+                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                 e.currentTarget.style.borderBottomColor = '#ffffff';
                }}
                onMouseLeave={(e) => {
                  e.currentTarget.style.backgroundColor = 'transparent';
@@ -74,15 +100,15 @@ export default function Header() {
              </Link>
              <Link
                href="/file-complaint"
-               className="px-4 py-3 font-semibold transition-all border-b-3 border-transparent"
-               style={{
-                 color: '#f4ecb3',
-                 fontFamily: 'var(--font-cinzel), Cinzel, serif',
-                 fontSize: '0.9rem'
-               }}
+               className="px-4 py-2 font-semibold transition-all border-b-3 border-transparent"
+              style={{
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px'
+              }}
                onMouseEnter={(e) => {
-                 e.currentTarget.style.backgroundColor = 'rgba(244, 236, 179, 0.15)';
-                 e.currentTarget.style.borderBottomColor = '#f4ecb3';
+                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                 e.currentTarget.style.borderBottomColor = '#ffffff';
                }}
                onMouseLeave={(e) => {
                  e.currentTarget.style.backgroundColor = 'transparent';
@@ -93,15 +119,15 @@ export default function Header() {
              </Link>
              <Link
                href="/find-authority"
-               className="px-4 py-3 font-semibold transition-all border-b-3 border-transparent"
-               style={{
-                 color: '#f4ecb3',
-                 fontFamily: 'var(--font-cinzel), Cinzel, serif',
-                 fontSize: '0.9rem'
-               }}
+               className="px-4 py-2 font-semibold transition-all border-b-3 border-transparent"
+              style={{
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px'
+              }}
                onMouseEnter={(e) => {
-                 e.currentTarget.style.backgroundColor = 'rgba(244, 236, 179, 0.15)';
-                 e.currentTarget.style.borderBottomColor = '#f4ecb3';
+                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                 e.currentTarget.style.borderBottomColor = '#ffffff';
                }}
                onMouseLeave={(e) => {
                  e.currentTarget.style.backgroundColor = 'transparent';
@@ -112,15 +138,15 @@ export default function Header() {
              </Link>
              <Link
                href="/track-complaint"
-               className="px-4 py-3 font-semibold transition-all border-b-3 border-transparent"
-               style={{
-                 color: '#f4ecb3',
-                 fontFamily: 'var(--font-cinzel), Cinzel, serif',
-                 fontSize: '0.9rem'
-               }}
+               className="px-4 py-2 font-semibold transition-all border-b-3 border-transparent"
+              style={{
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px'
+              }}
                onMouseEnter={(e) => {
-                 e.currentTarget.style.backgroundColor = 'rgba(244, 236, 179, 0.15)';
-                 e.currentTarget.style.borderBottomColor = '#f4ecb3';
+                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                 e.currentTarget.style.borderBottomColor = '#ffffff';
                }}
                onMouseLeave={(e) => {
                  e.currentTarget.style.backgroundColor = 'transparent';
@@ -131,15 +157,15 @@ export default function Header() {
              </Link>
              <Link
                href="/fraud-awareness"
-               className="px-4 py-3 font-semibold transition-all border-b-3 border-transparent"
-               style={{
-                 color: '#f4ecb3',
-                 fontFamily: 'var(--font-cinzel), Cinzel, serif',
-                 fontSize: '0.9rem'
-               }}
+               className="px-4 py-2 font-semibold transition-all border-b-3 border-transparent"
+              style={{
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px'
+              }}
                onMouseEnter={(e) => {
-                 e.currentTarget.style.backgroundColor = 'rgba(244, 236, 179, 0.15)';
-                 e.currentTarget.style.borderBottomColor = '#f4ecb3';
+                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                 e.currentTarget.style.borderBottomColor = '#ffffff';
                }}
                onMouseLeave={(e) => {
                  e.currentTarget.style.backgroundColor = 'transparent';
@@ -150,15 +176,15 @@ export default function Header() {
              </Link>
              <Link
                href="/research"
-               className="px-4 py-3 font-semibold transition-all border-b-3 border-transparent"
-               style={{
-                 color: '#f4ecb3',
-                 fontFamily: 'var(--font-cinzel), Cinzel, serif',
-                 fontSize: '0.9rem'
-               }}
+               className="px-4 py-2 font-semibold transition-all border-b-3 border-transparent"
+              style={{
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px'
+              }}
                onMouseEnter={(e) => {
-                 e.currentTarget.style.backgroundColor = 'rgba(244, 236, 179, 0.15)';
-                 e.currentTarget.style.borderBottomColor = '#f4ecb3';
+                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                 e.currentTarget.style.borderBottomColor = '#ffffff';
                }}
                onMouseLeave={(e) => {
                  e.currentTarget.style.backgroundColor = 'transparent';
@@ -169,15 +195,15 @@ export default function Header() {
              </Link>
              <Link
                href="/partnerships"
-               className="px-4 py-3 font-semibold transition-all border-b-3 border-transparent"
-               style={{
-                 color: '#f4ecb3',
-                 fontFamily: 'var(--font-cinzel), Cinzel, serif',
-                 fontSize: '0.9rem'
-               }}
+               className="px-4 py-2 font-semibold transition-all border-b-3 border-transparent"
+              style={{
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px'
+              }}
                onMouseEnter={(e) => {
-                 e.currentTarget.style.backgroundColor = 'rgba(244, 236, 179, 0.15)';
-                 e.currentTarget.style.borderBottomColor = '#f4ecb3';
+                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                 e.currentTarget.style.borderBottomColor = '#ffffff';
                }}
                onMouseLeave={(e) => {
                  e.currentTarget.style.backgroundColor = 'transparent';
@@ -188,15 +214,15 @@ export default function Header() {
              </Link>
              <Link
                href="/about"
-               className="px-4 py-3 font-semibold transition-all border-b-3 border-transparent"
-               style={{
-                 color: '#f4ecb3',
-                 fontFamily: 'var(--font-cinzel), Cinzel, serif',
-                 fontSize: '0.9rem'
-               }}
+               className="px-4 py-2 font-semibold transition-all border-b-3 border-transparent"
+              style={{
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px'
+              }}
                onMouseEnter={(e) => {
-                 e.currentTarget.style.backgroundColor = 'rgba(244, 236, 179, 0.15)';
-                 e.currentTarget.style.borderBottomColor = '#f4ecb3';
+                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                 e.currentTarget.style.borderBottomColor = '#ffffff';
                }}
                onMouseLeave={(e) => {
                  e.currentTarget.style.backgroundColor = 'transparent';
@@ -209,7 +235,7 @@ export default function Header() {
            <div className="md:hidden flex items-center justify-between py-3">
              <button
                className="p-2"
-               style={{color: '#f4ecb3'}}
+               style={{color: '#ffffff'}}
                aria-label="Menu"
              >
                <svg

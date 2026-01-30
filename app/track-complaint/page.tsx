@@ -11,59 +11,68 @@ export default function TrackComplaintPage() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          How to Track Your Complaint
+    <div style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
+      <div className="container mx-auto px-4 py-8">
+      <div className="mb-10">
+        <h1 className="text-4xl font-bold mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
+          Track Your Complaint
         </h1>
-        <p className="text-xl text-gray-600 mb-4">
+        <p className="text-xl mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '20px'}}>
           Guidance on Tracking Complaints
         </p>
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-          <p className="text-gray-700">
-            <strong>Note:</strong> Since IAFAF does not collect data, this page provides 
-            guidance on tracking complaints on regulator portals. You must track your 
-            complaint using the reference number provided by the regulator.
+        <div className="bg-white border-l-4 p-6 mb-8 rounded-lg shadow-md" style={{borderColor: '#8b0000'}}>
+          <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+            <strong style={{color: '#8b0000'}}>Note:</strong> IAFAF does not track complaints. Use the reference number provided by the regulator to track your complaint on their official portal.
           </p>
         </div>
       </div>
 
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Understanding Reference Numbers
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
+          Reference Numbers
         </h2>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-gray-700 mb-4">
-            When you submit a complaint on a regulator's portal, you will receive a 
-            unique reference number. This reference number is used to track the status 
-            of your complaint.
+        <div className="bg-white rounded-xl shadow-lg p-8 border-l-4" style={{borderColor: '#8b0000'}}>
+          <p className="mb-6" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+            Upon complaint submission, you will receive a unique reference number from the regulator.
           </p>
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>Save your reference number immediately after submission</li>
-            <li>Reference numbers are usually sent via email or SMS</li>
-            <li>Use the same reference number to track your complaint status</li>
-            <li>Different regulators use different reference number formats</li>
+          <ul className="space-y-3" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>Save the reference number immediately after submission</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>Reference numbers are sent via email or SMS</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>Use the same reference number to track complaint status</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>Reference number formats vary by regulator</span>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Authority-Specific Tracking Guides
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
+          Authority-Specific Tracking
         </h2>
         <div className="space-y-6">
           {trackingAuthorities.map((authority) => (
-            <div key={authority.id} className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">
+            <div key={authority.id} className="bg-white rounded-xl shadow-lg p-8 mb-6 border-l-4" style={{borderColor: '#8b0000'}}>
+              <h3 className="text-xl font-bold mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
                 {authority.name}
               </h3>
-              <div className="mb-4">
-                <h4 className="font-semibold text-gray-700 mb-2">
-                  How to Track:
-                </h4>
-                <ol className="list-decimal list-inside text-gray-700 space-y-1">
+              <div className="mb-6">
+                <ol className="space-y-2" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
                   {authority.trackingGuide.map((step, index) => (
-                    <li key={index}>{step}</li>
+                    <li key={index} className="flex items-start gap-3">
+                      <span style={{color: '#8b0000', marginTop: '0.25rem', fontWeight: 'bold'}}>{index + 1}.</span>
+                      <span>{step}</span>
+                    </li>
                   ))}
                 </ol>
               </div>
@@ -72,9 +81,16 @@ export default function TrackComplaintPage() {
                   href={authority.trackingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 font-medium"
+                  className="inline-block px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
+                  style={{
+                    backgroundColor: '#8b0000',
+                    color: '#ffffff',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '16px',
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+                  }}
                 >
-                  Go to {authority.name} Tracking Portal
+                  Go to {authority.name} Portal
                 </a>
               )}
             </div>
@@ -82,57 +98,56 @@ export default function TrackComplaintPage() {
         </div>
       </div>
 
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Typical Status Stages
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
+          Complaint Status Stages
         </h2>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-gray-700 mb-4">
-            While different regulators may use different terminology, complaint status 
-            typically follows these stages:
+        <div className="bg-white rounded-xl shadow-lg p-8 border-l-4" style={{borderColor: '#8b0000'}}>
+          <p className="mb-6" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+            Complaint status typically follows these stages:
           </p>
-          <ul className="space-y-3">
-            <li className="flex items-start gap-3">
-              <span className="bg-red-100 text-red-800 px-3 py-1 rounded font-semibold">
+          <ul className="space-y-4">
+            <li className="flex items-start gap-4">
+              <span className="px-3 py-1 rounded font-bold" style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif"}}>
                 1
               </span>
               <div>
-                <strong className="text-gray-800">Submitted</strong>
-                <p className="text-gray-600 text-sm">
-                  Your complaint has been received and is awaiting review
+                <strong style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>Submitted</strong>
+                <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px', marginTop: '0.25rem'}}>
+                  Complaint received and awaiting review
                 </p>
               </div>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded font-semibold">
+            <li className="flex items-start gap-4">
+              <span className="px-3 py-1 rounded font-bold" style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif"}}>
                 2
               </span>
               <div>
-                <strong className="text-gray-800">Under Review</strong>
-                <p className="text-gray-600 text-sm">
-                  The authority is reviewing your complaint and documents
+                <strong style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>Under Review</strong>
+                <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px', marginTop: '0.25rem'}}>
+                  Authority reviewing complaint and documents
                 </p>
               </div>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded font-semibold">
+            <li className="flex items-start gap-4">
+              <span className="px-3 py-1 rounded font-bold" style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif"}}>
                 3
               </span>
               <div>
-                <strong className="text-gray-800">Forwarded</strong>
-                <p className="text-gray-600 text-sm">
-                  Complaint has been forwarded to the appropriate department
+                <strong style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>Forwarded</strong>
+                <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px', marginTop: '0.25rem'}}>
+                  Complaint forwarded to appropriate department
                 </p>
               </div>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded font-semibold">
+            <li className="flex items-start gap-4">
+              <span className="px-3 py-1 rounded font-bold" style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif"}}>
                 4
               </span>
               <div>
-                <strong className="text-gray-800">Resolved</strong>
-                <p className="text-gray-600 text-sm">
-                  Complaint has been resolved or action has been taken
+                <strong style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>Resolved</strong>
+                <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px', marginTop: '0.25rem'}}>
+                  Complaint resolved or action taken
                 </p>
               </div>
             </li>
@@ -140,36 +155,49 @@ export default function TrackComplaintPage() {
         </div>
       </div>
 
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Escalation Guidance
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
+          Escalation Process
         </h2>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-gray-700 mb-4">
-            If your complaint is not resolved within a reasonable time, you may need to escalate:
+        <div className="bg-white rounded-xl shadow-lg p-8 border-l-4" style={{borderColor: '#8b0000'}}>
+          <p className="mb-6" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+            If your complaint is not resolved within a reasonable time:
           </p>
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>Check the regulator's escalation process on their portal</li>
-            <li>Contact the regulator's helpline or customer service</li>
-            <li>File a complaint with the Ombudsman (if applicable)</li>
-            <li>Contact the regulator's regional office</li>
-            <li>For urgent matters, contact the regulator's emergency helpline</li>
+          <ul className="space-y-3 mb-6" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>Check the regulator's escalation process on their portal</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>Contact the regulator's helpline or customer service</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>File a complaint with the Ombudsman (if applicable)</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>Contact the regulator's regional office</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
+              <span>For urgent matters, contact the regulator's emergency helpline</span>
+            </li>
           </ul>
-          <div className="mt-4 bg-red-50 border-l-4 border-red-500 p-4">
-            <p className="text-sm text-gray-700">
-              <strong>Tip:</strong> Keep all your documents and reference numbers safe. 
-              You may need them for escalation or follow-up.
+          <div className="mt-6 bg-white border-l-4 p-6 rounded-lg" style={{borderColor: '#8b0000', backgroundColor: '#f9f9f9'}}>
+            <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+              <strong style={{color: '#8b0000'}}>Important:</strong> Keep all documents and reference numbers safe for escalation or follow-up.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="bg-gray-50 border-l-4 border-gray-400 p-4">
-        <p className="text-sm text-gray-700">
-          <strong>Remember:</strong> IAFAF does not track complaints. You must track 
-          your complaint directly on the regulator's portal using the reference number 
-          provided when you submitted your complaint.
+      <div className="bg-white border-l-4 p-6 rounded-lg shadow-md mb-8" style={{borderColor: '#8b0000'}}>
+        <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
+          <strong style={{color: '#8b0000'}}>Note:</strong> IAFAF does not track complaints. Track your complaint directly on the regulator's portal using the reference number provided at submission.
         </p>
+      </div>
       </div>
     </div>
   );

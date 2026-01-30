@@ -3,7 +3,8 @@ import PrimaryActionButton from "../components/PrimaryActionButton";
 
 export default function ReportFraudPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
+      <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
           Report Suspected Fraud
@@ -81,7 +82,7 @@ export default function ReportFraudPage() {
         </div>
       </div>
 
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6">
+      <div className="bg-white border-l-4 border-red-600 p-6">
         <h2 className="text-xl font-bold text-gray-800 mb-2">
           Important Reminders
         </h2>
@@ -100,6 +101,7 @@ export default function ReportFraudPage() {
           IAFAF operates as a facilitation, awareness and research institution in public interest. 
           IAFAF does not collect or store any user data.
         </p>
+      </div>
       </div>
     </div>
   );

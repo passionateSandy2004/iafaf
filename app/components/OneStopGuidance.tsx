@@ -53,23 +53,23 @@ export default function OneStopGuidance() {
   const questions = [
     {
       id: "investmentRelated",
-      text: "Was it investment related?",
+      text: "Was it Investment Related?",
     },
     {
       id: "bankNBFCRelated",
-      text: "Was it bank / NBFC related?",
+      text: "Was it Bank / NBFC Related?",
     },
     {
       id: "digitalFraud",
-      text: "Was it online or digital fraud?",
+      text: "Was it Online or Digital Fraud?",
     },
     {
       id: "companyMLM",
-      text: "Was it a company or MLM scheme?",
+      text: "Was it a PONZI or MLM Scheme?",
     },
     {
       id: "cryptoTrading",
-      text: "Was it crypto / trading tips / app based?",
+      text: "Was it Crypto / Trading Tips / App Based?",
     },
   ];
 
@@ -112,92 +112,93 @@ export default function OneStopGuidance() {
   };
 
   return (
-    <div className="bg-white border-t-4 border-[#bd1c0d] rounded-xl p-8 md:p-10 shadow-2xl max-w-5xl mx-auto">
-      <div className="flex items-center gap-4 mb-6">
-        <div className="w-14 h-14 bg-gradient-to-br from-[#bd1c0d] to-[#d32f2f] rounded-full flex items-center justify-center shadow-lg">
-          <span className="text-white font-bold text-2xl">?</span>
+    <div className="rounded-xl p-8 md:p-10 shadow-2xl max-w-5xl mx-auto" style={{backgroundColor: '#ffffff'}}>
+        <div className="mb-6">
+          <div className="inline-block px-8 py-4 rounded-full shadow-lg mb-6" style={{backgroundColor: '#8b0000'}}>
+          <h2 className="font-bold" style={{color: '#ffffff', fontFamily: "'Times New Roman', Times, serif", fontSize: '26px'}}>
+            Not Sure Where to Complain?
+          </h2>
+          </div>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#bd1c0d]">
-          Not sure where to complain?
-        </h2>
-      </div>
-      <p className="text-gray-600 mb-8 text-lg">
-        Answer 5 simple questions to find the right authority for your complaint
+      <p className="mb-8" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '22px'}}>
+        Answer 5 Simple Questions to Find the Right Authority for Your Complaint
       </p>
 
       {recommendedAuthority ? (
         <div className="space-y-6">
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-600 p-6 rounded-r-xl shadow-md">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="border-l-4 p-8 rounded-r-xl shadow-lg" style={{backgroundColor: '#ffffff', borderColor: '#8b0000'}}>
+            <div className="flex items-center gap-3 mb-5">
               <span className="text-3xl">✅</span>
-              <h3 className="text-2xl font-bold text-green-800">
+              <h3 className="text-2xl font-bold" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
                 Recommended Authority
               </h3>
             </div>
-            <p className="text-xl font-bold text-gray-900 mb-2">
+            <p className="text-xl font-bold mb-3" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
               {authorities[recommendedAuthority].name}
             </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="mb-6 leading-relaxed text-base" style={{color: '#8b0000', opacity: 0.85}}>
               {authorities[recommendedAuthority].description}
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href={`/find-authority/${recommendedAuthority.toLowerCase()}`}
-                className="bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] text-white px-8 py-3 rounded-lg hover:from-[#bd1c0d] hover:to-[#bd1c0d] font-semibold shadow-lg transition-all transform hover:-translate-y-0.5"
+                className="px-8 py-3 rounded-lg font-semibold shadow-md transition-all hover:shadow-lg"
+                style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif"}}
               >
-                📋 Learn More
+                Learn More
               </Link>
               <a
                 href={authorities[recommendedAuthority].url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#2e7d32] to-[#388e3c] text-white px-8 py-3 rounded-lg hover:from-[#1b5e20] hover:to-[#2e7d32] font-semibold shadow-lg transition-all transform hover:-translate-y-0.5"
+                className="px-8 py-3 rounded-lg font-semibold shadow-md transition-all hover:shadow-lg border-2"
+                style={{backgroundColor: '#ffffff', color: '#8b0000', borderColor: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}
               >
-                🌐 Go to Portal
+                Go to Portal
               </a>
             </div>
           </div>
           <button
             onClick={resetQuestionnaire}
-            className="text-[#bd1c0d] hover:text-[#bd1c0d] font-semibold hover:underline transition-all"
+            className="font-semibold hover:underline transition-all text-base"
+            style={{color: '#8b0000'}}
           >
             ← Start Over
           </button>
         </div>
       ) : (
         <div className="space-y-6">
-          <div className="bg-gradient-to-br from-red-50 to-red-50 p-6 rounded-xl border border-red-200 shadow-inner">
-            <div className="flex items-center justify-between mb-4">
-              <p className="text-gray-700 font-medium">
+          <div className="p-8 rounded-xl shadow-lg" style={{backgroundColor: '#ffffff'}}>
+            <div className="flex items-center justify-between mb-6">
+              <p className="font-medium" style={{color: '#8b0000', fontStyle: 'italic', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>
                 Question {currentStep + 1} of {questions.length}
               </p>
-              <span className="bg-[#bd1c0d] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                {Math.round(((currentStep + 1) / questions.length) * 100)}%
-              </span>
             </div>
-            <div className="mb-6">
-              <div className="w-full bg-gray-300 rounded-full h-3 shadow-inner">
+            <div className="mb-8">
+              <div className="w-full rounded-full h-2.5" style={{backgroundColor: '#f0f0f0'}}>
                 <div
-                  className="bg-gradient-to-r from-[#bd1c0d] to-[#d32f2f] h-3 rounded-full transition-all duration-500 shadow-sm"
-                  style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
+                  className="h-2.5 rounded-full transition-all duration-500"
+                  style={{ width: `${((currentStep + 1) / questions.length) * 100}%`, backgroundColor: '#8b0000' }}
                 ></div>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-[#bd1c0d] mb-6">
+            <h3 className="font-bold mb-8" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '24px'}}>
               {questions[currentStep].text}
             </h3>
             <div className="grid grid-cols-2 gap-4">
               <button
                 onClick={() => handleAnswer(questions[currentStep].id as keyof QuestionnaireAnswers, true)}
-                className="bg-gradient-to-br from-[#2e7d32] to-[#388e3c] text-white px-8 py-4 rounded-xl hover:from-[#1b5e20] hover:to-[#2e7d32] font-bold text-lg shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-xl"
+                className="px-8 py-4 rounded-full font-bold shadow-md transition-all hover:shadow-lg"
+                style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}
               >
-                ✓ Yes
+                Yes
               </button>
               <button
                 onClick={() => handleAnswer(questions[currentStep].id as keyof QuestionnaireAnswers, false)}
-                className="bg-gradient-to-br from-gray-600 to-gray-700 text-white px-8 py-4 rounded-xl hover:from-gray-700 hover:to-gray-800 font-bold text-lg shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-xl"
+                className="px-8 py-4 rounded-full font-bold shadow-md transition-all hover:shadow-lg"
+                style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}
               >
-                ✗ No
+                No
               </button>
             </div>
           </div>

@@ -19,11 +19,11 @@ export default function PrimaryActionButton({
       href={href}
       className="px-8 py-8 rounded-xl text-lg font-bold transition-all duration-300 flex flex-col items-center justify-center gap-3 min-h-[160px] text-center transform hover:scale-105 hover:-translate-y-1 border-3"
       style={{
-        backgroundColor: '#bd1c0d',
-        color: '#f4ecb3',
-        borderColor: '#f4ecb3',
+        backgroundColor: '#8b0000',
+        color: '#ffffff',
+        borderColor: '#ffffff',
         borderWidth: '3px',
-        fontFamily: 'var(--font-cinzel), Cinzel, serif'
+        fontFamily: "'Times New Roman', Times, serif"
       }}
     >
       {icon && <span className="text-5xl drop-shadow-lg">{icon}</span>}
