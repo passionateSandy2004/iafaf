@@ -33,19 +33,54 @@ export default function ComplaintGuidanceWizard() {
     {
       title: "Identify Your Issue",
       content: (
-        <div className="space-y-4">
-          <p className="text-gray-700 mb-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <p style={{
+            color: '#555555',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '16px',
+            marginBottom: '8px'
+          }}>
             Select the type of complaint you want to file:
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '16px'
+          }}>
             {complaintTypes.map((type) => (
               <button
                 key={type.id}
                 onClick={() => handleComplaintTypeSelect(type.id)}
-                className="p-4 border-2 border-gray-300 rounded-lg hover:border-red-500 hover:bg-red-50 text-left transition-all"
+                style={{
+                  padding: '20px',
+                  border: '2px solid #e0e0e0',
+                  borderRadius: '10px',
+                  backgroundColor: '#ffffff',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#8b0000';
+                  e.currentTarget.style.backgroundColor = 'rgba(139, 0, 0, 0.03)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = '#e0e0e0';
+                  e.currentTarget.style.backgroundColor = '#ffffff';
+                }}
               >
-                <div className="font-semibold text-gray-800">{type.label}</div>
-                <div className="text-sm text-gray-600 mt-1">{type.description}</div>
+                <div style={{
+                  fontWeight: '600',
+                  color: '#333333',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '16px',
+                  marginBottom: '6px'
+                }}>{type.label}</div>
+                <div style={{
+                  fontSize: '14px',
+                  color: '#666666',
+                  fontFamily: "'Times New Roman', Times, serif"
+                }}>{type.description}</div>
               </button>
             ))}
           </div>
@@ -55,21 +90,51 @@ export default function ComplaintGuidanceWizard() {
     {
       title: "Understand Requirements",
       content: (
-        <div className="space-y-4">
-          <p className="text-gray-700 mb-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <p style={{
+            color: '#555555',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '16px'
+          }}>
             For your complaint type, you will need to provide the following information:
           </p>
           {authority && (
-            <div className="bg-red-50 p-4 rounded">
-              <h3 className="font-semibold text-gray-800 mb-2">
+            <div style={{
+              backgroundColor: '#fafafa',
+              padding: '24px',
+              borderRadius: '10px',
+              borderLeft: '4px solid #8b0000'
+            }}>
+              <h3 style={{
+                fontWeight: '600',
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '18px',
+                marginBottom: '16px'
+              }}>
                 Required Information:
               </h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-1">
-                <li>Detailed description of the incident</li>
-                <li>Date and time of occurrence</li>
-                <li>Amount involved (if applicable)</li>
-                <li>Names of parties involved</li>
-                <li>Any communication records</li>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '10px'
+              }}>
+                {["Detailed description of the incident", "Date and time of occurrence", "Amount involved (if applicable)", "Names of parties involved", "Any communication records"].map((item, i) => (
+                  <li key={i} style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '10px',
+                    color: '#444444',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '15px'
+                  }}>
+                    <span style={{ color: '#8b0000', fontWeight: 'bold' }}>•</span>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           )}
@@ -79,21 +144,49 @@ export default function ComplaintGuidanceWizard() {
     {
       title: "Authority Mapping",
       content: (
-        <div className="space-y-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {authority && (
-            <div className="bg-green-50 border-l-4 border-green-500 p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
+            <div style={{
+              backgroundColor: '#fafafa',
+              borderLeft: '4px solid #8b0000',
+              padding: '24px',
+              borderRadius: '0 10px 10px 0'
+            }}>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '700',
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                marginBottom: '12px'
+              }}>
                 Recommended Authority
               </h3>
-              <p className="text-lg font-semibold text-gray-700 mb-1">
+              <p style={{
+                fontSize: '20px',
+                fontWeight: '600',
+                color: '#333333',
+                fontFamily: "'Times New Roman', Times, serif",
+                marginBottom: '6px'
+              }}>
                 {authority.name}
               </p>
-              <p className="text-gray-600 mb-4">{authority.jurisdiction}</p>
+              <p style={{
+                color: '#666666',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px',
+                marginBottom: '16px'
+              }}>{authority.jurisdiction}</p>
               <Link
                 href={`/find-authority/${authorityId}`}
-                className="text-red-600 hover:text-red-800 font-medium"
+                style={{
+                  color: '#8b0000',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '15px',
+                  fontWeight: '600',
+                  textDecoration: 'none'
+                }}
               >
-                Learn more about {authority.name} →
+                Learn more about {authority.name}
               </Link>
             </div>
           )}
@@ -103,27 +196,68 @@ export default function ComplaintGuidanceWizard() {
     {
       title: "Document Checklist",
       content: (
-        <div className="space-y-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {authority && (
             <div>
-              <p className="text-gray-700 mb-4">
+              <p style={{
+                color: '#555555',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '16px',
+                marginBottom: '16px'
+              }}>
                 Make sure you have the following documents ready:
               </p>
-              <div className="bg-white border-l-4 border-red-600 p-6">
-                <h3 className="font-semibold text-gray-800 mb-3">
+              <div style={{
+                backgroundColor: '#fafafa',
+                borderLeft: '4px solid #8b0000',
+                padding: '24px',
+                borderRadius: '0 10px 10px 0'
+              }}>
+                <h3 style={{
+                  fontWeight: '600',
+                  color: '#8b0000',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '18px',
+                  marginBottom: '16px'
+                }}>
                   Required Documents:
                 </h3>
-                <ul className="space-y-2">
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px'
+                }}>
                   {authority.documentChecklist.map((doc, index) => (
-                    <li key={index} className="flex items-start gap-2 text-gray-700">
-                      <span className="text-red-600 mt-1">✓</span>
+                    <li key={index} style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '10px',
+                      color: '#444444',
+                      fontFamily: "'Times New Roman', Times, serif",
+                      fontSize: '15px'
+                    }}>
+                      <span style={{ color: '#8b0000', fontWeight: 'bold' }}>•</span>
                       <span>{doc}</span>
                     </li>
                   ))}
                 </ul>
                 <button
                   onClick={() => window.print()}
-                  className="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                  style={{
+                    marginTop: '20px',
+                    backgroundColor: '#8b0000',
+                    color: '#ffffff',
+                    padding: '12px 24px',
+                    borderRadius: '6px',
+                    border: 'none',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '14px',
+                    fontWeight: '600',
+                    cursor: 'pointer'
+                  }}
                 >
                   Print Checklist
                 </button>
@@ -136,15 +270,50 @@ export default function ComplaintGuidanceWizard() {
     {
       title: "Submission Guide",
       content: (
-        <div className="space-y-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {authority && (
             <div>
-              <p className="text-gray-700 mb-4">
+              <p style={{
+                color: '#555555',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '16px',
+                marginBottom: '16px'
+              }}>
                 Follow these steps to submit your complaint:
               </p>
-              <ol className="list-decimal list-inside space-y-3 text-gray-700">
+              <ol style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px',
+                counterReset: 'step'
+              }}>
                 {authority.submissionGuide.map((step, index) => (
-                  <li key={index} className="pl-2">{step}</li>
+                  <li key={index} style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '12px',
+                    color: '#444444',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '15px'
+                  }}>
+                    <span style={{
+                      backgroundColor: '#8b0000',
+                      color: '#ffffff',
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '13px',
+                      fontWeight: '600',
+                      flexShrink: 0
+                    }}>{index + 1}</span>
+                    <span style={{ paddingTop: '2px' }}>{step}</span>
+                  </li>
                 ))}
               </ol>
             </div>
@@ -155,10 +324,15 @@ export default function ComplaintGuidanceWizard() {
     {
       title: "Direct Portal Link",
       content: (
-        <div className="space-y-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {authority && (
-            <div className="text-center">
-              <p className="text-gray-700 mb-6">
+            <div style={{ textAlign: 'center' }}>
+              <p style={{
+                color: '#555555',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '16px',
+                marginBottom: '24px'
+              }}>
                 You are now ready to submit your complaint. Click the button below to go to the official portal:
               </p>
               {authority.portalUrl !== "#" ? (
@@ -166,13 +340,34 @@ export default function ComplaintGuidanceWizard() {
                   href={authority.portalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 font-bold text-lg"
+                  style={{
+                    display: 'inline-block',
+                    backgroundColor: '#8b0000',
+                    color: '#ffffff',
+                    padding: '16px 32px',
+                    borderRadius: '8px',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '16px',
+                    fontWeight: '700',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 15px rgba(139, 0, 0, 0.25)'
+                  }}
                 >
                   Go to {authority.name} Portal
                 </a>
               ) : (
-                <div className="bg-white border-l-4 border-red-600 p-4">
-                  <p className="text-gray-700">
+                <div style={{
+                  backgroundColor: '#fafafa',
+                  borderLeft: '4px solid #8b0000',
+                  padding: '20px',
+                  borderRadius: '0 10px 10px 0',
+                  textAlign: 'left'
+                }}>
+                  <p style={{
+                    color: '#555555',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '15px'
+                  }}>
                     Please contact {authority.name} directly for submission instructions.
                   </p>
                 </div>
@@ -185,41 +380,105 @@ export default function ComplaintGuidanceWizard() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl p-8 md:p-10 border-t-4 border-[#8b0000]">
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-3xl font-bold text-[#8b0000]">
+    <div style={{
+      backgroundColor: '#ffffff',
+      borderRadius: '16px',
+      boxShadow: '0 4px 24px rgba(0, 0, 0, 0.1)',
+      padding: '40px',
+      borderTop: '4px solid #8b0000'
+    }}>
+      {/* Header */}
+      <div style={{ marginBottom: '32px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: 'bold',
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            margin: 0
+          }}>
             Complaint Guidance Wizard
           </h2>
-          <span className="bg-[#8b0000] text-white px-4 py-2 rounded-full text-sm font-semibold">
+          <span style={{
+            backgroundColor: '#8b0000',
+            color: '#ffffff',
+            padding: '8px 16px',
+            borderRadius: '50px',
+            fontSize: '13px',
+            fontWeight: '600',
+            fontFamily: "'Times New Roman', Times, serif"
+          }}>
             Step {currentStep + 1} of {steps.length}
           </span>
         </div>
-        <div className="mt-4 w-full bg-gray-300 rounded-full h-3 shadow-inner">
+
+        {/* Progress Bar */}
+        <div style={{
+          width: '100%',
+          backgroundColor: '#e5e5e5',
+          borderRadius: '10px',
+          height: '10px',
+          overflow: 'hidden'
+        }}>
           <div
-            className="bg-gradient-to-r from-[#8b0000] to-[#d32f2f] h-3 rounded-full transition-all duration-500 shadow-sm"
-            style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
-          ></div>
+            style={{
+              background: 'linear-gradient(90deg, #8b0000 0%, #a50000 100%)',
+              height: '10px',
+              borderRadius: '10px',
+              transition: 'width 0.4s ease',
+              width: `${((currentStep + 1) / steps.length) * 100}%`
+            }}
+          />
         </div>
-        <p className="text-gray-600 mt-2 text-sm">
+        <p style={{
+          color: '#777777',
+          marginTop: '10px',
+          fontSize: '13px',
+          fontFamily: "'Times New Roman', Times, serif"
+        }}>
           {Math.round(((currentStep + 1) / steps.length) * 100)}% Complete
         </p>
       </div>
 
-      <div className="mb-8 bg-gradient-to-br from-red-50 to-red-50 p-6 rounded-xl border border-red-200">
-        <h3 className="text-2xl font-bold text-[#8b0000] mb-6">
+      {/* Step Content */}
+      <div style={{
+        marginBottom: '32px',
+        backgroundColor: '#ffffff',
+        padding: '30px',
+        borderRadius: '12px',
+        border: '1px solid #e5e5e5'
+      }}>
+        <h3 style={{
+          fontSize: '22px',
+          fontWeight: '700',
+          color: '#8b0000',
+          fontFamily: "'Times New Roman', Times, serif",
+          marginBottom: '24px'
+        }}>
           {steps[currentStep].title}
         </h3>
         <div>{steps[currentStep].content}</div>
       </div>
 
-      <div className="flex justify-between items-center">
+      {/* Navigation Buttons */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <button
           onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
           disabled={currentStep === 0}
-          className="px-8 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-all shadow-md"
+          style={{
+            padding: '14px 28px',
+            backgroundColor: currentStep === 0 ? '#e5e5e5' : '#f5f5f5',
+            color: currentStep === 0 ? '#999999' : '#555555',
+            border: '1px solid #ddd',
+            borderRadius: '8px',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '15px',
+            fontWeight: '600',
+            cursor: currentStep === 0 ? 'not-allowed' : 'pointer',
+            opacity: currentStep === 0 ? 0.6 : 1
+          }}
         >
-          ← Previous
+          Previous
         </button>
         {currentStep < steps.length - 1 ? (
           <button
@@ -228,9 +487,21 @@ export default function ComplaintGuidanceWizard() {
               setCurrentStep(Math.min(steps.length - 1, currentStep + 1));
             }}
             disabled={currentStep === 0 && !complaintType}
-            className="px-8 py-3 bg-gradient-to-r from-[#8b0000] to-[#d32f2f] text-white rounded-lg hover:from-[#8b0000] hover:to-[#8b0000] disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-all shadow-lg"
+            style={{
+              padding: '14px 28px',
+              backgroundColor: (currentStep === 0 && !complaintType) ? '#cccccc' : '#8b0000',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '8px',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '15px',
+              fontWeight: '600',
+              cursor: (currentStep === 0 && !complaintType) ? 'not-allowed' : 'pointer',
+              opacity: (currentStep === 0 && !complaintType) ? 0.6 : 1,
+              boxShadow: '0 4px 12px rgba(139, 0, 0, 0.2)'
+            }}
           >
-            Next →
+            Next
           </button>
         ) : (
           <button
@@ -239,22 +510,45 @@ export default function ComplaintGuidanceWizard() {
               setComplaintType(null);
               setAuthorityId(null);
             }}
-            className="px-8 py-3 bg-gradient-to-r from-[#2e7d32] to-[#388e3c] text-white rounded-lg hover:from-[#1b5e20] hover:to-[#2e7d32] font-semibold transition-all shadow-lg"
+            style={{
+              padding: '14px 28px',
+              backgroundColor: '#8b0000',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '8px',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '15px',
+              fontWeight: '600',
+              cursor: 'pointer',
+              boxShadow: '0 4px 12px rgba(139, 0, 0, 0.2)'
+            }}
           >
-            🔄 Start Over
+            Start Over
           </button>
         )}
       </div>
 
-      <div className="mt-8 bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-xl shadow-md">
-        <p className="text-sm text-gray-700">
-          <strong>Important:</strong> IAFAF is a facilitation and awareness platform. 
-          IAFAF does not investigate complaints or guarantee recovery. 
-          IAFAF does not collect or store any complaint data. 
+      {/* Disclaimer */}
+      <div style={{
+        marginTop: '32px',
+        backgroundColor: '#fafafa',
+        borderLeft: '4px solid #8b0000',
+        padding: '20px 24px',
+        borderRadius: '0 10px 10px 0'
+      }}>
+        <p style={{
+          fontSize: '14px',
+          color: '#555555',
+          fontFamily: "'Times New Roman', Times, serif",
+          lineHeight: '1.6',
+          margin: 0
+        }}>
+          <strong style={{ color: '#8b0000' }}>Important:</strong> IAFAF is a facilitation and awareness platform.
+          IAFAF does not investigate complaints or guarantee recovery.
+          IAFAF does not collect or store any complaint data.
           All complaints must be submitted directly on the regulator's official portal.
         </p>
       </div>
     </div>
   );
 }
-

@@ -40,6 +40,23 @@ header {
   padding: 0;
 }
 
+/* Remove focus outlines from navigation */
+nav a,
+nav a:focus,
+nav a:active,
+nav a:visited {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Remove focus ring from all links in header */
+header a:focus,
+header a:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* Government portal styling */
 .container {
   max-width: 1200px;

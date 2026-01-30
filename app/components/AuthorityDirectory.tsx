@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { authorities, ComplaintType } from "@/lib/data/authorities";
+import { authorities } from "@/lib/data/authorities";
+import { useState } from "react";
 
 const issueTypeMapping: Record<string, string> = {
   "Investment fraud": "sebi",
@@ -12,6 +15,8 @@ const issueTypeMapping: Record<string, string> = {
 };
 
 export default function AuthorityDirectory() {
+  const [hoveredRow, setHoveredRow] = useState<number | null>(null);
+
   const directoryEntries = [
     { issueType: "Investment fraud", authority: "SEBI (SCORES)" },
     { issueType: "Unauthorized NBFC", authority: "RBI CMS" },
@@ -23,25 +28,83 @@ export default function AuthorityDirectory() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-t-4 border-[#8b0000]">
-      <div className="p-6" style={{background: 'linear-gradient(to right, #8b0000, #8b0000)'}}>
-        <div className="flex items-center gap-3 mb-2">
-          <h2 className="text-3xl font-bold" style={{color: '#ffffff', fontFamily: "'Times New Roman', Times, serif"}}>Interactive Authority Directory</h2>
-        </div>
-        <p className="mt-2 text-lg" style={{color: '#ffffff', opacity: 0.9}}>Find the right authority for your complaint type</p>
+    <div style={{
+      backgroundColor: '#ffffff',
+      borderRadius: '12px',
+      boxShadow: '0 4px 24px rgba(0, 0, 0, 0.1)',
+      overflow: 'hidden',
+      border: '1px solid rgba(139, 0, 0, 0.1)'
+    }}>
+      {/* Compact Header */}
+      <div style={{
+        background: 'linear-gradient(135deg, #8b0000 0%, #6b0000 100%)',
+        padding: '16px 25px'
+      }}>
+        <h2 style={{
+          color: '#ffffff',
+          fontFamily: "'Times New Roman', Times, serif",
+          fontSize: '20px',
+          fontWeight: 'bold',
+          margin: 0,
+          marginBottom: '4px'
+        }}>
+          Authority Directory
+        </h2>
+        <p style={{
+          color: 'rgba(255, 255, 255, 0.85)',
+          fontFamily: "'Times New Roman', Times, serif",
+          fontSize: '13px',
+          margin: 0
+        }}>
+          Find the right authority for your complaint type
+        </p>
       </div>
-      <div className="overflow-x-auto">
-        <table className="w-full">
-          <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
-            <tr>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#8b0000] border-b-2 border-[#8b0000]">
+
+      {/* Compact Table */}
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{
+          width: '100%',
+          borderCollapse: 'collapse',
+          fontSize: '14px'
+        }}>
+          <thead>
+            <tr style={{ background: 'linear-gradient(135deg, #6b0000 0%, #5a0000 100%)' }}>
+              <th style={{
+                padding: '14px 20px',
+                textAlign: 'left',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '13px',
+                fontWeight: '700',
+                color: '#ffffff',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px'
+              }}>
                 Issue Type
               </th>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#8b0000] border-b-2 border-[#8b0000]">
+              <th style={{
+                padding: '14px 20px',
+                textAlign: 'left',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '13px',
+                fontWeight: '700',
+                color: '#ffffff',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px'
+              }}>
                 Authority
               </th>
-              <th className="px-6 py-4 text-left text-sm font-bold text-[#8b0000] border-b-2 border-[#8b0000]">
-                Actions
+              <th style={{
+                padding: '14px 20px',
+                textAlign: 'center',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '13px',
+                fontWeight: '700',
+                color: '#ffffff',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                width: '100px'
+              }}>
+                Action
               </th>
             </tr>
           </thead>
@@ -49,29 +112,69 @@ export default function AuthorityDirectory() {
             {directoryEntries.map((entry, index) => {
               const authorityId = issueTypeMapping[entry.issueType];
               const authority = authorityId ? authorities[authorityId] : null;
-              
+              const isHovered = hoveredRow === index;
+
               return (
                 <tr
                   key={index}
-                  className="hover:bg-red-50 transition-all duration-200 border-b"
+                  onMouseEnter={() => setHoveredRow(index)}
+                  onMouseLeave={() => setHoveredRow(null)}
+                  style={{
+                    backgroundColor: isHovered ? 'rgba(139, 0, 0, 0.04)' :
+                      index % 2 === 0 ? '#ffffff' : '#fafafa',
+                    borderBottom: '1px solid #f0f0f0',
+                    transition: 'background-color 0.15s ease'
+                  }}
                 >
-                  <td className="px-6 py-4 text-sm text-gray-900 font-semibold">
+                  <td style={{
+                    padding: '14px 20px',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '15px',
+                    fontWeight: '600',
+                    color: '#333333'
+                  }}>
                     {entry.issueType}
                   </td>
-                  <td className="px-6 py-4 text-sm text-gray-700 font-medium">
+                  <td style={{
+                    padding: '14px 20px',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '14px',
+                    color: '#555555'
+                  }}>
                     {entry.authority}
                   </td>
-                  <td className="px-6 py-4 text-sm">
+                  <td style={{
+                    padding: '14px 20px',
+                    textAlign: 'center'
+                  }}>
                     {authority ? (
                       <Link
                         href={`/find-authority/${authorityId}`}
-                        className="text-[#8b0000] hover:text-[#8b0000] font-semibold hover:underline transition-all"
-                        style={{fontFamily: "'Times New Roman', Times, serif"}}
+                        style={{
+                          display: 'inline-block',
+                          backgroundColor: isHovered ? '#8b0000' : 'transparent',
+                          color: isHovered ? '#ffffff' : '#8b0000',
+                          fontFamily: "'Times New Roman', Times, serif",
+                          fontSize: '13px',
+                          fontWeight: '600',
+                          padding: '6px 16px',
+                          borderRadius: '4px',
+                          textDecoration: 'none',
+                          border: '1px solid #8b0000',
+                          transition: 'all 0.15s ease'
+                        }}
                       >
-                        Details
+                        View
                       </Link>
                     ) : (
-                      <span className="text-gray-400 italic">Coming soon</span>
+                      <span style={{
+                        color: '#999999',
+                        fontFamily: "'Times New Roman', Times, serif",
+                        fontSize: '13px',
+                        fontStyle: 'italic'
+                      }}>
+                        Soon
+                      </span>
                     )}
                   </td>
                 </tr>
@@ -80,7 +183,36 @@ export default function AuthorityDirectory() {
           </tbody>
         </table>
       </div>
+
+      {/* Compact Footer */}
+      <div style={{
+        backgroundColor: '#fafafa',
+        padding: '12px 20px',
+        borderTop: '1px solid #f0f0f0',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        <span style={{
+          color: '#777777',
+          fontFamily: "'Times New Roman', Times, serif",
+          fontSize: '12px'
+        }}>
+          {directoryEntries.length} categories available
+        </span>
+        <Link
+          href="/file-complaint"
+          style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '13px',
+            fontWeight: '600',
+            textDecoration: 'none'
+          }}
+        >
+          File a Complaint
+        </Link>
+      </div>
     </div>
   );
 }
-

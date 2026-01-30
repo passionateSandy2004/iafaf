@@ -1,190 +1,224 @@
 import Link from "next/link";
 
 export default function ResearchPage() {
+  const rdActivities = [
+    { title: "National Fraud Trend Analysis", desc: "Analysis of fraud patterns across India" },
+    { title: "Scam Typology Research", desc: "Classification and study of financial scam types" },
+    { title: "Complaint Pattern Analytics", desc: "Analysis of complaint patterns to identify systemic issues" },
+    { title: "Policy Gap Studies", desc: "Research on gaps in investor protection policies" },
+    { title: "Early-Warning Advisories", desc: "Development of early warning systems for fraud prevention" },
+    { title: "Investor Vulnerability Index", desc: "Assessment of investor vulnerability to fraud types" }
+  ];
+
+  const publications = [
+    { title: "Monthly Fraud Alerts", desc: "Monthly publication highlighting recent fraud trends and alerts", meta: "Published monthly | Public interest advisories" },
+    { title: "Quarterly Fraud Heat Map", desc: "Quarterly analysis showing fraud hotspots and trends across India", meta: "Published quarterly | Geographic and sectoral analysis" },
+    { title: "Annual Fraud Report – India", desc: "Annual report on fraud trends, patterns, and recommendations", meta: "Published annually | Comprehensive analysis" },
+    { title: "Investor Risk Index", desc: "Assessment of risk levels across different investment categories", meta: "Published quarterly | Risk assessment framework" },
+    { title: "Regulatory Policy Briefs", desc: "Policy recommendations and briefs for regulators and policymakers", meta: "Published as needed | Policy recommendations" }
+  ];
+
+  const objectives = [
+    "Strengthen investor protection through evidence-based research",
+    "Identify emerging fraud patterns and trends",
+    "Support policy development and regulatory improvements",
+    "Enhance public awareness through research findings",
+    "Contribute to India's investor protection ecosystem"
+  ];
+
   return (
-    <div style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
-      <div className="container mx-auto px-4 py-8">
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Research & Development Wing
-        </h1>
-        <p className="text-xl mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '20px'}}>
-          Think Tank Section
-        </p>
-        <p className="max-w-3xl leading-relaxed" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-          Independent investor-protection research and intelligence unit.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-xl shadow-lg p-8 mb-10 border-l-4" style={{borderColor: '#8b0000'}}>
-        <h2 className="text-2xl font-bold mb-8" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          R&D Activities
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>
-              National Fraud Trend Analysis
-            </h3>
-            <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Analysis of fraud patterns across India
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>
-              Scam Typology Research
-            </h3>
-            <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Classification and study of financial scam types
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>
-              Complaint Pattern Analytics
-            </h3>
-            <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Analysis of complaint patterns to identify systemic issues
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>
-              Policy Gap Studies
-            </h3>
-            <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Research on gaps in investor protection policies
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>
-              Early-Warning Advisories
-            </h3>
-            <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Development of early warning systems for fraud prevention
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>
-              Investor Vulnerability Index
-            </h3>
-            <p style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Assessment of investor vulnerability to fraud types
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-xl shadow-lg p-8 mb-10 border-l-4" style={{borderColor: '#8b0000'}}>
-        <h2 className="text-2xl font-bold mb-8" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Publications
-        </h2>
-        <div className="space-y-6">
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="text-xl font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-              Monthly Fraud Alerts
-            </h3>
-            <p className="mb-2" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Monthly publication highlighting recent fraud trends and alerts
-            </p>
-            <p style={{color: '#666666', fontFamily: "'Times New Roman', Times, serif", fontSize: '14px'}}>
-              Published monthly | Public interest advisories
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="text-xl font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-              Quarterly Fraud Heat Map
-            </h3>
-            <p className="mb-2" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Quarterly analysis showing fraud hotspots and trends across India
-            </p>
-            <p style={{color: '#666666', fontFamily: "'Times New Roman', Times, serif", fontSize: '14px'}}>
-              Published quarterly | Geographic and sectoral analysis
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="text-xl font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-              Annual Fraud Report – India
-            </h3>
-            <p className="mb-2" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Annual report on fraud trends, patterns, and recommendations
-            </p>
-            <p style={{color: '#666666', fontFamily: "'Times New Roman', Times, serif", fontSize: '14px'}}>
-              Published annually | Comprehensive analysis
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="text-xl font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-              Investor Risk Index
-            </h3>
-            <p className="mb-2" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Assessment of risk levels across different investment categories
-            </p>
-            <p style={{color: '#666666', fontFamily: "'Times New Roman', Times, serif", fontSize: '14px'}}>
-              Published quarterly | Risk assessment framework
-            </p>
-          </div>
-          <div className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-            <h3 className="text-xl font-semibold mb-2" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-              Regulatory Policy Briefs
-            </h3>
-            <p className="mb-2" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-              Policy recommendations and briefs for regulators and policymakers
-            </p>
-            <p style={{color: '#666666', fontFamily: "'Times New Roman', Times, serif", fontSize: '14px'}}>
-              Published as needed | Policy recommendations
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white border-l-4 p-8 rounded-xl shadow-lg mb-10" style={{borderColor: '#8b0000'}}>
-        <h2 className="text-xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Research Objectives
-        </h2>
-        <ul className="space-y-3" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Strengthen investor protection through evidence-based research</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Identify emerging fraud patterns and trends</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Support policy development and regulatory improvements</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Enhance public awareness through research findings</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Contribute to India's investor protection ecosystem</span>
-          </li>
-        </ul>
-      </div>
-
-      <div className="mt-12 mb-12 flex justify-center">
-        <Link
-          href="/fraud-alerts"
-          className="px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg text-center"
-          style={{
-            backgroundColor: '#8b0000',
-            color: '#ffffff',
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 40px 80px 40px' }}>
+        {/* Page Header */}
+        <div style={{ marginBottom: '50px' }}>
+          <h1 style={{
+            color: '#8b0000',
             fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '16px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: '56px'
-          }}
-        >
-          View Fraud Alert Bulletin →
-        </Link>
-      </div>
+            fontSize: '42px',
+            fontWeight: 'bold',
+            marginBottom: '15px'
+          }}>
+            Research & Development Wing
+          </h1>
+          <p style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '20px',
+            marginBottom: '15px'
+          }}>
+            Think Tank Section
+          </p>
+          <p style={{
+            color: '#555555',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '17px',
+            maxWidth: '800px'
+          }}>
+            Independent investor-protection research and intelligence unit.
+          </p>
+        </div>
+
+        {/* R&D Activities */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '35px'
+          }}>
+            R&D Activities
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '25px'
+          }}>
+            {rdActivities.map((activity, index) => (
+              <div key={index} style={{
+                borderLeft: '4px solid #8b0000',
+                paddingLeft: '20px'
+              }}>
+                <h3 style={{
+                  color: '#8b0000',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '18px',
+                  fontWeight: '600',
+                  marginBottom: '8px'
+                }}>
+                  {activity.title}
+                </h3>
+                <p style={{
+                  color: '#555555',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '15px',
+                  lineHeight: '1.6'
+                }}>
+                  {activity.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Publications */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '35px'
+          }}>
+            Publications
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+            {publications.map((pub, index) => (
+              <div key={index} style={{
+                borderLeft: '4px solid #8b0000',
+                paddingLeft: '20px'
+              }}>
+                <h3 style={{
+                  color: '#8b0000',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '20px',
+                  fontWeight: '600',
+                  marginBottom: '10px'
+                }}>
+                  {pub.title}
+                </h3>
+                <p style={{
+                  color: '#333333',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '16px',
+                  marginBottom: '8px',
+                  lineHeight: '1.6'
+                }}>
+                  {pub.desc}
+                </p>
+                <p style={{
+                  color: '#777777',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '14px'
+                }}>
+                  {pub.meta}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Research Objectives */}
+        <div style={{
+          backgroundColor: '#fafafa',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '40px 45px',
+          marginBottom: '50px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '24px',
+            fontWeight: 'bold',
+            marginBottom: '25px'
+          }}>
+            Research Objectives
+          </h2>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+            {objectives.map((objective, index) => (
+              <li key={index} style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '15px',
+                marginBottom: '14px',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '16px',
+                lineHeight: '1.6'
+              }}>
+                <span style={{ color: '#8b0000', fontWeight: 'bold' }}>•</span>
+                <span style={{ color: '#333333' }}>{objective}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* CTA Button */}
+        <div style={{ textAlign: 'center' }}>
+          <Link
+            href="/fraud-alerts"
+            style={{
+              display: 'inline-block',
+              backgroundColor: '#8b0000',
+              color: '#ffffff',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              fontWeight: '600',
+              padding: '18px 40px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              boxShadow: '0 4px 15px rgba(139, 0, 0, 0.25)'
+            }}
+          >
+            View Fraud Alert Bulletin
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
-
-

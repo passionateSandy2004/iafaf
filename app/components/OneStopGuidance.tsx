@@ -112,38 +112,108 @@ export default function OneStopGuidance() {
   };
 
   return (
-    <div className="rounded-xl p-8 md:p-10 shadow-2xl max-w-5xl mx-auto" style={{backgroundColor: '#ffffff'}}>
-        <div className="mb-6">
-          <div className="inline-block px-8 py-4 rounded-full shadow-lg mb-6" style={{backgroundColor: '#8b0000'}}>
-          <h2 className="font-bold" style={{color: '#ffffff', fontFamily: "'Times New Roman', Times, serif", fontSize: '26px'}}>
+    <div
+      style={{
+        backgroundColor: '#ffffff',
+        borderRadius: '20px',
+        padding: '50px 60px',
+        maxWidth: '900px',
+        margin: '0 auto',
+        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.12)'
+      }}
+    >
+      {/* Header Section */}
+      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <div
+          style={{
+            display: 'inline-block',
+            backgroundColor: '#8b0000',
+            borderRadius: '50px',
+            padding: '18px 40px',
+            marginBottom: '25px',
+            boxShadow: '0 4px 15px rgba(139, 0, 0, 0.3)'
+          }}
+        >
+          <h2 style={{
+            color: '#ffffff',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '24px',
+            fontWeight: 'bold',
+            margin: 0
+          }}>
             Not Sure Where to Complain?
           </h2>
-          </div>
         </div>
-      <p className="mb-8" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '22px'}}>
-        Answer 5 Simple Questions to Find the Right Authority for Your Complaint
-      </p>
+        <p style={{
+          color: '#333333',
+          fontFamily: "'Times New Roman', Times, serif",
+          fontSize: '18px',
+          margin: 0,
+          lineHeight: '1.6'
+        }}>
+          Answer 5 Simple Questions to Find the Right Authority for Your Complaint
+        </p>
+      </div>
 
       {recommendedAuthority ? (
-        <div className="space-y-6">
-          <div className="border-l-4 p-8 rounded-r-xl shadow-lg" style={{backgroundColor: '#ffffff', borderColor: '#8b0000'}}>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="text-3xl">✅</span>
-              <h3 className="text-2xl font-bold" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
+        /* Results Section */
+        <div>
+          <div
+            style={{
+              backgroundColor: '#fafafa',
+              borderLeft: '5px solid #8b0000',
+              borderRadius: '0 16px 16px 0',
+              padding: '35px 40px',
+              marginBottom: '25px',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
+              <span style={{ fontSize: '28px' }}>✅</span>
+              <h3 style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '22px',
+                fontWeight: 'bold',
+                margin: 0
+              }}>
                 Recommended Authority
               </h3>
             </div>
-            <p className="text-xl font-bold mb-3" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
+            <p style={{
+              color: '#8b0000',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '20px',
+              fontWeight: 'bold',
+              marginBottom: '12px'
+            }}>
               {authorities[recommendedAuthority].name}
             </p>
-            <p className="mb-6 leading-relaxed text-base" style={{color: '#8b0000', opacity: 0.85}}>
+            <p style={{
+              color: '#555555',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              marginBottom: '30px',
+              lineHeight: '1.6'
+            }}>
               {authorities[recommendedAuthority].description}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
               <Link
                 href={`/find-authority/${recommendedAuthority.toLowerCase()}`}
-                className="px-8 py-3 rounded-lg font-semibold shadow-md transition-all hover:shadow-lg"
-                style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif"}}
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: '#8b0000',
+                  color: '#ffffff',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  padding: '14px 35px',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  boxShadow: '0 3px 10px rgba(139, 0, 0, 0.25)',
+                  transition: 'all 0.2s ease'
+                }}
               >
                 Learn More
               </Link>
@@ -151,8 +221,19 @@ export default function OneStopGuidance() {
                 href={authorities[recommendedAuthority].url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 rounded-lg font-semibold shadow-md transition-all hover:shadow-lg border-2"
-                style={{backgroundColor: '#ffffff', color: '#8b0000', borderColor: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: '#ffffff',
+                  color: '#8b0000',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  padding: '14px 35px',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  border: '2px solid #8b0000',
+                  transition: 'all 0.2s ease'
+                }}
               >
                 Go to Portal
               </a>
@@ -160,51 +241,120 @@ export default function OneStopGuidance() {
           </div>
           <button
             onClick={resetQuestionnaire}
-            className="font-semibold hover:underline transition-all text-base"
-            style={{color: '#8b0000'}}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#8b0000',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              fontWeight: '600',
+              cursor: 'pointer',
+              padding: '10px 0'
+            }}
           >
             ← Start Over
           </button>
         </div>
       ) : (
-        <div className="space-y-6">
-          <div className="p-8 rounded-xl shadow-lg" style={{backgroundColor: '#ffffff'}}>
-            <div className="flex items-center justify-between mb-6">
-              <p className="font-medium" style={{color: '#8b0000', fontStyle: 'italic', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>
-                Question {currentStep + 1} of {questions.length}
-              </p>
-            </div>
-            <div className="mb-8">
-              <div className="w-full rounded-full h-2.5" style={{backgroundColor: '#f0f0f0'}}>
-                <div
-                  className="h-2.5 rounded-full transition-all duration-500"
-                  style={{ width: `${((currentStep + 1) / questions.length) * 100}%`, backgroundColor: '#8b0000' }}
-                ></div>
-              </div>
-            </div>
-            <h3 className="font-bold mb-8" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '24px'}}>
-              {questions[currentStep].text}
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              <button
-                onClick={() => handleAnswer(questions[currentStep].id as keyof QuestionnaireAnswers, true)}
-                className="px-8 py-4 rounded-full font-bold shadow-md transition-all hover:shadow-lg"
-                style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}
-              >
-                Yes
-              </button>
-              <button
-                onClick={() => handleAnswer(questions[currentStep].id as keyof QuestionnaireAnswers, false)}
-                className="px-8 py-4 rounded-full font-bold shadow-md transition-all hover:shadow-lg"
-                style={{backgroundColor: '#8b0000', color: '#ffffff', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}
-              >
-                No
-              </button>
-            </div>
+        /* Question Section */
+        <div
+          style={{
+            backgroundColor: '#fafafa',
+            borderRadius: '16px',
+            padding: '40px 45px',
+            boxShadow: 'inset 0 2px 8px rgba(0, 0, 0, 0.04)'
+          }}
+        >
+          {/* Question Counter */}
+          <p style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '16px',
+            fontStyle: 'italic',
+            marginBottom: '20px'
+          }}>
+            Question {currentStep + 1} of {questions.length}
+          </p>
+
+          {/* Progress Bar */}
+          <div style={{
+            width: '100%',
+            height: '8px',
+            backgroundColor: '#e0e0e0',
+            borderRadius: '4px',
+            marginBottom: '35px',
+            overflow: 'hidden'
+          }}>
+            <div
+              style={{
+                width: `${((currentStep + 1) / questions.length) * 100}%`,
+                height: '100%',
+                backgroundColor: '#8b0000',
+                borderRadius: '4px',
+                transition: 'width 0.4s ease'
+              }}
+            />
+          </div>
+
+          {/* Question Text */}
+          <h3 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '22px',
+            fontWeight: 'bold',
+            marginBottom: '35px',
+            textAlign: 'center'
+          }}>
+            {questions[currentStep].text}
+          </h3>
+
+          {/* Answer Buttons */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '25px',
+            maxWidth: '500px',
+            margin: '0 auto'
+          }}>
+            <button
+              onClick={() => handleAnswer(questions[currentStep].id as keyof QuestionnaireAnswers, true)}
+              style={{
+                backgroundColor: '#8b0000',
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '18px',
+                fontWeight: 'bold',
+                padding: '18px 40px',
+                borderRadius: '50px',
+                border: 'none',
+                cursor: 'pointer',
+                boxShadow: '0 4px 15px rgba(139, 0, 0, 0.3)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              Yes
+            </button>
+            <button
+              onClick={() => handleAnswer(questions[currentStep].id as keyof QuestionnaireAnswers, false)}
+              style={{
+                backgroundColor: '#8b0000',
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '18px',
+                fontWeight: 'bold',
+                padding: '18px 40px',
+                borderRadius: '50px',
+                border: 'none',
+                cursor: 'pointer',
+                boxShadow: '0 4px 15px rgba(139, 0, 0, 0.3)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              No
+            </button>
           </div>
         </div>
       )}
     </div>
   );
 }
-

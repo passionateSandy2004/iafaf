@@ -1,122 +1,285 @@
+import Link from "next/link";
+
 export default function FraudAlertsPage() {
+  const guidelines = [
+    { label: "Verified alerts only", desc: "All information is verified before publication" },
+    { label: "No accusations", desc: "We do not make unverified accusations" },
+    { label: "No naming without confirmation", desc: "Entities are not named without proper verification" },
+    { label: "Public-interest advisories", desc: "Alerts are issued in public interest" }
+  ];
+
+  const alerts = [
+    {
+      type: "ALERT",
+      color: "#8b0000",
+      bgColor: "#fdf2f2",
+      date: "[To be updated]",
+      title: "Emerging Fraud Pattern Alert",
+      content: "[Alert content will be published here following verification guidelines]",
+      category: "Investment Fraud",
+      status: "Verified"
+    },
+    {
+      type: "ADVISORY",
+      color: "#ed6c02",
+      bgColor: "#fff4e5",
+      date: "[To be updated]",
+      title: "Digital Payment Fraud Advisory",
+      content: "[Advisory content will be published here following verification guidelines]",
+      category: "Digital Fraud",
+      status: "Verified"
+    }
+  ];
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Fraud Alert Bulletin
-        </h1>
-        <p className="text-xl text-gray-600 mb-4">
-          Verified Public-Interest Advisories
-        </p>
-        <div className="bg-white border-l-4 border-red-600 p-4 mb-6">
-          <p className="text-gray-700">
-            <strong>Important:</strong> All alerts published here are verified and 
-            follow strict guidelines. No accusations are made without confirmation. 
-            No naming without proper verification. These are public-interest advisories only.
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 40px 80px 40px' }}>
+        {/* Page Header */}
+        <div style={{ marginBottom: '40px' }}>
+          <h1 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '42px',
+            fontWeight: 'bold',
+            marginBottom: '15px'
+          }}>
+            Fraud Alert Bulletin
+          </h1>
+          <p style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '20px',
+            marginBottom: '25px'
+          }}>
+            Verified Public-Interest Advisories
+          </p>
+
+          {/* Important Note */}
+          <div style={{
+            backgroundColor: '#fafafa',
+            borderLeft: '5px solid #8b0000',
+            borderRadius: '0 12px 12px 0',
+            padding: '20px 25px',
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.06)'
+          }}>
+            <p style={{
+              color: '#333333',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              lineHeight: '1.7',
+              margin: 0
+            }}>
+              <strong style={{ color: '#8b0000' }}>Important:</strong> All alerts published here are verified and
+              follow strict guidelines. No accusations are made without confirmation.
+              No naming without proper verification. These are public-interest advisories only.
+            </p>
+          </div>
+        </div>
+
+        {/* Alert Guidelines */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '30px'
+          }}>
+            Alert Guidelines
+          </h2>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+            {guidelines.map((item, index) => (
+              <li key={index} style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '15px',
+                marginBottom: '18px',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '16px',
+                lineHeight: '1.6'
+              }}>
+                <span style={{
+                  color: '#2e7d32',
+                  fontSize: '16px',
+                  fontWeight: 'bold'
+                }}>•</span>
+                <span style={{ color: '#333333' }}>
+                  <strong style={{ color: '#8b0000' }}>{item.label}:</strong> {item.desc}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Recent Alerts */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '30px'
+          }}>
+            Recent Alerts
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+            {alerts.map((alert, index) => (
+              <div key={index} style={{
+                borderLeft: `5px solid ${alert.color}`,
+                paddingLeft: '25px'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '15px',
+                  marginBottom: '12px'
+                }}>
+                  <span style={{
+                    backgroundColor: alert.bgColor,
+                    color: alert.color,
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '13px',
+                    fontWeight: '600',
+                    padding: '6px 14px',
+                    borderRadius: '4px'
+                  }}>
+                    {alert.type}
+                  </span>
+                  <span style={{
+                    color: '#777777',
+                    fontFamily: "'Times New Roman', Times, serif",
+                    fontSize: '14px'
+                  }}>
+                    Date: {alert.date}
+                  </span>
+                </div>
+                <h3 style={{
+                  color: '#333333',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '20px',
+                  fontWeight: '600',
+                  marginBottom: '10px'
+                }}>
+                  {alert.title}
+                </h3>
+                <p style={{
+                  color: '#555555',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '16px',
+                  marginBottom: '10px',
+                  lineHeight: '1.6'
+                }}>
+                  {alert.content}
+                </p>
+                <p style={{
+                  color: '#777777',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '14px'
+                }}>
+                  Category: {alert.category} | Status: {alert.status}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* How to Report */}
+        <div style={{
+          backgroundColor: '#fdf2f2',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '35px 40px',
+          marginBottom: '30px'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '24px',
+            fontWeight: 'bold',
+            marginBottom: '15px'
+          }}>
+            How to Report Suspected Fraud
+          </h2>
+          <p style={{
+            color: '#333333',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '16px',
+            lineHeight: '1.7',
+            marginBottom: '25px'
+          }}>
+            If you have information about a potential fraud that should be investigated,
+            please report it to the appropriate regulator. IAFAF does not investigate
+            complaints but can guide you to the right authority.
+          </p>
+          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+            <Link
+              href="/file-complaint"
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#8b0000',
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px',
+                fontWeight: '600',
+                padding: '14px 28px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                boxShadow: '0 3px 12px rgba(139, 0, 0, 0.2)'
+              }}
+            >
+              File a Complaint
+            </Link>
+            <Link
+              href="/find-authority"
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#2e7d32',
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px',
+                fontWeight: '600',
+                padding: '14px 28px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                boxShadow: '0 3px 12px rgba(46, 125, 50, 0.2)'
+              }}
+            >
+              Find Authority
+            </Link>
+          </div>
+        </div>
+
+        {/* Bottom Note */}
+        <div style={{
+          backgroundColor: '#fafafa',
+          borderLeft: '5px solid #8b0000',
+          borderRadius: '0 12px 12px 0',
+          padding: '20px 25px',
+          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.06)'
+        }}>
+          <p style={{
+            color: '#333333',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '15px',
+            margin: 0
+          }}>
+            <strong style={{ color: '#8b0000' }}>Note:</strong> This bulletin is updated regularly with verified alerts.
+            All information is published in public interest and follows strict verification protocols.
           </p>
         </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          Alert Guidelines
-        </h2>
-        <ul className="space-y-3 text-gray-700">
-          <li className="flex items-start gap-3">
-            <span className="text-green-600 mt-1">✓</span>
-            <span><strong>Verified alerts only:</strong> All information is verified before publication</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-green-600 mt-1">✓</span>
-            <span><strong>No accusations:</strong> We do not make unverified accusations</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-green-600 mt-1">✓</span>
-            <span><strong>No naming without confirmation:</strong> Entities are not named without proper verification</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-green-600 mt-1">✓</span>
-            <span><strong>Public-interest advisories:</strong> Alerts are issued in public interest</span>
-          </li>
-        </ul>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          Recent Alerts
-        </h2>
-        <div className="space-y-6">
-          <div className="border-l-4 border-red-500 pl-4">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="bg-red-100 text-red-800 px-3 py-1 rounded text-sm font-semibold">
-                ALERT
-              </span>
-              <span className="text-gray-500 text-sm">Date: [To be updated]</span>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              Emerging Fraud Pattern Alert
-            </h3>
-            <p className="text-gray-700 mb-2">
-              [Alert content will be published here following verification guidelines]
-            </p>
-            <p className="text-sm text-gray-500">
-              Category: Investment Fraud | Status: Verified
-            </p>
-          </div>
-
-          <div className="border-l-4 border-orange-500 pl-4">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-semibold">
-                ADVISORY
-              </span>
-              <span className="text-gray-500 text-sm">Date: [To be updated]</span>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              Digital Payment Fraud Advisory
-            </h3>
-            <p className="text-gray-700 mb-2">
-              [Advisory content will be published here following verification guidelines]
-            </p>
-            <p className="text-sm text-gray-500">
-              Category: Digital Fraud | Status: Verified
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-red-50 border-l-4 border-red-500 p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-2">
-          How to Report Suspected Fraud
-        </h2>
-        <p className="text-gray-700 mb-4">
-          If you have information about a potential fraud that should be investigated, 
-          please report it to the appropriate regulator. IAFAF does not investigate 
-          complaints but can guide you to the right authority.
-        </p>
-        <div className="flex gap-4">
-          <a
-            href="/file-complaint"
-            className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 font-medium"
-          >
-            File a Complaint
-          </a>
-          <a
-            href="/find-authority"
-            className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 font-medium"
-          >
-            Find Authority
-          </a>
-        </div>
-      </div>
-
-      <div className="mt-8 bg-gray-50 border-l-4 border-gray-400 p-4">
-        <p className="text-sm text-gray-700">
-          <strong>Note:</strong> This bulletin is updated regularly with verified alerts. 
-          All information is published in public interest and follows strict verification protocols.
-        </p>
       </div>
     </div>
   );
 }
-
-

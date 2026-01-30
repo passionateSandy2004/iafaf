@@ -25,113 +25,249 @@ export default function PartnershipsPage() {
     "Policy consultation",
   ];
 
+  const partnershipObjectives = [
+    "Strengthen coordination between regulators and awareness organizations",
+    "Improve complaint routing and facilitation",
+    "Enhance fraud awareness and prevention",
+    "Support evidence-based policy development",
+    "Build capacity for investor protection"
+  ];
+
   return (
-    <div style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
-      <div className="container mx-auto px-4 py-8">
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Government & Regulator Partnerships
-        </h1>
-        <p className="text-xl mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '20px'}}>
-          Collaborative Engagement for Investor Protection
-        </p>
-        <p className="max-w-3xl leading-relaxed" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-          IAFAF collaborates with Government Ministries, statutory regulators, law-enforcement agencies and public institutions to strengthen India's investor protection ecosystem.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-xl shadow-lg p-8 mb-10 border-l-4" style={{borderColor: '#8b0000'}}>
-        <h2 className="text-2xl font-bold mb-8" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Ministries in Coordination
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {ministries.map((ministry, index) => (
-            <div key={index} className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-              <h3 className="font-semibold" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>{ministry}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-white rounded-xl shadow-lg p-8 mb-10 border-l-4" style={{borderColor: '#8b0000'}}>
-        <h2 className="text-2xl font-bold mb-8" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Regulators
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {regulators.map((regulator, index) => (
-            <div key={index} className="border-l-4 pl-4" style={{borderColor: '#8b0000'}}>
-              <h3 className="font-semibold" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '18px'}}>{regulator}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-white rounded-xl shadow-lg p-8 mb-10 border-l-4" style={{borderColor: '#8b0000'}}>
-        <h2 className="text-2xl font-bold mb-8" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Cooperation Areas
-        </h2>
-        <ul className="space-y-3" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-          {cooperationAreas.map((area, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-              <span>{area}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="bg-white border-l-4 p-8 rounded-xl shadow-lg mb-10" style={{borderColor: '#8b0000'}}>
-        <h2 className="text-xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Partnership Objectives
-        </h2>
-        <ul className="space-y-3" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Strengthen coordination between regulators and awareness organizations</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Improve complaint routing and facilitation</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Enhance fraud awareness and prevention</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Support evidence-based policy development</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-            <span>Build capacity for investor protection</span>
-          </li>
-        </ul>
-      </div>
-
-      <div className="bg-white rounded-xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          For Government Ministries & Regulators
-        </h2>
-        <p className="mb-6 leading-relaxed" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-          IAFAF welcomes partnerships with government ministries and regulators. For collaboration opportunities, visit our dedicated page.
-        </p>
-        <a
-          href="/for-regulators"
-          className="inline-block px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
-          style={{
-            backgroundColor: '#8b0000',
-            color: '#ffffff',
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 40px 80px 40px' }}>
+        {/* Page Header */}
+        <div style={{ marginBottom: '50px' }}>
+          <h1 style={{
+            color: '#8b0000',
             fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '16px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
-          }}
-        >
-          Learn More for Ministries & Regulators →
-        </a>
-      </div>
+            fontSize: '42px',
+            fontWeight: 'bold',
+            marginBottom: '15px'
+          }}>
+            Government & Regulator Partnerships
+          </h1>
+          <p style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '20px',
+            marginBottom: '20px'
+          }}>
+            Collaborative Engagement for Investor Protection
+          </p>
+          <p style={{
+            color: '#555555',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '17px',
+            lineHeight: '1.7',
+            maxWidth: '900px'
+          }}>
+            IAFAF collaborates with Government Ministries, statutory regulators, law-enforcement agencies and public institutions to strengthen India's investor protection ecosystem.
+          </p>
+        </div>
+
+        {/* Ministries Section */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '30px'
+          }}>
+            Ministries in Coordination
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '20px'
+          }}>
+            {ministries.map((ministry, index) => (
+              <div key={index} style={{
+                borderLeft: '4px solid #8b0000',
+                paddingLeft: '18px',
+                paddingTop: '5px',
+                paddingBottom: '5px'
+              }}>
+                <h3 style={{
+                  color: '#8b0000',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '17px',
+                  fontWeight: '600'
+                }}>
+                  {ministry}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Regulators Section */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '30px'
+          }}>
+            Regulators
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '20px'
+          }}>
+            {regulators.map((regulator, index) => (
+              <div key={index} style={{
+                borderLeft: '4px solid #8b0000',
+                paddingLeft: '18px',
+                paddingTop: '5px',
+                paddingBottom: '5px'
+              }}>
+                <h3 style={{
+                  color: '#8b0000',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '17px',
+                  fontWeight: '600'
+                }}>
+                  {regulator}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Cooperation Areas */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '25px'
+          }}>
+            Cooperation Areas
+          </h2>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+            {cooperationAreas.map((area, index) => (
+              <li key={index} style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '15px',
+                marginBottom: '14px',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '16px',
+                lineHeight: '1.6'
+              }}>
+                <span style={{ color: '#8b0000', fontWeight: 'bold' }}>•</span>
+                <span style={{ color: '#333333' }}>{area}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Partnership Objectives */}
+        <div style={{
+          backgroundColor: '#fafafa',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '24px',
+            fontWeight: 'bold',
+            marginBottom: '25px'
+          }}>
+            Partnership Objectives
+          </h2>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+            {partnershipObjectives.map((objective, index) => (
+              <li key={index} style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '15px',
+                marginBottom: '14px',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '16px',
+                lineHeight: '1.6'
+              }}>
+                <span style={{ color: '#8b0000', fontWeight: 'bold' }}>•</span>
+                <span style={{ color: '#333333' }}>{objective}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* For Regulators CTA */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          padding: '45px 50px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '20px'
+          }}>
+            For Government Ministries & Regulators
+          </h2>
+          <p style={{
+            color: '#555555',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '17px',
+            lineHeight: '1.7',
+            marginBottom: '30px'
+          }}>
+            IAFAF welcomes partnerships with government ministries and regulators. For collaboration opportunities, visit our dedicated page.
+          </p>
+          <Link
+            href="/for-regulators"
+            style={{
+              display: 'inline-block',
+              backgroundColor: '#8b0000',
+              color: '#ffffff',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              fontWeight: '600',
+              padding: '18px 40px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              boxShadow: '0 4px 15px rgba(139, 0, 0, 0.25)'
+            }}
+          >
+            Learn More for Ministries & Regulators
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
-
-

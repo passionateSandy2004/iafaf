@@ -103,97 +103,197 @@ export default function FraudAwarenessPage() {
   ];
 
   return (
-    <div style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
-      <div className="container mx-auto px-4 py-8">
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          Fraud Awareness Centre
-        </h1>
-        <p className="text-xl mb-4" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", fontSize: '20px'}}>
-          Protect Yourself from Financial Fraud
-        </p>
-        <p className="max-w-3xl leading-relaxed" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-          Learn about different types of financial scams, red flags to watch for, 
-          and how to protect yourself from fraud.
-        </p>
-      </div>
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 40px 80px 40px' }}>
+        {/* Page Header */}
+        <div style={{ marginBottom: '50px' }}>
+          <h1 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '42px',
+            fontWeight: 'bold',
+            marginBottom: '15px'
+          }}>
+            Fraud Awareness Centre
+          </h1>
+          <p style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '20px',
+            marginBottom: '20px'
+          }}>
+            Protect Yourself from Financial Fraud
+          </p>
+          <p style={{
+            color: '#555555',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '17px',
+            lineHeight: '1.7',
+            maxWidth: '800px'
+          }}>
+            Learn about different types of financial scams, red flags to watch for,
+            and how to protect yourself from fraud.
+          </p>
+        </div>
 
-      <div className="space-y-6">
-        {fraudTypes.map((section) => (
-          <div key={section.id} className="bg-white rounded-xl shadow-lg p-8 border-l-4" style={{borderColor: '#8b0000'}}>
-            <h2 className="text-2xl font-bold mb-6 pb-3" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif", borderBottom: '2px solid rgba(139, 0, 0, 0.2)'}}>
-              {section.title}
-            </h2>
-            <ul className="space-y-3">
-              {section.content.map((item, index) => (
-                <li key={index} className="flex items-start gap-3" style={{fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-                  <span style={{color: '#8b0000', marginTop: '0.25rem'}}>•</span>
-                  <span style={{color: '#000000'}}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+        {/* Fraud Types Cards */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', marginBottom: '50px' }}>
+          {fraudTypes.map((section) => (
+            <div
+              key={section.id}
+              style={{
+                backgroundColor: '#ffffff',
+                borderRadius: '16px',
+                borderLeft: '5px solid #8b0000',
+                padding: '35px 40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+              }}
+            >
+              <h2 style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '24px',
+                fontWeight: 'bold',
+                marginBottom: '25px',
+                paddingBottom: '15px',
+                borderBottom: '2px solid rgba(139, 0, 0, 0.15)'
+              }}>
+                {section.title}
+              </h2>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+                {section.content.map((item, index) => (
+                  <li
+                    key={index}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '15px',
+                      marginBottom: '14px',
+                      fontFamily: "'Times New Roman', Times, serif",
+                      fontSize: '16px',
+                      lineHeight: '1.6'
+                    }}
+                  >
+                    <span style={{ color: '#8b0000', fontWeight: 'bold', marginTop: '2px' }}>•</span>
+                    <span style={{ color: '#333333' }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-      <div className="mt-12 bg-white border-l-4 p-8 rounded-xl shadow-lg" style={{borderColor: '#8b0000'}}>
-        <h2 className="text-2xl font-bold mb-6" style={{color: '#8b0000', fontFamily: "'Times New Roman', Times, serif"}}>
-          What to Do If You Suspect Fraud
-        </h2>
-        <ol className="list-decimal list-inside space-y-3" style={{color: '#000000', fontFamily: "'Times New Roman', Times, serif", fontSize: '16px'}}>
-          <li>Stop all communication with the suspected fraudster</li>
-          <li>Do not transfer any more money</li>
-          <li>Gather all evidence (screenshots, emails, documents)</li>
-          <li>Report to the appropriate regulator using our guidance</li>
-          <li>File a complaint with the cybercrime portal if it's digital fraud</li>
-          <li>Inform your bank if money has been transferred</li>
-          <li>Keep all reference numbers and documentation safe</li>
-        </ol>
-      </div>
+        {/* What to Do Section */}
+        <div style={{
+          backgroundColor: '#fafafa',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '40px 45px',
+          marginBottom: '50px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '30px'
+          }}>
+            What to Do If You Suspect Fraud
+          </h2>
+          <ol style={{
+            margin: 0,
+            padding: 0,
+            listStyle: 'none',
+            counterReset: 'step-counter'
+          }}>
+            {[
+              "Stop all communication with the suspected fraudster",
+              "Do not transfer any more money",
+              "Gather all evidence (screenshots, emails, documents)",
+              "Report to the appropriate regulator using our guidance",
+              "File a complaint with the cybercrime portal if it's digital fraud",
+              "Inform your bank if money has been transferred",
+              "Keep all reference numbers and documentation safe"
+            ].map((step, index) => (
+              <li
+                key={index}
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '18px',
+                  marginBottom: '18px',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '16px',
+                  lineHeight: '1.6'
+                }}
+              >
+                <span style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '30px',
+                  height: '30px',
+                  backgroundColor: '#8b0000',
+                  color: '#ffffff',
+                  borderRadius: '50%',
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  flexShrink: 0
+                }}>
+                  {index + 1}
+                </span>
+                <span style={{ color: '#333333', paddingTop: '4px' }}>{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
 
-      <div className="mt-12 mb-16">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 max-w-2xl mx-auto">
+        {/* Action Buttons */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '25px',
+          flexWrap: 'wrap'
+        }}>
           <Link
             href="/file-complaint"
-            className="w-full md:w-auto px-8 py-4 rounded-lg text-center font-semibold transition-all duration-300 hover:shadow-lg"
             style={{
+              display: 'inline-block',
               backgroundColor: '#8b0000',
               color: '#ffffff',
               fontFamily: "'Times New Roman', Times, serif",
               fontSize: '16px',
-              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '56px'
+              fontWeight: '600',
+              padding: '18px 40px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              boxShadow: '0 4px 15px rgba(139, 0, 0, 0.25)',
+              transition: 'all 0.2s ease'
             }}
           >
             File a Complaint
           </Link>
           <Link
             href="/find-authority"
-            className="w-full md:w-auto px-8 py-4 rounded-lg text-center font-semibold transition-all duration-300 hover:shadow-lg"
             style={{
+              display: 'inline-block',
               backgroundColor: '#ffffff',
               color: '#8b0000',
-              border: '2px solid #8b0000',
               fontFamily: "'Times New Roman', Times, serif",
               fontSize: '16px',
-              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '56px'
+              fontWeight: '600',
+              padding: '18px 40px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              border: '2px solid #8b0000',
+              transition: 'all 0.2s ease'
             }}
           >
             Find the Right Authority
           </Link>
         </div>
       </div>
-      </div>
     </div>
   );
 }
-
-
-

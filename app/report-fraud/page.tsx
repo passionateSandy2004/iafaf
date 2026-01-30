@@ -1,110 +1,259 @@
 import Link from "next/link";
-import PrimaryActionButton from "../components/PrimaryActionButton";
 
 export default function ReportFraudPage() {
+  const fraudTypes = [
+    { title: "Investment Fraud", desc: "Fake investment schemes, Ponzi schemes, unauthorized investment advisors" },
+    { title: "Digital/UPI Fraud", desc: "Online payment fraud, UPI scams, phishing attacks" },
+    { title: "Loan App Harassment", desc: "Unauthorized digital lending apps, harassment, excessive interest" },
+    { title: "Identity Theft", desc: "Impersonation, fake SEBI/RBI officials, identity fraud" }
+  ];
+
+  const reminders = [
+    "Report fraud as soon as possible to increase chances of recovery",
+    "Keep all evidence and documents safe",
+    "Do not share your personal information with unknown callers",
+    "Verify the authenticity of any communication claiming to be from regulators",
+    "IAFAF provides guidance only - all complaints must be filed with the appropriate regulator"
+  ];
+
   return (
-    <div style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
-      <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Report Suspected Fraud
-        </h1>
-        <p className="text-xl text-gray-600 mb-4">
-          Guidance for Reporting Financial Fraud
-        </p>
-        <p className="text-gray-700 max-w-3xl">
-          If you suspect you have been a victim of financial fraud or have identified 
-          a potential scam, use the resources below to report it to the appropriate authority.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-red-600">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Not Sure Where to Report?
-          </h2>
-          <p className="text-gray-700 mb-4">
-            Use our One-Stop Guidance tool to find the right authority for your specific case.
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 40px 80px 40px' }}>
+        {/* Page Header */}
+        <div style={{ marginBottom: '40px' }}>
+          <h1 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '42px',
+            fontWeight: 'bold',
+            marginBottom: '15px'
+          }}>
+            Report Suspected Fraud
+          </h1>
+          <p style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '20px',
+            marginBottom: '20px'
+          }}>
+            Guidance for Reporting Financial Fraud
           </p>
-          <Link
-            href="/"
-            className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 font-medium"
-          >
-            Use One-Stop Guidance →
-          </Link>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-600">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Ready to File a Complaint?
-          </h2>
-          <p className="text-gray-700 mb-4">
-            Follow our step-by-step guidance to file your complaint with the appropriate regulator.
+          <p style={{
+            color: '#555555',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '17px',
+            lineHeight: '1.7',
+            maxWidth: '800px'
+          }}>
+            If you suspect you have been a victim of financial fraud or have identified
+            a potential scam, use the resources below to report it to the appropriate authority.
           </p>
-          <Link
-            href="/file-complaint"
-            className="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 font-medium"
-          >
-            File Complaint →
-          </Link>
         </div>
-      </div>
 
-      <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Common Types of Financial Fraud
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="border-l-4 border-red-500 pl-4">
-            <h3 className="font-semibold text-gray-800 mb-2">Investment Fraud</h3>
-            <p className="text-gray-600 text-sm">
-              Fake investment schemes, Ponzi schemes, unauthorized investment advisors
+        {/* Action Cards */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '30px',
+          marginBottom: '40px'
+        }}>
+          {/* One-Stop Guidance Card */}
+          <div style={{
+            backgroundColor: '#ffffff',
+            borderRadius: '16px',
+            borderLeft: '5px solid #8b0000',
+            padding: '35px 40px',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+          }}>
+            <h2 style={{
+              color: '#8b0000',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '24px',
+              fontWeight: 'bold',
+              marginBottom: '15px'
+            }}>
+              Not Sure Where to Report?
+            </h2>
+            <p style={{
+              color: '#555555',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              lineHeight: '1.7',
+              marginBottom: '25px'
+            }}>
+              Use our One-Stop Guidance tool to find the right authority for your specific case.
             </p>
+            <Link
+              href="/"
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#8b0000',
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px',
+                fontWeight: '600',
+                padding: '14px 28px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                boxShadow: '0 3px 12px rgba(139, 0, 0, 0.2)'
+              }}
+            >
+              Use One-Stop Guidance
+            </Link>
           </div>
-          <div className="border-l-4 border-red-500 pl-4">
-            <h3 className="font-semibold text-gray-800 mb-2">Digital/UPI Fraud</h3>
-            <p className="text-gray-600 text-sm">
-              Online payment fraud, UPI scams, phishing attacks
+
+          {/* File Complaint Card */}
+          <div style={{
+            backgroundColor: '#ffffff',
+            borderRadius: '16px',
+            borderLeft: '5px solid #2e7d32',
+            padding: '35px 40px',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+          }}>
+            <h2 style={{
+              color: '#2e7d32',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '24px',
+              fontWeight: 'bold',
+              marginBottom: '15px'
+            }}>
+              Ready to File a Complaint?
+            </h2>
+            <p style={{
+              color: '#555555',
+              fontFamily: "'Times New Roman', Times, serif",
+              fontSize: '16px',
+              lineHeight: '1.7',
+              marginBottom: '25px'
+            }}>
+              Follow our step-by-step guidance to file your complaint with the appropriate regulator.
             </p>
-          </div>
-          <div className="border-l-4 border-red-500 pl-4">
-            <h3 className="font-semibold text-gray-800 mb-2">Loan App Harassment</h3>
-            <p className="text-gray-600 text-sm">
-              Unauthorized digital lending apps, harassment, excessive interest
-            </p>
-          </div>
-          <div className="border-l-4 border-red-500 pl-4">
-            <h3 className="font-semibold text-gray-800 mb-2">Identity Theft</h3>
-            <p className="text-gray-600 text-sm">
-              Impersonation, fake SEBI/RBI officials, identity fraud
-            </p>
+            <Link
+              href="/file-complaint"
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#2e7d32',
+                color: '#ffffff',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '15px',
+                fontWeight: '600',
+                padding: '14px 28px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                boxShadow: '0 3px 12px rgba(46, 125, 50, 0.2)'
+              }}
+            >
+              File Complaint
+            </Link>
           </div>
         </div>
-      </div>
 
-      <div className="bg-white border-l-4 border-red-600 p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-2">
-          Important Reminders
-        </h2>
-        <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>Report fraud as soon as possible to increase chances of recovery</li>
-          <li>Keep all evidence and documents safe</li>
-          <li>Do not share your personal information with unknown callers</li>
-          <li>Verify the authenticity of any communication claiming to be from regulators</li>
-          <li>IAFAF provides guidance only - all complaints must be filed with the appropriate regulator</li>
-        </ul>
-      </div>
+        {/* Common Types of Fraud */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          padding: '40px 45px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '26px',
+            fontWeight: 'bold',
+            marginBottom: '30px'
+          }}>
+            Common Types of Financial Fraud
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '25px'
+          }}>
+            {fraudTypes.map((fraud, index) => (
+              <div key={index} style={{
+                borderLeft: '4px solid #8b0000',
+                paddingLeft: '20px'
+              }}>
+                <h3 style={{
+                  color: '#8b0000',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '18px',
+                  fontWeight: '600',
+                  marginBottom: '8px'
+                }}>
+                  {fraud.title}
+                </h3>
+                <p style={{
+                  color: '#555555',
+                  fontFamily: "'Times New Roman', Times, serif",
+                  fontSize: '15px',
+                  lineHeight: '1.6'
+                }}>
+                  {fraud.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
 
-      <div className="mt-8 bg-red-50 border-l-4 border-red-400 p-4">
-        <p className="text-sm text-gray-700">
-          <strong>Disclaimer:</strong> IAFAF does not investigate, adjudicate or recover funds. 
-          IAFAF operates as a facilitation, awareness and research institution in public interest. 
-          IAFAF does not collect or store any user data.
-        </p>
-      </div>
+        {/* Important Reminders */}
+        <div style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          borderLeft: '5px solid #8b0000',
+          padding: '35px 40px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h2 style={{
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '24px',
+            fontWeight: 'bold',
+            marginBottom: '25px'
+          }}>
+            Important Reminders
+          </h2>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+            {reminders.map((reminder, index) => (
+              <li key={index} style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '15px',
+                marginBottom: '14px',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '16px',
+                lineHeight: '1.6'
+              }}>
+                <span style={{ color: '#8b0000', fontWeight: 'bold' }}>•</span>
+                <span style={{ color: '#333333' }}>{reminder}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Disclaimer */}
+        <div style={{
+          backgroundColor: '#fdf2f2',
+          borderLeft: '5px solid #8b0000',
+          borderRadius: '0 12px 12px 0',
+          padding: '22px 28px',
+          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.06)'
+        }}>
+          <p style={{
+            color: '#333333',
+            fontFamily: "'Times New Roman', Times, serif",
+            fontSize: '15px',
+            lineHeight: '1.7',
+            margin: 0
+          }}>
+            <strong style={{ color: '#8b0000' }}>Disclaimer:</strong> IAFAF does not investigate, adjudicate or recover funds.
+            IAFAF operates as a facilitation, awareness and research institution in public interest.
+            IAFAF does not collect or store any user data.
+          </p>
+        </div>
       </div>
     </div>
   );
 }
-
-
