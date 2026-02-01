@@ -29,17 +29,7 @@ export default function Header() {
     <header style={{ backgroundColor: '#ffffff', borderBottom: '3px solid #8b0000', margin: 0, padding: 0 }}>
       {/* Top bar */}
       <div style={{ backgroundColor: '#8b0000', padding: '10px 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{
-            color: '#ffffff',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '13px',
-            fontWeight: '600',
-            textTransform: 'uppercase',
-            letterSpacing: '1px'
-          }}>
-            Government Registered Organisation
-          </span>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
           <span style={{
             color: '#ffffff',
             fontFamily: "'Times New Roman', Times, serif",
