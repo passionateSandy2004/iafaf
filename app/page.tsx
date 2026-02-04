@@ -1,3 +1,5 @@
+'use client';
+
 import PrimaryActionButton from "./components/PrimaryActionButton";
 import OneStopGuidance from "./components/OneStopGuidance";
 import Link from "next/link";
@@ -8,18 +10,18 @@ export default function Home() {
       {/* Hero Section */}
       <section style={{
         backgroundColor: '#ffffff',
-        padding: '80px 0 70px 0'
+        padding: '30px 0 50px 0'
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
-          <div style={{
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+          <div className="hero-grid" style={{
             display: 'grid',
             gridTemplateColumns: '1fr 380px',
-            gap: '60px',
+            gap: '40px',
             alignItems: 'center'
           }}>
             {/* Left Side - Content */}
             <div>
-              <h1 style={{
+              <h1 className="hero-title" style={{
                 color: '#8b0000',
                 fontFamily: "'Times New Roman', Times, serif",
                 fontSize: '42px',
@@ -30,7 +32,7 @@ export default function Home() {
                 Investor Awareness & Fraud Awareness Federation
               </h1>
 
-              <p style={{
+              <p className="hero-subtitle" style={{
                 color: '#333333',
                 fontFamily: "'Times New Roman', Times, serif",
                 fontSize: '22px',
@@ -39,7 +41,7 @@ export default function Home() {
                 निवेशक जागरूकता एवं धोखाधड़ी जागरूकता महासंघ
               </p>
 
-              <p style={{
+              <p className="hero-desc" style={{
                 color: '#8b0000',
                 fontFamily: "'Times New Roman', Times, serif",
                 fontSize: '20px',
@@ -58,7 +60,7 @@ export default function Home() {
                 borderRadius: '2px'
               }} />
 
-              <p style={{
+              <p className="hero-italic" style={{
                 color: '#555555',
                 fontFamily: "'Times New Roman', Times, serif",
                 fontSize: '18px',
@@ -70,7 +72,7 @@ export default function Home() {
             </div>
 
             {/* Right Side - Action Buttons */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <div className="action-buttons" style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
               {[
                 { href: '/report-fraud', label: 'Report Suspected Fraud / Scam' },
                 { href: '/file-complaint', label: 'File Investor Complaint' },
@@ -106,11 +108,11 @@ export default function Home() {
       {/* One-Stop Guidance Section */}
       <section style={{
         backgroundColor: '#f5f5f5',
-        padding: '100px 0',
+        padding: '80px 0',
         position: 'relative'
       }}>
         {/* Red decorative bar */}
-        <div style={{
+        <div className="decorative-bar" style={{
           position: 'absolute',
           left: 0,
           right: 0,
@@ -122,7 +124,7 @@ export default function Home() {
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto',
-          padding: '0 40px',
+          padding: '0 20px',
           position: 'relative',
           zIndex: 1
         }}>
@@ -133,12 +135,12 @@ export default function Home() {
       {/* Resources Section */}
       <section style={{
         backgroundColor: '#f5f5f5',
-        padding: '100px 0'
+        padding: '80px 0'
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
           {/* Section Header */}
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{
+          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+            <h2 className="resources-title" style={{
               color: '#1a1a1a',
               fontFamily: "'Times New Roman', Times, serif",
               fontSize: '40px',
@@ -147,7 +149,7 @@ export default function Home() {
             }}>
               Explore Our Resources
             </h2>
-            <p style={{
+            <p className="resources-subtitle" style={{
               color: '#555555',
               fontFamily: "'Times New Roman', Times, serif",
               fontSize: '20px',
@@ -168,10 +170,10 @@ export default function Home() {
           </div>
 
           {/* Resource Cards Grid */}
-          <div style={{
+          <div className="resources-grid" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '30px'
+            gap: '25px'
           }}>
             {[
               {
@@ -217,7 +219,7 @@ export default function Home() {
               >
                 {/* Card Content */}
                 <div style={{
-                  padding: '35px 25px',
+                  padding: '30px 20px',
                   flexGrow: 1,
                   display: 'flex',
                   flexDirection: 'column',
@@ -225,9 +227,9 @@ export default function Home() {
                   textAlign: 'center'
                 }}>
                   <div style={{
-                    width: '80px',
-                    height: '80px',
-                    marginBottom: '20px'
+                    width: '70px',
+                    height: '70px',
+                    marginBottom: '18px'
                   }}>
                     <img
                       src={card.icon}
@@ -238,7 +240,7 @@ export default function Home() {
                   <p style={{
                     color: '#8b0000',
                     fontFamily: "'Times New Roman', Times, serif",
-                    fontSize: '15px',
+                    fontSize: '14px',
                     lineHeight: '1.6'
                   }}>
                     {card.desc}
@@ -247,13 +249,13 @@ export default function Home() {
                 {/* Card Footer */}
                 <div style={{
                   backgroundColor: '#8b0000',
-                  padding: '18px 20px',
+                  padding: '16px 15px',
                   textAlign: 'center'
                 }}>
                   <h3 style={{
                     color: '#ffffff',
                     fontFamily: "'Times New Roman', Times, serif",
-                    fontSize: '17px',
+                    fontSize: '15px',
                     fontWeight: 'bold',
                     margin: 0
                   }}>
@@ -265,6 +267,74 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Responsive Styles */}
+      <style jsx>{`
+        @media (max-width: 1024px) {
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          .action-buttons {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 15px !important;
+          }
+          .resources-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .hero-title {
+            font-size: 32px !important;
+          }
+          .hero-subtitle {
+            font-size: 18px !important;
+          }
+          .hero-desc {
+            font-size: 16px !important;
+          }
+          .hero-italic {
+            font-size: 15px !important;
+          }
+          .action-buttons {
+            grid-template-columns: 1fr !important;
+          }
+          .resources-title {
+            font-size: 28px !important;
+          }
+          .resources-subtitle {
+            font-size: 16px !important;
+          }
+          .resources-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          .decorative-bar {
+            height: 60px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-title {
+            font-size: 24px !important;
+          }
+          .hero-subtitle {
+            font-size: 16px !important;
+          }
+          .hero-desc {
+            font-size: 14px !important;
+          }
+          .hero-italic {
+            font-size: 14px !important;
+          }
+          .resources-title {
+            font-size: 24px !important;
+          }
+          .decorative-bar {
+            height: 40px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

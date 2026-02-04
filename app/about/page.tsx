@@ -62,7 +62,7 @@ export default function AboutPage() {
 
   return (
     <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 40px 80px 40px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 40px 80px 40px' }}>
         {/* Page Header */}
         <div style={{ marginBottom: '50px' }}>
           <h1 style={{
@@ -149,7 +149,7 @@ export default function AboutPage() {
                   alignItems: 'flex-start',
                   gap: '15px',
                   marginBottom: '14px',
-                  fontFamily: "'Times New Roman', Times, serif",
+                  fontFamily: "var(--font-lato), 'Lato', 'Helvetica Neue', sans-serif",
                   fontSize: '16px',
                   lineHeight: '1.6'
                 }}>
@@ -184,7 +184,7 @@ export default function AboutPage() {
                   alignItems: 'flex-start',
                   gap: '15px',
                   marginBottom: '14px',
-                  fontFamily: "'Times New Roman', Times, serif",
+                  fontFamily: "var(--font-lato), 'Lato', 'Helvetica Neue', sans-serif",
                   fontSize: '16px',
                   lineHeight: '1.6'
                 }}>
@@ -228,7 +228,7 @@ export default function AboutPage() {
                   alignItems: 'flex-start',
                   gap: '15px',
                   marginBottom: '14px',
-                  fontFamily: "'Times New Roman', Times, serif",
+                  fontFamily: "var(--font-lato), 'Lato', 'Helvetica Neue', sans-serif",
                   fontSize: '16px',
                   lineHeight: '1.6'
                 }}>
@@ -298,7 +298,7 @@ export default function AboutPage() {
                   alignItems: 'flex-start',
                   gap: '15px',
                   marginBottom: '14px',
-                  fontFamily: "'Times New Roman', Times, serif",
+                  fontFamily: "var(--font-lato), 'Lato', 'Helvetica Neue', sans-serif",
                   fontSize: '16px',
                   lineHeight: '1.6'
                 }}>
@@ -341,7 +341,7 @@ export default function AboutPage() {
                   alignItems: 'flex-start',
                   gap: '15px',
                   marginBottom: '14px',
-                  fontFamily: "'Times New Roman', Times, serif",
+                  fontFamily: "var(--font-lato), 'Lato', 'Helvetica Neue', sans-serif",
                   fontSize: '16px',
                   lineHeight: '1.6'
                 }}>
@@ -376,7 +376,7 @@ export default function AboutPage() {
                   alignItems: 'flex-start',
                   gap: '15px',
                   marginBottom: '14px',
-                  fontFamily: "'Times New Roman', Times, serif",
+                  fontFamily: "var(--font-lato), 'Lato', 'Helvetica Neue', sans-serif",
                   fontSize: '16px',
                   lineHeight: '1.6'
                 }}>
