@@ -95,11 +95,11 @@ export default function Header() {
           style={{
             position: 'absolute',
             left: '60px',
-            top: '51%',
+            top: '50%',
             transform: 'translateY(-50%)',
             zIndex: 100,
-            width: '220px',
-            height: '220px'
+            width: '240px',
+            height: '240px'
           }}
         >
           <Image
@@ -133,7 +133,7 @@ export default function Header() {
         <div style={{ backgroundColor: '#ffffff', padding: '20px 0' }}>
           <div
             className="header-title-section"
-            style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', paddingLeft: '200px' }}
+            style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', paddingLeft: '320px' }}
           >
             {/* Title Section */}
             <div>
@@ -169,7 +169,7 @@ export default function Header() {
         <nav style={{ backgroundColor: '#8b0000', padding: 0, margin: 0 }}>
           <div
             className="nav-container"
-            style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', paddingLeft: '200px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+            style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px', paddingLeft: '320px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
           >
             {/* Desktop Navigation */}
             <ul
@@ -177,8 +177,9 @@ export default function Header() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'flex-start',
-                gap: '0',
+                justifyContent: 'space-between',
+                width: '100%',
+                margin: 0,
                 margin: 0,
                 padding: 0,
                 listStyle: 'none'
@@ -189,8 +190,11 @@ export default function Header() {
                   <Link
                     href={link.href}
                     style={{
-                      display: 'block',
-                      padding: '14px 20px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      height: '100%',
+                      padding: '16px 10px',
                       fontFamily: "'Times New Roman', Times, serif",
                       fontSize: '15px',
                       fontWeight: '600',
@@ -198,9 +202,11 @@ export default function Header() {
                       transition: 'all 0.2s ease',
                       backgroundColor: isActive(link.href) ? '#ffffff' : 'transparent',
                       color: isActive(link.href) ? '#8b0000' : '#ffffff',
+                      letterSpacing: '0px',
                       outline: 'none',
                       border: 'none',
-                      boxShadow: 'none'
+                      boxShadow: 'none',
+                      whiteSpace: 'nowrap'
                     }}
                     onMouseEnter={(e) => {
                       if (!isActive(link.href)) {
