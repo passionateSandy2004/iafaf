@@ -94,12 +94,12 @@ export default function Header() {
           className="floating-logo"
           style={{
             position: 'absolute',
-            left: '20px',
+            left: '35px',
             top: '51%',
             transform: 'translateY(-50%)',
             zIndex: 100,
-            width: '250px',
-            height: '250px'
+            width: '220px',
+            height: '220px'
           }}
         >
           <Image

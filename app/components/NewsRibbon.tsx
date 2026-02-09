@@ -148,19 +148,6 @@ export default function NewsRibbon() {
                     }}
                 >
                     {duplicatedNews.map((item, index) => {
-                        // Array of vibrant colors for the news links
-                        const colors = [
-                            '#FFD700', // Gold
-                            '#00FF7F', // Spring Green
-                            '#FF69B4', // Hot Pink
-                            '#00CED1', // Dark Turquoise
-                            '#FFA500', // Orange
-                            '#98FB98', // Pale Green
-                            '#FF6347', // Tomato
-                            '#87CEEB', // Sky Blue
-                        ];
-                        const linkColor = colors[index % colors.length];
-
                         return (
                             <a
                                 key={index}
@@ -169,8 +156,8 @@ export default function NewsRibbon() {
                                 rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                                 style={{
                                     fontFamily: "'Times New Roman', Times, serif",
-                                    fontSize: '12px',
-                                    color: linkColor,
+                                    fontSize: '14px',
+                                    color: '#ffffff',
                                     textDecoration: 'none',
                                     display: 'inline-flex',
                                     alignItems: 'center',
@@ -181,9 +168,9 @@ export default function NewsRibbon() {
                                 onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
                             >
                                 <span style={{
-                                    color: linkColor,
+                                    color: '#ffffff',
                                     marginRight: '8px',
-                                    fontSize: '10px'
+                                    fontSize: '12px'
                                 }}>●</span>
                                 <span>{item.title}</span>
                                 {item.source_id && (
