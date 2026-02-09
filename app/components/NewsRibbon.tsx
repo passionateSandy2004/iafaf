@@ -157,6 +157,7 @@ export default function NewsRibbon() {
                                 style={{
                                     fontFamily: "'Times New Roman', Times, serif",
                                     fontSize: '14px',
+                                    fontStyle: 'italic',
                                     color: '#ffffff',
                                     textDecoration: 'none',
                                     display: 'inline-flex',

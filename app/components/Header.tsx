@@ -16,7 +16,7 @@ export default function Header() {
     { href: '/track-complaint', label: 'Track Complaint' },
     { href: '/fraud-awareness', label: 'Fraud Awareness' },
     { href: '/research', label: 'Research' },
-    { href: '/partnerships', label: 'Partnerships' },
+    { href: '/partnerships', label: 'Related Authorities' },
     { href: '/about', label: 'About' },
   ];
 
@@ -94,7 +94,7 @@ export default function Header() {
           className="floating-logo"
           style={{
             position: 'absolute',
-            left: '35px',
+            left: '60px',
             top: '51%',
             transform: 'translateY(-50%)',
             zIndex: 100,
@@ -192,7 +192,7 @@ export default function Header() {
                       display: 'block',
                       padding: '14px 20px',
                       fontFamily: "'Times New Roman', Times, serif",
-                      fontSize: '13px',
+                      fontSize: '15px',
                       fontWeight: '600',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease',

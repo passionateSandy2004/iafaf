@@ -87,7 +87,7 @@ export default function Home() {
                     backgroundColor: '#8b0000',
                     color: '#ffffff',
                     fontFamily: "'Times New Roman', Times, serif",
-                    fontSize: '16px',
+                    fontSize: '18px',
                     fontWeight: '600',
                     padding: '18px 30px',
                     borderRadius: '50px',

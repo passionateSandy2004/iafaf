@@ -32,7 +32,7 @@ export default function Footer() {
             <p style={{
               color: 'rgba(255, 255, 255, 0.95)',
               fontFamily: "'Times New Roman', Times, serif",
-              fontSize: '14px',
+              fontSize: '16px',
               lineHeight: '1.8',
               marginBottom: '12px'
             }}>
@@ -41,7 +41,7 @@ export default function Footer() {
             <p style={{
               color: 'rgba(255, 255, 255, 0.95)',
               fontFamily: "'Times New Roman', Times, serif",
-              fontSize: '14px',
+              fontSize: '16px',
               lineHeight: '1.8'
             }}>
               निवेशक जागरूकता एवं धोखाधड़ी जागरूकता महासंघ
@@ -74,7 +74,7 @@ export default function Footer() {
                     style={{
                       color: 'rgba(255, 255, 255, 0.95)',
                       fontFamily: "'Times New Roman', Times, serif",
-                      fontSize: '14px',
+                      fontSize: '16px',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease'
                     }}
@@ -113,7 +113,7 @@ export default function Footer() {
                     style={{
                       color: 'rgba(255, 255, 255, 0.95)',
                       fontFamily: "'Times New Roman', Times, serif",
-                      fontSize: '14px',
+                      fontSize: '16px',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease'
                     }}
@@ -152,7 +152,7 @@ export default function Footer() {
                     style={{
                       color: 'rgba(255, 255, 255, 0.95)',
                       fontFamily: "'Times New Roman', Times, serif",
-                      fontSize: '14px',
+                      fontSize: '16px',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease'
                     }}
@@ -184,7 +184,7 @@ export default function Footer() {
           <h4 style={{
             color: '#8b0000',
             fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '16px',
+            fontSize: '18px',
             fontWeight: 'bold',
             textTransform: 'uppercase',
             letterSpacing: '1px',
@@ -204,10 +204,10 @@ export default function Footer() {
               marginBottom: '15px',
               color: '#8b0000',
               fontFamily: "'Times New Roman', Times, serif",
-              fontSize: '14px',
+              fontSize: '17px',
               lineHeight: '1.7'
             }}>
-              <span style={{ fontWeight: 'bold', fontSize: '16px', marginTop: '-2px' }}>•</span>
+              <span style={{ fontWeight: 'bold', fontSize: '18px', marginTop: '-2px' }}>•</span>
               <span><strong>IAFAF does not investigate, adjudicate or recover funds.</strong></span>
             </li>
             <li style={{
@@ -217,10 +217,10 @@ export default function Footer() {
               marginBottom: '15px',
               color: '#8b0000',
               fontFamily: "'Times New Roman', Times, serif",
-              fontSize: '14px',
+              fontSize: '17px',
               lineHeight: '1.7'
             }}>
-              <span style={{ fontWeight: 'bold', fontSize: '16px', marginTop: '-2px' }}>•</span>
+              <span style={{ fontWeight: 'bold', fontSize: '18px', marginTop: '-2px' }}>•</span>
               <span>IAFAF operates as a facilitation, awareness and research institution in public interest.</span>
             </li>
             <li style={{
@@ -229,10 +229,10 @@ export default function Footer() {
               gap: '12px',
               color: '#8b0000',
               fontFamily: "'Times New Roman', Times, serif",
-              fontSize: '14px',
+              fontSize: '17px',
               lineHeight: '1.7'
             }}>
-              <span style={{ fontWeight: 'bold', fontSize: '16px', marginTop: '-2px' }}>•</span>
+              <span style={{ fontWeight: 'bold', fontSize: '18px', marginTop: '-2px' }}>•</span>
               <span>IAFAF does not collect or store any user data.</span>
             </li>
           </ul>
@@ -243,7 +243,7 @@ export default function Footer() {
           <p style={{
             color: '#ffffff',
             fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '15px',
+            fontSize: '16px',
             fontWeight: '600',
             marginBottom: '10px'
           }}>
@@ -252,7 +252,7 @@ export default function Footer() {
           <p style={{
             color: 'rgba(255, 255, 255, 0.85)',
             fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '13px',
+            fontSize: '15px',
             marginBottom: '8px'
           }}>
             A not-for-profit national institution (Section-8 Company) | All rights reserved
@@ -260,7 +260,7 @@ export default function Footer() {
           <p style={{
             color: 'rgba(255, 255, 255, 0.7)',
             fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '12px'
+            fontSize: '14px'
           }}>
             Last Updated: January 2026 | Website Version 1.0
           </p>
