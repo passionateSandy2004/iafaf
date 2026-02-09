@@ -180,7 +180,6 @@ export default function Header() {
                 justifyContent: 'space-between',
                 width: '100%',
                 margin: 0,
-                margin: 0,
                 padding: 0,
                 listStyle: 'none'
               }}
