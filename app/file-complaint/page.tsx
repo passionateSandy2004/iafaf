@@ -34,8 +34,8 @@ export default function FileComplaintPage() {
         }
       `}</style>
 
-      <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
-        <div className="page-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 40px 80px 40px' }}>
+      <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', overflowX: 'hidden', minWidth: 0 }}>
+        <div className="page-container" style={{ maxWidth: '1200px', width: '100%', minWidth: 0, margin: '0 auto', padding: '30px 40px 80px 40px', boxSizing: 'border-box' }}>
           {/* Page Header */}
           <div style={{ textAlign: 'center', marginBottom: '50px', maxWidth: '800px', margin: '0 auto 50px auto' }}>
             <div

@@ -1,3 +1,5 @@
+'use client';
+
 export default function ForRegulatorsPage() {
   const mandate = [
     "Investor awareness and education",
@@ -48,38 +50,81 @@ export default function ForRegulatorsPage() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 40px 80px 40px' }}>
-        {/* Page Header */}
-        <div style={{ marginBottom: '50px' }}>
-          <h1 style={{
-            color: '#8b0000',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '42px',
-            fontWeight: 'bold',
-            marginBottom: '15px'
-          }}>
-            For Ministries & Regulators
-          </h1>
-          <p style={{
-            color: '#8b0000',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '20px',
-            marginBottom: '20px'
-          }}>
-            MoU-Ready Page
-          </p>
-          <p style={{
-            color: '#555555',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '17px',
-            lineHeight: '1.7',
-            maxWidth: '800px'
-          }}>
-            This page provides comprehensive information for government ministries and
-            regulators interested in partnering with IAFAF.
-          </p>
-        </div>
+    <>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .page-container {
+            padding: 40px 20px 60px 20px !important;
+          }
+          .page-title {
+            font-size: 28px !important;
+          }
+          .page-subtitle {
+            font-size: 18px !important;
+          }
+          .page-desc {
+            font-size: 16px !important;
+          }
+          .governance-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .page-container {
+            padding: 30px 15px 50px 15px !important;
+          }
+          .page-title {
+            font-size: 24px !important;
+          }
+          .page-subtitle {
+            font-size: 16px !important;
+          }
+          .page-desc {
+            font-size: 14px !important;
+          }
+        }
+      `}</style>
+      <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+        <div className="page-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 40px 80px 40px' }}>
+          {/* Page Header */}
+          <div style={{ marginBottom: '50px' }}>
+            <h1
+              className="page-title"
+              style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '42px',
+                fontWeight: 'bold',
+                marginBottom: '15px'
+              }}
+            >
+              For Ministries & Regulators
+            </h1>
+            <p
+              className="page-subtitle"
+              style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '20px',
+                marginBottom: '20px'
+              }}
+            >
+              MoU-Ready Page
+            </p>
+            <p
+              className="page-desc"
+              style={{
+                color: '#555555',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '17px',
+                lineHeight: '1.7',
+                maxWidth: '800px'
+              }}
+            >
+              This page provides comprehensive information for government ministries and
+              regulators interested in partnering with IAFAF.
+            </p>
+          </div>
 
         {/* Content Sections */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
@@ -154,11 +199,14 @@ export default function ForRegulatorsPage() {
             }}>
               Governance Framework
             </h2>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '25px'
-            }}>
+            <div
+              className="governance-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '25px'
+              }}
+            >
               {governance.map((item, index) => (
                 <div key={index}>
                   <h3 style={{
@@ -451,5 +499,6 @@ export default function ForRegulatorsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

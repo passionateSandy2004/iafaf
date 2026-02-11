@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 
 export default function FraudAlertsPage() {
@@ -32,30 +34,69 @@ export default function FraudAlertsPage() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 40px 80px 40px' }}>
-        {/* Page Header */}
-        <div style={{ marginBottom: '40px' }}>
-          <h1 style={{
-            color: '#8b0000',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '42px',
-            fontWeight: 'bold',
-            marginBottom: '15px'
-          }}>
-            Fraud Alert Bulletin
-          </h1>
-          <p style={{
-            color: '#8b0000',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '20px',
-            marginBottom: '25px'
-          }}>
-            Verified Public-Interest Advisories
-          </p>
+    <>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .page-container {
+            padding: 40px 20px 60px 20px !important;
+          }
+          .page-title {
+            font-size: 28px !important;
+          }
+          .page-subtitle {
+            font-size: 18px !important;
+          }
+          .alerts-section,
+          .guidelines-section {
+            padding: 25px 20px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .page-container {
+            padding: 30px 15px 50px 15px !important;
+          }
+          .page-title {
+            font-size: 24px !important;
+          }
+          .page-subtitle {
+            font-size: 16px !important;
+          }
+          .alerts-section,
+          .guidelines-section {
+            padding: 20px 15px !important;
+          }
+        }
+      `}</style>
+      <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+        <div className="page-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 40px 80px 40px' }}>
+          {/* Page Header */}
+          <div style={{ marginBottom: '40px' }}>
+            <h1
+              className="page-title"
+              style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '42px',
+                fontWeight: 'bold',
+                marginBottom: '15px'
+              }}
+            >
+              Fraud Alert Bulletin
+            </h1>
+            <p
+              className="page-subtitle"
+              style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '20px',
+                marginBottom: '25px'
+              }}
+            >
+              Verified Public-Interest Advisories
+            </p>
 
-          {/* Important Note */}
-          <div style={{
+            {/* Important Note */}
+            <div style={{
             backgroundColor: '#fafafa',
             borderLeft: '5px solid #8b0000',
             borderRadius: '0 12px 12px 0',
@@ -77,13 +118,16 @@ export default function FraudAlertsPage() {
         </div>
 
         {/* Alert Guidelines */}
-        <div style={{
-          backgroundColor: '#ffffff',
-          borderRadius: '16px',
-          padding: '40px 45px',
-          marginBottom: '30px',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
-        }}>
+        <div
+          className="guidelines-section"
+          style={{
+            backgroundColor: '#ffffff',
+            borderRadius: '16px',
+            padding: '40px 45px',
+            marginBottom: '30px',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+          }}
+        >
           <h2 style={{
             color: '#8b0000',
             fontFamily: "'Times New Roman', Times, serif",
@@ -118,13 +162,16 @@ export default function FraudAlertsPage() {
         </div>
 
         {/* Recent Alerts */}
-        <div style={{
-          backgroundColor: '#ffffff',
-          borderRadius: '16px',
-          padding: '40px 45px',
-          marginBottom: '30px',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
-        }}>
+        <div
+          className="alerts-section"
+          style={{
+            backgroundColor: '#ffffff',
+            borderRadius: '16px',
+            padding: '40px 45px',
+            marginBottom: '30px',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+          }}
+        >
           <h2 style={{
             color: '#8b0000',
             fontFamily: "'Times New Roman', Times, serif",
@@ -281,5 +328,6 @@ export default function FraudAlertsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

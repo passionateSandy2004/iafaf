@@ -53,6 +53,11 @@ export default function AuthorityDirectory() {
           .directory-title {
             font-size: 16px !important;
           }
+          .directory-table-wrap th,
+          .directory-table-wrap td {
+            padding: 0.5rem 0.75rem !important;
+            font-size: 12px !important;
+          }
         }
       `}</style>
 
@@ -98,7 +103,7 @@ export default function AuthorityDirectory() {
         </div>
 
         {/* Compact Table */}
-        <div style={{ overflowX: 'auto' }}>
+        <div className="directory-table-wrap" style={{ overflowX: 'auto' }}>
           <table style={{
             width: '100%',
             borderCollapse: 'collapse',

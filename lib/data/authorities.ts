@@ -29,8 +29,8 @@ export const authorities: Record<string, Authority> = {
     id: "sebi",
     name: "SEBI (SCORES)",
     type: [ComplaintType.INVESTMENT, ComplaintType.CRYPTO],
-    portalUrl: "https://scores.gov.in/",
-    trackingUrl: "https://scores.gov.in/",
+    portalUrl: "https://scores.sebi.gov.in/",
+    trackingUrl: "https://scores.sebi.gov.in/",
     jurisdiction: "Securities market, stock exchanges, mutual funds, investment advisors",
     laws: [
       "Securities and Exchange Board of India Act, 1992",
@@ -46,7 +46,7 @@ export const authorities: Record<string, Authority> = {
     ],
     escalationProcess: "If complaint not resolved within 30 days, escalate to SEBI Ombudsman or approach SEBI directly",
     submissionGuide: [
-      "Visit scores.gov.in",
+      "Visit scores.sebi.gov.in",
       "Register/login to the portal",
       "Select complaint category",
       "Fill in complaint details",
@@ -62,7 +62,7 @@ export const authorities: Record<string, Authority> = {
       "Communication records",
     ],
     trackingGuide: [
-      "Visit scores.gov.in",
+      "Visit scores.sebi.gov.in",
       "Login with your credentials",
       "Go to 'Track Complaint' section",
       "Enter your complaint reference number",

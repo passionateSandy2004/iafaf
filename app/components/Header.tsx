@@ -38,27 +38,58 @@ export default function Header() {
             display: flex !important;
           }
           .header-title-section {
-            padding-left: 140px !important;
-          }
-          .nav-container {
-            padding-left: 140px !important;
-          }
-          .floating-logo {
-            width: 120px !important;
-            height: 120px !important;
-          }
-        }
-        @media (max-width: 768px) {
-          .header-title-section {
-            padding-left: 100px !important;
+            padding-left: 155px !important;
           }
           .nav-container {
             padding-left: 20px !important;
           }
           .floating-logo {
-            width: 80px !important;
-            height: 80px !important;
+            width: 130px !important;
+            height: 130px !important;
             left: 10px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+          }
+          .header-main-white {
+            border: none !important;
+            border-bottom: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+          }
+          .site-header {
+            border-bottom: none !important;
+          }
+          nav {
+            border-top: none !important;
+            border-bottom: none !important;
+            outline: none !important;
+            margin-top: -3px !important;
+          }
+          .header-main-white::after {
+            display: none !important;
+            content: none !important;
+            border: none !important;
+          }
+          .site-nav::before,
+          .site-nav::after {
+            display: none !important;
+            content: none !important;
+            border: none !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .header-title-section {
+            padding-left: 110px !important;
+          }
+          .nav-container {
+            padding-left: 16px !important;
+          }
+          .floating-logo {
+            width: 92px !important;
+            height: 92px !important;
+            left: 8px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
           }
           .header-title {
             font-size: 18px !important;
@@ -72,12 +103,14 @@ export default function Header() {
         }
         @media (max-width: 480px) {
           .header-title-section {
-            padding-left: 85px !important;
+            padding-left: 100px !important;
           }
           .floating-logo {
-            width: 65px !important;
-            height: 65px !important;
+            width: 85px !important;
+            height: 85px !important;
             left: 8px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
           }
           .header-title {
             font-size: 14px !important;
@@ -86,31 +119,35 @@ export default function Header() {
             font-size: 10px !important;
           }
         }
+        .mobile-menu-dropdown {
+          border: none !important;
+          border-top: none !important;
+          box-shadow: 0 6px 16px rgba(0,0,0,0.2) !important;
+        }
+        @media (max-width: 1024px) {
+          .site-nav {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+          }
+          .nav-container {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+          }
+          .mobile-menu-btn {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+          }
+          .mobile-menu-btn:focus {
+            outline: none !important;
+            box-shadow: none !important;
+          }
+        }
       `}</style>
 
-      <header style={{ backgroundColor: '#ffffff', borderBottom: '3px solid #8b0000', margin: 0, padding: 0, position: 'relative' }}>
-        {/* Floating Logo - overlaps both red bars */}
-        <div
-          className="floating-logo"
-          style={{
-            position: 'absolute',
-            left: '60px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            zIndex: 100,
-            width: '240px',
-            height: '240px'
-          }}
-        >
-          <Image
-            src="/iafaf-logo.png"
-            alt="IAFAF Logo"
-            fill
-            style={{ objectFit: 'contain', display: 'block' }}
-            priority
-          />
-        </div>
-
+      <header className="site-header" style={{ backgroundColor: '#ffffff', borderBottom: '3px solid #8b0000', margin: 0, padding: 0, position: 'relative' }}>
         {/* Top bar */}
         <div style={{ backgroundColor: '#8b0000', padding: '10px 0' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
@@ -129,8 +166,31 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Main Header with Title */}
-        <div style={{ backgroundColor: '#ffffff', padding: '20px 0' }}>
+        {/* Main Header with Title - logo centered in this block in responsive */}
+        <div className="header-main-white" style={{ backgroundColor: '#ffffff', padding: '20px 0', position: 'relative' }}>
+          {/* Floating Logo - vertically centered within this section */}
+          <div
+            className="floating-logo"
+            style={{
+              position: 'absolute',
+              left: '60px',
+              top: '55%',
+              transform: 'translateY(-50%)',
+              zIndex: 101,
+              width: '240px',
+              height: '240px',
+              minWidth: '85px',
+              minHeight: '85px'
+            }}
+          >
+            <Image
+              src="/iafaf-logo.png"
+              alt="IAFAF Logo"
+              fill
+              style={{ objectFit: 'contain', display: 'block' }}
+              priority
+            />
+          </div>
           <div
             className="header-title-section"
             style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', paddingLeft: '320px' }}
@@ -166,10 +226,10 @@ export default function Header() {
         </div>
 
         {/* Navigation Bar */}
-        <nav style={{ backgroundColor: '#8b0000', padding: 0, margin: 0 }}>
+        <nav className="site-nav" style={{ backgroundColor: '#8b0000', padding: 0, margin: 0, border: 'none' }}>
           <div
             className="nav-container"
-            style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px', paddingLeft: '320px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+            style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 20px', paddingLeft: '320px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: 'none', outline: 'none' }}
           >
             {/* Desktop Navigation */}
             <ul
@@ -234,6 +294,8 @@ export default function Header() {
                 justifyContent: 'center',
                 background: 'none',
                 border: 'none',
+                outline: 'none',
+                boxShadow: 'none',
                 color: '#ffffff',
                 padding: '14px',
                 cursor: 'pointer',
@@ -248,6 +310,7 @@ export default function Header() {
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
             <div
+              className="mobile-menu-dropdown"
               style={{
                 position: 'absolute',
                 top: '100%',
@@ -255,7 +318,7 @@ export default function Header() {
                 right: 0,
                 backgroundColor: '#8b0000',
                 zIndex: 99,
-                boxShadow: '0 4px 10px rgba(0,0,0,0.2)'
+                boxShadow: '0 4px 12px rgba(0,0,0,0.25)'
               }}
             >
               <ul style={{ listStyle: 'none', margin: 0, padding: '10px 0' }}>

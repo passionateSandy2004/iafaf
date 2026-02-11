@@ -14,7 +14,7 @@ interface QuestionnaireAnswers {
 const authorities = {
   SEBI: {
     name: "SEBI (SCORES)",
-    url: "https://scores.gov.in/",
+    url: "https://scores.sebi.gov.in/",
     description: "Securities and Exchange Board of India - SCORES Portal",
   },
   RBI: {

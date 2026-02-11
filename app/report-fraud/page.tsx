@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 
 export default function ReportFraudPage() {
@@ -17,46 +19,95 @@ export default function ReportFraudPage() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 40px 80px 40px' }}>
-        {/* Page Header */}
-        <div style={{ marginBottom: '40px' }}>
-          <h1 style={{
-            color: '#8b0000',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '42px',
-            fontWeight: 'bold',
-            marginBottom: '15px'
-          }}>
-            Report Suspected Fraud
-          </h1>
-          <p style={{
-            color: '#8b0000',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '20px',
-            marginBottom: '20px'
-          }}>
-            Guidance for Reporting Financial Fraud
-          </p>
-          <p style={{
-            color: '#555555',
-            fontFamily: "'Times New Roman', Times, serif",
-            fontSize: '17px',
-            lineHeight: '1.7',
-            maxWidth: '800px'
-          }}>
+    <>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .page-container {
+            padding: 40px 20px 60px 20px !important;
+          }
+          .page-title {
+            font-size: 28px !important;
+          }
+          .page-subtitle {
+            font-size: 18px !important;
+          }
+          .page-desc {
+            font-size: 16px !important;
+          }
+          .action-cards-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .fraud-types-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .page-container {
+            padding: 30px 15px 50px 15px !important;
+          }
+          .page-title {
+            font-size: 24px !important;
+          }
+          .page-subtitle {
+            font-size: 16px !important;
+          }
+          .page-desc {
+            font-size: 14px !important;
+          }
+        }
+      `}</style>
+      <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+        <div className="page-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '30px 40px 80px 40px' }}>
+          {/* Page Header */}
+          <div style={{ marginBottom: '40px' }}>
+            <h1
+              className="page-title"
+              style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '42px',
+                fontWeight: 'bold',
+                marginBottom: '15px'
+              }}
+            >
+              Report Suspected Fraud
+            </h1>
+            <p
+              className="page-subtitle"
+              style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '20px',
+                marginBottom: '20px'
+              }}
+            >
+              Guidance for Reporting Financial Fraud
+            </p>
+            <p
+              className="page-desc"
+              style={{
+                color: '#555555',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '17px',
+                lineHeight: '1.7',
+                maxWidth: '800px'
+              }}
+            >
             If you suspect you have been a victim of financial fraud or have identified
             a potential scam, use the resources below to report it to the appropriate authority.
           </p>
         </div>
 
         {/* Action Cards */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '30px',
-          marginBottom: '40px'
-        }}>
+        <div
+          className="action-cards-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '30px',
+            marginBottom: '40px'
+          }}
+        >
           {/* One-Stop Guidance Card */}
           <div style={{
             backgroundColor: '#ffffff',
@@ -165,11 +216,14 @@ export default function ReportFraudPage() {
           }}>
             Common Types of Financial Fraud
           </h2>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '25px'
-          }}>
+          <div
+            className="fraud-types-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '25px'
+            }}
+          >
             {fraudTypes.map((fraud, index) => (
               <div key={index} style={{
                 borderLeft: '4px solid #8b0000',
@@ -255,5 +309,6 @@ export default function ReportFraudPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

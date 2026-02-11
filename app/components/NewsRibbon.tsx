@@ -108,15 +108,18 @@ export default function NewsRibbon() {
             alignItems: 'center'
         }}>
             {/* Label */}
-            <div style={{
-                backgroundColor: '#6b0000',
-                height: '100%',
-                padding: '0 14px',
-                display: 'flex',
-                alignItems: 'center',
-                flexShrink: 0,
-                zIndex: 10
-            }}>
+            <div
+                className="news-ribbon-label"
+                style={{
+                    backgroundColor: '#6b0000',
+                    height: '100%',
+                    padding: '0 14px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexShrink: 0,
+                    zIndex: 10
+                }}
+            >
                 <span style={{
                     fontFamily: "'Times New Roman', Times, serif",
                     fontSize: '11px',
@@ -129,11 +132,12 @@ export default function NewsRibbon() {
                 </span>
             </div>
 
-            {/* Scrolling Container */}
+            {/* Scrolling Container - clips so only one strip visible, no overlap */}
             <div
                 className="news-scroll-container"
                 style={{
                     flex: 1,
+                    minWidth: 0,
                     overflow: 'hidden',
                     position: 'relative'
                 }}
@@ -141,9 +145,10 @@ export default function NewsRibbon() {
                 <div
                     className="news-scroll-content"
                     style={{
-                        display: 'flex',
+                        display: 'inline-flex',
                         alignItems: 'center',
-                        animation: 'newsScroll 40s linear infinite',
+                        flexWrap: 'nowrap',
+                        animation: 'newsScroll 150s linear infinite',
                         whiteSpace: 'nowrap'
                     }}
                 >
@@ -162,6 +167,7 @@ export default function NewsRibbon() {
                                     textDecoration: 'none',
                                     display: 'inline-flex',
                                     alignItems: 'center',
+                                    flexShrink: 0,
                                     marginRight: '40px',
                                     transition: 'opacity 0.2s'
                                 }}
@@ -190,8 +196,16 @@ export default function NewsRibbon() {
                 </div>
             </div>
 
-            {/* CSS Animation */}
+            {/* CSS Animation - scroll content stays one strip, container clips */}
             <style jsx>{`
+                .news-scroll-container {
+                    overflow-x: hidden !important;
+                    overflow-y: hidden !important;
+                }
+                .news-scroll-content {
+                    min-width: max-content;
+                    will-change: transform;
+                }
                 @keyframes newsScroll {
                     0% {
                         transform: translateX(0);
@@ -202,6 +216,17 @@ export default function NewsRibbon() {
                 }
                 .news-scroll-container:hover .news-scroll-content {
                     animation-play-state: paused;
+                }
+                @media (max-width: 480px) {
+                    .news-ribbon-label span {
+                        font-size: 10px !important;
+                    }
+                    .news-ribbon-label {
+                        padding: 0 10px !important;
+                    }
+                    .news-scroll-content a {
+                        font-size: 12px !important;
+                    }
                 }
             `}</style>
         </div>

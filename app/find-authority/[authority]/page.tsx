@@ -18,9 +18,10 @@ export default async function AuthorityDetailPage({ params }: PageProps) {
     <div className="container mx-auto px-4 py-8">
       <Link
         href="/find-authority"
-        className="text-blue-600 hover:text-blue-800 mb-4 inline-block"
+        className="inline-flex items-center gap-2 mb-6 px-5 py-3 rounded-lg font-semibold bg-[#8b0000] hover:bg-[#6b0000] transition-colors"
+        style={{ fontFamily: "'Times New Roman', Times, serif", color: "#ffffff" }}
       >
-        ← Back to Authority Directory
+        ← Back to Find Authority
       </Link>
 
       <div className="bg-white rounded-lg shadow-md p-8">

@@ -42,14 +42,18 @@ export default function ComplaintGuidanceWizard() {
           }}>
             Select the type of complaint you want to file:
           </p>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '16px'
-          }}>
+          <div
+            className="wizard-complaint-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '16px'
+            }}
+          >
             {complaintTypes.map((type) => (
               <button
                 key={type.id}
+                className="wizard-complaint-card"
                 onClick={() => handleComplaintTypeSelect(type.id)}
                 style={{
                   padding: '20px',
@@ -380,37 +384,183 @@ export default function ComplaintGuidanceWizard() {
   ];
 
   return (
-    <div style={{
-      backgroundColor: '#ffffff',
-      borderRadius: '16px',
-      boxShadow: '0 4px 24px rgba(0, 0, 0, 0.1)',
-      padding: '40px',
-      borderTop: '4px solid #8b0000'
-    }}>
-      {/* Header */}
-      <div style={{ marginBottom: '32px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-          <h2 style={{
-            fontSize: '28px',
-            fontWeight: 'bold',
-            color: '#8b0000',
-            fontFamily: "'Times New Roman', Times, serif",
-            margin: 0
-          }}>
-            Complaint Guidance Wizard
-          </h2>
-          <span style={{
-            backgroundColor: '#8b0000',
-            color: '#ffffff',
-            padding: '8px 16px',
-            borderRadius: '50px',
-            fontSize: '13px',
-            fontWeight: '600',
-            fontFamily: "'Times New Roman', Times, serif"
-          }}>
-            Step {currentStep + 1} of {steps.length}
-          </span>
-        </div>
+    <>
+      <style jsx>{`
+        .wizard-container {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+          box-sizing: border-box !important;
+          overflow-x: hidden !important;
+        }
+        .wizard-title {
+          min-width: 0 !important;
+          overflow-wrap: break-word !important;
+          word-wrap: break-word !important;
+        }
+        .wizard-header-row .wizard-title {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+        }
+        .wizard-complaint-grid {
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .wizard-step-content {
+          min-width: 0 !important;
+          overflow-x: hidden !important;
+        }
+        .wizard-step-content > div,
+        .wizard-step-body {
+          min-width: 0 !important;
+          max-width: 100% !important;
+        }
+        .wizard-step-heading {
+          min-width: 0 !important;
+          overflow-wrap: break-word !important;
+          word-wrap: break-word !important;
+        }
+        .wizard-complaint-card {
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+          text-align: left !important;
+          overflow: hidden !important;
+          white-space: normal !important;
+        }
+        .wizard-complaint-card div {
+          width: 100% !important;
+          box-sizing: border-box !important;
+          overflow-wrap: break-word !important;
+          word-wrap: break-word !important;
+          word-break: break-word !important;
+          min-width: 0 !important;
+          max-width: 100% !important;
+        }
+        .wizard-step-body > div {
+          min-width: 0 !important;
+          max-width: 100% !important;
+          overflow: hidden !important;
+        }
+        @media (max-width: 1024px) {
+          .wizard-container {
+            padding: 32px !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .wizard-container {
+            padding: 24px !important;
+          }
+          .wizard-header-row {
+            flex-wrap: wrap !important;
+            gap: 12px !important;
+          }
+          .wizard-title {
+            font-size: 22px !important;
+          }
+          .wizard-complaint-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .wizard-complaint-card {
+            padding: 14px !important;
+          }
+          .wizard-step-content {
+            padding: 20px !important;
+          }
+          .wizard-step-heading {
+            font-size: 18px !important;
+          }
+          .wizard-nav-buttons {
+            flex-direction: column !important;
+            gap: 12px !important;
+          }
+          .wizard-nav-buttons button {
+            width: 100% !important;
+            text-align: center !important;
+          }
+          .wizard-disclaimer {
+            padding: 16px 20px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .wizard-container {
+            padding: 16px !important;
+          }
+          .wizard-title {
+            font-size: 18px !important;
+          }
+          .wizard-step-badge {
+            padding: 6px 12px !important;
+            font-size: 12px !important;
+          }
+          .wizard-step-content {
+            padding: 16px !important;
+          }
+          .wizard-step-heading {
+            font-size: 16px !important;
+          }
+          .wizard-complaint-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .wizard-complaint-card {
+            padding: 12px !important;
+          }
+          .wizard-complaint-card div:first-child {
+            font-size: 14px !important;
+          }
+          .wizard-complaint-card div:last-child {
+            font-size: 13px !important;
+          }
+          .wizard-disclaimer {
+            padding: 14px 16px !important;
+          }
+        }
+      `}</style>
+      <div
+        className="wizard-container"
+        style={{
+          backgroundColor: '#ffffff',
+          borderRadius: '16px',
+          boxShadow: '0 4px 24px rgba(0, 0, 0, 0.1)',
+          padding: '40px',
+          borderTop: '4px solid #8b0000'
+        }}
+      >
+        {/* Header */}
+        <div style={{ marginBottom: '32px' }}>
+          <div
+            className="wizard-header-row"
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}
+          >
+            <h2
+              className="wizard-title"
+              style={{
+                fontSize: '28px',
+                fontWeight: 'bold',
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                margin: 0
+              }}
+            >
+              Complaint Guidance Wizard
+            </h2>
+            <span
+              className="wizard-step-badge"
+              style={{
+                backgroundColor: '#8b0000',
+                color: '#ffffff',
+                padding: '8px 16px',
+                borderRadius: '50px',
+                fontSize: '13px',
+                fontWeight: '600',
+                fontFamily: "'Times New Roman', Times, serif"
+              }}
+            >
+              Step {currentStep + 1} of {steps.length}
+            </span>
+          </div>
 
         {/* Progress Bar */}
         <div style={{
@@ -441,27 +591,36 @@ export default function ComplaintGuidanceWizard() {
       </div>
 
       {/* Step Content */}
-      <div style={{
-        marginBottom: '32px',
-        backgroundColor: '#ffffff',
-        padding: '30px',
-        borderRadius: '12px',
-        border: '1px solid #e5e5e5'
-      }}>
-        <h3 style={{
-          fontSize: '22px',
-          fontWeight: '700',
-          color: '#8b0000',
-          fontFamily: "'Times New Roman', Times, serif",
-          marginBottom: '24px'
-        }}>
+      <div
+        className="wizard-step-content"
+        style={{
+          marginBottom: '32px',
+          backgroundColor: '#ffffff',
+          padding: '30px',
+          borderRadius: '12px',
+          border: '1px solid #e5e5e5'
+        }}
+      >
+        <h3
+          className="wizard-step-heading"
+          style={{
+            fontSize: '22px',
+            fontWeight: '700',
+            color: '#8b0000',
+            fontFamily: "'Times New Roman', Times, serif",
+            marginBottom: '24px'
+          }}
+        >
           {steps[currentStep].title}
         </h3>
-        <div>{steps[currentStep].content}</div>
+        <div className="wizard-step-body">{steps[currentStep].content}</div>
       </div>
 
       {/* Navigation Buttons */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div
+        className="wizard-nav-buttons"
+        style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+      >
         <button
           onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
           disabled={currentStep === 0}
@@ -529,13 +688,16 @@ export default function ComplaintGuidanceWizard() {
       </div>
 
       {/* Disclaimer */}
-      <div style={{
-        marginTop: '32px',
-        backgroundColor: '#fafafa',
-        borderLeft: '4px solid #8b0000',
-        padding: '20px 24px',
-        borderRadius: '0 10px 10px 0'
-      }}>
+      <div
+        className="wizard-disclaimer"
+        style={{
+          marginTop: '32px',
+          backgroundColor: '#fafafa',
+          borderLeft: '4px solid #8b0000',
+          padding: '20px 24px',
+          borderRadius: '0 10px 10px 0'
+        }}
+      >
         <p style={{
           fontSize: '14px',
           color: '#555555',
@@ -550,5 +712,6 @@ export default function ComplaintGuidanceWizard() {
         </p>
       </div>
     </div>
+    </>
   );
 }

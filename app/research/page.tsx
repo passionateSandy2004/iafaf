@@ -65,6 +65,48 @@ export default function ResearchPage() {
             font-size: 11px !important;
           }
         }
+        @media (max-width: 768px) {
+          .publications-section {
+            padding: 30px 20px !important;
+          }
+          .publications-title {
+            font-size: 22px !important;
+            margin-bottom: 25px !important;
+          }
+          .publication-card {
+            padding: 20px !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 12px !important;
+          }
+          .publication-card h3 {
+            font-size: 16px !important;
+          }
+          .publication-card .pub-desc {
+            font-size: 14px !important;
+          }
+          .publication-card .pub-meta {
+            font-size: 12px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .publications-section {
+            padding: 20px 15px !important;
+          }
+          .publications-title {
+            font-size: 20px !important;
+            margin-bottom: 20px !important;
+          }
+          .publication-card {
+            padding: 16px !important;
+          }
+          .publication-card h3 {
+            font-size: 15px !important;
+          }
+          .publication-card .pub-desc {
+            font-size: 13px !important;
+          }
+        }
       `}</style>
 
       <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
@@ -186,33 +228,43 @@ export default function ResearchPage() {
           </div>
 
           {/* Publications */}
-          <div style={{
-            backgroundColor: '#f8f8f8',
-            borderRadius: '16px',
-            padding: '45px 40px',
-            marginBottom: '50px'
-          }}>
-            <h2 style={{
-              color: '#8b0000',
-              fontFamily: "'Times New Roman', Times, serif",
-              fontSize: '26px',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              marginBottom: '35px'
-            }}>
+          <div
+            className="publications-section"
+            style={{
+              backgroundColor: '#f8f8f8',
+              borderRadius: '16px',
+              padding: '45px 40px',
+              marginBottom: '50px'
+            }}
+          >
+            <h2
+              className="publications-title"
+              style={{
+                color: '#8b0000',
+                fontFamily: "'Times New Roman', Times, serif",
+                fontSize: '26px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                marginBottom: '35px'
+              }}
+            >
               Publications
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {publications.map((pub, index) => (
-                <div key={index} style={{
-                  backgroundColor: '#ffffff',
-                  borderRadius: '12px',
-                  padding: '25px 30px',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '20px',
-                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.06)'
-                }}>
+                <div
+                  key={index}
+                  className="publication-card"
+                  style={{
+                    backgroundColor: '#ffffff',
+                    borderRadius: '12px',
+                    padding: '25px 30px',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '20px',
+                    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.06)'
+                  }}
+                >
                   <span style={{
                     display: 'inline-block',
                     backgroundColor: '#8b0000',
@@ -227,7 +279,7 @@ export default function ResearchPage() {
                   }}>
                     {pub.tag}
                   </span>
-                  <div style={{ flex: 1 }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <h3 style={{
                       color: '#8b0000',
                       fontFamily: "'Times New Roman', Times, serif",
@@ -237,21 +289,27 @@ export default function ResearchPage() {
                     }}>
                       {pub.title}
                     </h3>
-                    <p style={{
-                      color: '#333333',
-                      fontFamily: "'Times New Roman', Times, serif",
-                      fontSize: '15px',
-                      marginBottom: '8px',
-                      lineHeight: '1.6'
-                    }}>
+                    <p
+                      className="pub-desc"
+                      style={{
+                        color: '#333333',
+                        fontFamily: "'Times New Roman', Times, serif",
+                        fontSize: '15px',
+                        marginBottom: '8px',
+                        lineHeight: '1.6'
+                      }}
+                    >
                       {pub.desc}
                     </p>
-                    <p style={{
-                      color: '#888888',
-                      fontFamily: "'Times New Roman', Times, serif",
-                      fontSize: '13px',
-                      margin: 0
-                    }}>
+                    <p
+                      className="pub-meta"
+                      style={{
+                        color: '#888888',
+                        fontFamily: "'Times New Roman', Times, serif",
+                        fontSize: '13px',
+                        margin: 0
+                      }}
+                    >
                       {pub.meta}
                     </p>
                   </div>

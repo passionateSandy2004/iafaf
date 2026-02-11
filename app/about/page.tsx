@@ -72,6 +72,12 @@ export default function AboutPage() {
           .page-desc {
             font-size: 16px !important;
           }
+          .vision-mission-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .objectives-grid {
+            grid-template-columns: 1fr !important;
+          }
           .governance-grid {
             grid-template-columns: 1fr !important;
           }
@@ -184,12 +190,15 @@ export default function AboutPage() {
           </div>
 
           {/* Vision & Mission */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '30px',
-            marginBottom: '40px'
-          }}>
+          <div
+            className="vision-mission-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '30px',
+              marginBottom: '40px'
+            }}
+          >
             {/* Vision */}
             <div style={{
               backgroundColor: '#ffffff',
@@ -293,11 +302,14 @@ export default function AboutPage() {
             }}>
               Objectives
             </h2>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '15px'
-            }}>
+            <div
+              className="objectives-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '15px'
+              }}
+            >
               {objectives.map((objective, index) => (
                 <div key={index} style={{
                   display: 'flex',
