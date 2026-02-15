@@ -127,6 +127,12 @@ h3 {
   border-color: var(--color-vivid-red);
 }
 
+/* Authority detail: outline portal link (Track Complaint) - white text on hover */
+.authority-portal-link-outline:hover {
+  background-color: #8b0000 !important;
+  color: #ffffff !important;
+}
+
 /* Professional links */
 a {
   transition: all 0.2s ease-in-out;

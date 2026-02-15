@@ -15,6 +15,8 @@ export interface Authority {
   type: ComplaintType[];
   portalUrl: string;
   trackingUrl: string;
+  portalNote?: string;
+  portalNoteUrl?: string;
   jurisdiction: string;
   laws: string[];
   requiredDocuments: string[];
@@ -202,6 +204,9 @@ export const authorities: Record<string, Authority> = {
     type: [ComplaintType.PONZI_MLM],
     portalUrl: "#",
     trackingUrl: "#",
+    portalNote:
+      "State EOW is state-specific. File a complaint with your state police Economic Offences Wing or visit your state police website.",
+    portalNoteUrl: "https://www.ncrb.gov.in",
     jurisdiction: "Ponzi schemes, MLM fraud, economic offences at state level",
     laws: [
       "Indian Penal Code",
